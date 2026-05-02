@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>About Us | AdTech Dynamics</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#632892",
+                        "secondary": "#7c43ab",
+                        "outline-variant": "#e1bfb4",
+                        "on-background": "#0b1c30",
+                        "surface-container-high": "#dce9ff",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#ffdbcf",
+                        "tertiary-container": "#919191",
+                        "surface-container": "#e5eeff",
+                        "on-surface": "#0b1c30",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#cb8ffd",
+                        "surface-variant": "#d3e4fe",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-tint": "#a93800",
+                        "primary-container": "#f36428",
+                        "on-surface-variant": "#594139",
+                        "surface": "#f8f9ff",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "on-tertiary-container": "#2a2a2a",
+                        "primary": "#a93800",
+                        "secondary-fixed-dim": "#e0b6ff",
+                        "tertiary": "#5e5e5e",
+                        "primary-fixed-dim": "#ffb59b",
+                        "outline": "#8d7167",
+                        "on-primary-container": "#511600",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#eff4ff",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-tertiary-fixed": "#1b1b1b",
+                        "inverse-primary": "#ffb59b",
+                        "surface-dim": "#cbdbf5",
+                        "inverse-on-surface": "#eaf1ff",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#812900",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-secondary-fixed": "#2d004f",
+                        "background": "#f8f9ff",
+                        "secondary-fixed": "#f2daff",
+                        "inverse-surface": "#213145",
+                        "on-primary-fixed": "#380d00",
+                        "tertiary-fixed-dim": "#c6c6c6",
+                        "surface-bright": "#f8f9ff",
+                        "on-secondary-container": "#581d87",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "24px",
+                        "base": "8px",
+                        "lg": "40px",
+                        "xs": "4px",
+                        "max_width": "1440px",
+                        "xl": "64px",
+                        "margin": "32px",
+                        "sm": "12px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Space Grotesk", "sans-serif"],
+                        "body-md": ["Manrope", "sans-serif"],
+                        "display-lg": ["Space Grotesk", "sans-serif"],
+                        "headline-lg": ["Space Grotesk", "sans-serif"],
+                        "label-sm": ["Manrope", "sans-serif"],
+                        "body-lg": ["Manrope", "sans-serif"],
+                        "label-md": ["Manrope", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #f8f9ff;
+            color: #0b1c30;
+        }
+
+        .space-grotesk {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-surface text-on-surface">
+    <!-- TopNavBar -->
+    <nav
+        class="fixed top-0 w-full z-50 border-b bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-slate-200/60 dark:border-slate-800/60 shadow-sm">
+        <div class="max-w-7xl mx-auto flex justify-between items-center h-16 px-6">
+            <div class="text-xl font-bold tracking-tighter text-slate-900 dark:text-white font-['Space_Grotesk']">
+                AdTech Dynamics
+            </div>
+            <div class="hidden md:flex items-center gap-8 font-['Space_Grotesk'] text-sm font-medium tracking-tight">
+                <a class="text-orange-600 dark:text-orange-500 border-b-2 border-orange-600 pb-1" href="#">About</a>
+                <a class="text-slate-600 dark:text-slate-400 hover:text-orange-600 dark:hover:text-orange-500 transition-colors"
+                    href="#">Careers</a>
+                <a class="text-slate-600 dark:text-slate-400 hover:text-orange-600 dark:hover:text-orange-500 transition-colors"
+                    href="#">Blog</a>
+                <a class="text-slate-600 dark:text-slate-400 hover:text-orange-600 dark:hover:text-orange-500 transition-colors"
+                    href="#">Contact</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <button
+                    class="hidden sm:block text-slate-600 dark:text-slate-400 font-medium text-sm hover:opacity-80 transition-all active:scale-95">Login</button>
+                <button
+                    class="bg-primary-container text-on-primary font-bold py-2 px-6 rounded-lg text-sm hover:opacity-90 active:scale-95 transition-all shadow-md">
+                    Get Started
+                </button>
+            </div>
+        </div>
+    </nav>
+    <main class="pt-32">
+        <!-- Hero Section: Identity & Scale -->
+        <section class="max-w-7xl mx-auto px-6 mb-xl">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+                <div class="lg:col-span-7">
+                    <span
+                        class="inline-flex items-center gap-2 px-3 py-1 bg-secondary-container/20 text-on-secondary-container rounded-full font-label-md text-label-md mb-md">
+                        <span class="material-symbols-outlined text-[18px]">verified</span>
+                        The Programmatic Authority
+                    </span>
+                    <h1 class="font-display-lg text-display-lg text-on-background mb-md">
+                        Engineering the future of <span class="text-primary-container">Dynamic Advertising</span>.
+                    </h1>
+                    <p class="font-body-lg text-body-lg text-tertiary max-w-2xl">
+                        AdTech Dynamics bridges the gap between massive algorithmic data and human-centric marketing. We
+                        empower global brands with precision engineering for the programmatic era.
+                    </p>
+                </div>
+                <div class="lg:col-span-5 relative">
+                    <div
+                        class="aspect-square rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-slate-800">
+                        <img class="w-full h-full object-cover"
+                            data-alt="A sophisticated data visualization dashboard displayed on a high-resolution sleek glass screen. The interface shows intricate networks of golden and orange nodes connected by thin glowing lines against a deep purple background. Soft, cinematic lighting highlights the depth of the 3D data architecture, creating a high-performance technological mood that feels both authoritative and innovative."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhomJP2tw970SKcTYizdcHv6RzI5kAWSkR1vEAE8YxXExIt-b9Sy-FEzPLsal2Odp40vVhzyc4nzrfPQrKDzxrJSZN-bKCwdZxNzrL6zS2r-TJKjTpYFSCexLoR12RAC-bfMcNTShTlGZb-LvKLcQz_RC3qZBW30vxXpm1HNNETgkPJfCBhBDGbvNLQRQe4FvGvOPkv_5GVSGJYN73-zD8s5RThb3E_C4T0vurJpXlfGdsOoRZt8_o36ZcROegpqzOAA8IWRQi9hZU" />
+                    </div>
+                    <div
+                        class="absolute -bottom-8 -left-8 bg-white p-md rounded-xl shadow-xl border border-outline-variant/30 hidden md:block">
+                        <div class="flex items-center gap-4">
+                            <div class="p-3 bg-primary-fixed rounded-lg">
+                                <span class="material-symbols-outlined text-primary"
+                                    data-icon="rocket_launch">rocket_launch</span>
+                            </div>
+                            <div>
+                                <p class="font-headline-md text-headline-md text-on-background">12B+</p>
+                                <p class="font-label-sm text-label-sm text-tertiary">Daily Bid Requests</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Mission & Vision: Bento Grid Layout -->
+        <section class="bg-surface-container-low py-xl">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="mb-lg text-center">
+                    <h2 class="font-headline-lg text-headline-lg text-on-background">Our Core Foundation</h2>
+                    <p class="font-body-md text-body-md text-tertiary mt-base">Built on reliability, innovation, and
+                        absolute transparency.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+                    <!-- Mission Card -->
+                    <div
+                        class="md:col-span-2 bg-white dark:bg-slate-900 p-md rounded-xl shadow-sm border border-outline-variant/20 flex flex-col justify-between">
+                        <div>
+                            <span class="material-symbols-outlined text-primary-container text-4xl mb-md"
+                                data-icon="track_changes">track_changes</span>
+                            <h3 class="font-headline-md text-headline-md text-on-background mb-base">Our Mission</h3>
+                            <p class="font-body-lg text-body-lg text-tertiary">
+                                To democratize advanced programmatic infrastructure by providing high-performance tools
+                                that transform complex data into actionable revenue streams. We believe that every ad
+                                should deliver value, not just impressions.
+                            </p>
+                        </div>
+                        <div class="mt-xl grid grid-cols-2 gap-md">
+                            <div class="border-l-4 border-primary-container pl-md">
+                                <h4 class="font-label-md text-label-md text-on-background">Real-time Clarity</h4>
+                                <p class="font-label-sm text-label-sm text-tertiary">Unmatched visibility into every
+                                    transaction.</p>
+                            </div>
+                            <div class="border-l-4 border-secondary pl-md">
+                                <h4 class="font-label-md text-label-md text-on-background">Algorithmic Edge</h4>
+                                <p class="font-label-sm text-label-sm text-tertiary">Proprietary AI designed for
+                                    efficiency.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Vision Card -->
+                    <div class="bg-on-secondary-container p-md rounded-xl shadow-sm flex flex-col text-white">
+                        <span class="material-symbols-outlined text-secondary-container text-4xl mb-md"
+                            data-icon="visibility">visibility</span>
+                        <h3 class="font-headline-md text-headline-md mb-base">Our Vision</h3>
+                        <p class="font-body-md text-body-md opacity-90 mb-lg">
+                            Setting the global standard for ethical, high-velocity advertising where technology serves
+                            the user experience and the brand's bottom line simultaneously.
+                        </p>
+                        <div class="mt-auto">
+                            <img class="rounded-lg h-32 w-full object-cover grayscale opacity-50"
+                                data-alt="A wide-angle conceptual image of a futuristic global connectivity map. Luminous blue and purple data streams travel across a dark Earth silhouette, representing the speed and reach of global programmatic advertising. The aesthetic is clean and corporate, featuring high contrast and a sense of infinite technological possibility."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIeKoJ1X94FsOY3lBQnDUbrJoeTCVHhvTvc_hUMqaxIktrxr58sZ32RjLQoR_nRaHcKpYcw547qWgZHcRHagJDC5ptkbteyIHCWGzKINEUMO4cGtUHiH2RkkGIXfBbEIkhy9tFAQ6CTZiKY6MSXo89ROiiWdwmgmNqED7PCj7524VFyMWGQDGIisSFLT79rXZAF7KWM96njnn0QOSKydFh1M672QnFomxMlyhEXPnyUK7Q9uSQsWukDT9goNKxcJg_R8OxeEU6triS" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Leadership Team -->
+        <section class="max-w-7xl mx-auto px-6 py-xl">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-lg gap-md">
+                <div class="max-w-xl">
+                    <h2 class="font-headline-lg text-headline-lg text-on-background">The Architects</h2>
+                    <p class="font-body-md text-body-md text-tertiary mt-base">Meet the visionaries combining decades of
+                        experience in fintech, data science, and global marketing.</p>
+                </div>
+                <button
+                    class="group flex items-center gap-2 font-label-md text-label-md text-primary hover:text-on-primary-container transition-colors">
+                    Join the team
+                    <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform"
+                        data-icon="arrow_forward">arrow_forward</span>
+                </button>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+                <!-- Team Member 1 -->
+                <div class="group">
+                    <div
+                        class="relative aspect-[3/4] rounded-xl overflow-hidden mb-md shadow-md border border-outline-variant/10">
+                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            data-alt="Professional headshot of a senior executive male in a minimalist modern office setting. He is wearing a crisp white shirt and a navy blazer, projecting an air of confidence and authority. The lighting is soft and natural, emphasizing a professional, trustworthy, and innovative corporate personality within the high-end AdTech industry."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcxwCQwK82iIC3CqeWFFlaBdIbjQHtgpRQ-EThqZO1qpaBmnvpTUDxttvgoT0tikU5BIrViLB9FvWQZEeR9UeslqWytCcXaPh9oIpYZ29e05mFx1YFpm9z0cHvPBovW3DUDJUSaxM-9vbu_pnano3R4uFbRNU0wcdKgqRKBADNI5IoG18VEvIYcYpiQUiNEP6QzindUy7rSLWAm2F2W9KnIxP_0iIanPHHqBV8TuTkts0zCYWeIzeF7TCm18nFdySWoQEu7SSxGf7F" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-md">
+                            <div class="flex gap-4">
+                                <span
+                                    class="material-symbols-outlined text-white cursor-pointer hover:text-primary-container"
+                                    data-icon="link">link</span>
+                                <span
+                                    class="material-symbols-outlined text-white cursor-pointer hover:text-primary-container"
+                                    data-icon="alternate_email">alternate_email</span>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 class="font-headline-md text-headline-md text-on-background">Marcus Thorne</h4>
+                    <p class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Chief Executive
+                        Officer</p>
+                </div>
+                <!-- Team Member 2 -->
+                <div class="group">
+                    <div
+                        class="relative aspect-[3/4] rounded-xl overflow-hidden mb-md shadow-md border border-outline-variant/10">
+                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            data-alt="Professional headshot of a female technology leader in a bright, modern studio. She is dressed in business casual attire with a focus on clean lines and a vibrant orange accessory that aligns with the brand colors. The mood is energetic and intelligent, reflecting a high-level expertise in data science and technical innovation."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_gItOrSce2R4oECA7X4dzXhGPjN3IpuBU8YBxZ-P_0ihXdjIojSenftzeCVnIWd5C-oO_RRTCcq84MmhyhOGB2tcDhRMrIG-xuDgd8AqDR6pLoJozhgUILM2kwJvrKGDysjRpIPtkncVq6yOYA_u8XjsYINhNTdYXrDb_86xjoTn67zQ0P0I4BMWzg2tGlP-uCMsU_Uwhe7A65PFl1US5-s7CIzQqxYwBnmbn86lryWYfkNmVqU-9Z0AqLtvQC3S5SJ0iYqex0nPY" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-md">
+                            <div class="flex gap-4">
+                                <span
+                                    class="material-symbols-outlined text-white cursor-pointer hover:text-primary-container"
+                                    data-icon="link">link</span>
+                                <span
+                                    class="material-symbols-outlined text-white cursor-pointer hover:text-primary-container"
+                                    data-icon="alternate_email">alternate_email</span>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 class="font-headline-md text-headline-md text-on-background">Sarah Jenkins</h4>
+                    <p class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Chief Technology
+                        Officer</p>
+                </div>
+                <!-- Team Member 3 -->
+                <div class="group">
+                    <div
+                        class="relative aspect-[3/4] rounded-xl overflow-hidden mb-md shadow-md border border-outline-variant/10">
+                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            data-alt="A portrait of a male data strategist in a high-tech environment. The background features soft bokeh of server lights and monitors, creating a sense of deep technical immersion. He has an expression of focused precision, wearing professional attire that bridges the gap between engineering and business leadership."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_IWquKlToAH9EuX9BMWrvg-HOqtN41XPnbT4TgAazrK3bHdxK1DxwmZ5Fz2xX_faxbyrOHsGK9ZzTIv2ygbiegPRf7_G0Pa315fZQGgGiudf7_kKjFYLeAl-mO6ncI_oNg-NQM4tkIIhr2n_Tth1QI0NOnS4npI3JUYm6CPvtAAOdggjdTLkpOsZxlQ7GEBylnYBSwt3u26zrd29rqTjbLCcdkU788THwNrAROeGdnZrZ4gJ8vCIWuLwIckfhd9RJuwwJ27AQyaDB" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-md">
+                            <div class="flex gap-4">
+                                <span
+                                    class="material-symbols-outlined text-white cursor-pointer hover:text-primary-container"
+                                    data-icon="link">link</span>
+                                <span
+                                    class="material-symbols-outlined text-white cursor-pointer hover:text-primary-container"
+                                    data-icon="alternate_email">alternate_email</span>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 class="font-headline-md text-headline-md text-on-background">David Chen</h4>
+                    <p class="font-label-sm text-label-sm text-primary uppercase tracking-widest">VP of Engineering</p>
+                </div>
+                <!-- Team Member 4 -->
+                <div class="group">
+                    <div
+                        class="relative aspect-[3/4] rounded-xl overflow-hidden mb-md shadow-md border border-outline-variant/10">
+                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                            data-alt="A professional headshot of a female operations leader in a minimalist architectural space. The background consists of sleek white walls and sharp angles, evoking a minimalist and corporate aesthetic. She is dressed in a dark purple professional top that complements the brand identity, looking directly into the camera with a friendly yet authoritative smile."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9yD9IXi1Kwgaeqw6qBrXEolT4fHjJSlCP6uhJXQzSPYJ-7VeZItGIO_ljzI-3pdjNHUeHE8ZarihKMktGog_Fxg5CYEXUc6pb9wgjjxCLPiGuu-T9cyitymAoxbTbU38jxgHc2P4nWf23F-jGpOPt-TK4Le3ycdVREMEtTRWmfenLeoJ_WrWTcC-FoIMXkQgPojrxQ3okZe2n3y2QOLNIQX00TikUJaCY9N8v1wz7ESbTiZDNc7fjNOriTccJ7-9qnVNQ_cpcWVJU" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-md">
+                            <div class="flex gap-4">
+                                <span
+                                    class="material-symbols-outlined text-white cursor-pointer hover:text-primary-container"
+                                    data-icon="link">link</span>
+                                <span
+                                    class="material-symbols-outlined text-white cursor-pointer hover:text-primary-container"
+                                    data-icon="alternate_email">alternate_email</span>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 class="font-headline-md text-headline-md text-on-background">Elena Rodriguez</h4>
+                    <p class="font-label-sm text-label-sm text-primary uppercase tracking-widest">Head of Operations</p>
+                </div>
+            </div>
+        </section>
+        <!-- CTA Section -->
+        <section class="max-w-7xl mx-auto px-6 mb-xl">
+            <div
+                class="bg-primary-container rounded-2xl p-xl flex flex-col items-center text-center text-white relative overflow-hidden">
+                <div
+                    class="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl">
+                </div>
+                <div
+                    class="absolute bottom-0 left-0 w-64 h-64 bg-secondary/20 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl">
+                </div>
+                <h2 class="font-display-lg text-display-lg mb-md relative z-10">Ready to accelerate your dynamic
+                    campaigns?</h2>
+                <p class="font-body-lg text-body-lg opacity-90 max-w-2xl mb-lg relative z-10">
+                    Join over 500+ global brands leveraging AdTech Dynamics to scale their programmatic presence with
+                    absolute precision.
+                </p>
+                <div class="flex flex-wrap gap-md relative z-10">
+                    <button
+                        class="bg-white text-primary-container font-bold px-8 py-4 rounded-lg hover:bg-surface-container transition-all active:scale-95 shadow-lg">
+                        Talk to an Expert
+                    </button>
+                    <button
+                        class="bg-transparent border-2 border-white/40 hover:border-white text-white font-bold px-8 py-4 rounded-lg transition-all active:scale-95">
+                        View Open Roles
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="w-full border-t bg-slate-50 dark:bg-slate-950 border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto py-12 px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex flex-col items-center md:items-start gap-4">
+                <div class="text-lg font-black text-purple-900 dark:text-purple-400 font-['Space_Grotesk']">
+                    AdTech Dynamics
+                </div>
+                <p
+                    class="text-slate-500 dark:text-slate-500 font-['Space_Grotesk'] text-xs uppercase tracking-widest font-semibold max-w-sm text-center md:text-left">
+                    © 2024 AdTech Dynamics. All rights reserved. Precision engineering for the programmatic era.
+                </p>
+            </div>
+            <div
+                class="flex flex-wrap justify-center gap-6 font-['Space_Grotesk'] text-xs uppercase tracking-widest font-semibold">
+                <a class="text-slate-500 dark:text-slate-500 hover:text-purple-700 dark:hover:text-purple-300 cursor-pointer transition-opacity"
+                    href="#">Terms of Service</a>
+                <a class="text-slate-500 dark:text-slate-500 hover:text-purple-700 dark:hover:text-purple-300 cursor-pointer transition-opacity"
+                    href="#">Privacy Policy</a>
+                <a class="text-slate-500 dark:text-slate-500 hover:text-purple-700 dark:hover:text-purple-300 cursor-pointer transition-opacity"
+                    href="#">Cookie Policy</a>
+                <a class="text-slate-500 dark:text-slate-500 hover:text-purple-700 dark:hover:text-purple-300 cursor-pointer transition-opacity"
+                    href="#">GDPR</a>
+                <a class="text-slate-500 dark:text-slate-500 hover:text-purple-700 dark:hover:text-purple-300 cursor-pointer transition-opacity"
+                    href="#">Data Processing</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

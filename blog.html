@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Blog | AdTech Dynamics</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#632892",
+                        "secondary": "#7c43ab",
+                        "outline-variant": "#e1bfb4",
+                        "on-background": "#0b1c30",
+                        "surface-container-high": "#dce9ff",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#ffdbcf",
+                        "tertiary-container": "#919191",
+                        "surface-container": "#e5eeff",
+                        "on-surface": "#0b1c30",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#cb8ffd",
+                        "surface-variant": "#d3e4fe",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-tint": "#a93800",
+                        "primary-container": "#f36428",
+                        "on-surface-variant": "#594139",
+                        "surface": "#f8f9ff",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "on-tertiary-container": "#2a2a2a",
+                        "primary": "#a93800",
+                        "secondary-fixed-dim": "#e0b6ff",
+                        "tertiary": "#5e5e5e",
+                        "primary-fixed-dim": "#ffb59b",
+                        "outline": "#8d7167",
+                        "on-primary-container": "#511600",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#eff4ff",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-tertiary-fixed": "#1b1b1b",
+                        "inverse-primary": "#ffb59b",
+                        "surface-dim": "#cbdbf5",
+                        "inverse-on-surface": "#eaf1ff",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#812900",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-secondary-fixed": "#2d004f",
+                        "background": "#f8f9ff",
+                        "secondary-fixed": "#f2daff",
+                        "inverse-surface": "#213145",
+                        "on-primary-fixed": "#380d00",
+                        "tertiary-fixed-dim": "#c6c6c6",
+                        "surface-bright": "#f8f9ff",
+                        "on-secondary-container": "#581d87",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "24px",
+                        "base": "8px",
+                        "lg": "40px",
+                        "xs": "4px",
+                        "max_width": "1440px",
+                        "xl": "64px",
+                        "margin": "32px",
+                        "sm": "12px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Space Grotesk"],
+                        "body-md": ["Manrope"],
+                        "display-lg": ["Space Grotesk"],
+                        "headline-lg": ["Space Grotesk"],
+                        "label-sm": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "label-md": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-background">
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 w-full z-50 border-b bg-white/80 backdrop-blur-md border-slate-200/60 shadow-sm">
+        <div class="max-w-7xl mx-auto flex justify-between items-center h-16 px-6">
+            <div class="text-xl font-bold tracking-tighter text-slate-900">AdTech Dynamics</div>
+            <div class="hidden md:flex items-center gap-base">
+                <a class="px-3 py-2 font-['Space_Grotesk'] text-sm font-medium tracking-tight text-slate-600 hover:text-orange-600 transition-colors cursor-pointer"
+                    href="#">About</a>
+                <a class="px-3 py-2 font-['Space_Grotesk'] text-sm font-medium tracking-tight text-slate-600 hover:text-orange-600 transition-colors cursor-pointer"
+                    href="#">Careers</a>
+                <a class="px-3 py-2 font-['Space_Grotesk'] text-sm font-medium tracking-tight text-orange-600 border-b-2 border-orange-600 pb-1 cursor-pointer"
+                    href="#">Blog</a>
+                <a class="px-3 py-2 font-['Space_Grotesk'] text-sm font-medium tracking-tight text-slate-600 hover:text-orange-600 transition-colors cursor-pointer"
+                    href="#">Contact</a>
+            </div>
+            <div class="flex items-center gap-sm">
+                <button
+                    class="px-4 py-2 font-['Space_Grotesk'] text-sm font-medium text-slate-600 hover:bg-slate-50 transition-all active:scale-95">Login</button>
+                <button
+                    class="px-4 py-2 bg-primary-container text-on-primary font-['Space_Grotesk'] text-sm font-medium rounded-lg hover:shadow-lg transition-all active:scale-95">Get
+                    Started</button>
+            </div>
+        </div>
+    </nav>
+    <main class="pt-24 pb-xl">
+        <div class="max-w-7xl mx-auto px-6">
+            <!-- Header Section -->
+            <header class="mb-xl">
+                <span
+                    class="font-label-md text-primary bg-primary-container/10 px-3 py-1 rounded-full uppercase tracking-wider mb-base inline-block">Insights
+                    &amp; Innovation</span>
+                <h1 class="font-display-lg text-on-background max-w-2xl mt-base">Engineering the Future of Programmatic
+                    Advertising.</h1>
+            </header>
+            <!-- Featured Post (Bento Large) -->
+            <section class="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-xl">
+                <article
+                    class="md:col-span-8 group relative overflow-hidden rounded-xl bg-white border border-slate-200 shadow-sm hover:shadow-md transition-all">
+                    <div class="aspect-[16/9] overflow-hidden">
+                        <img alt="Featured Article Header"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            data-alt="A sophisticated data visualization dashboard displayed on a high-resolution curved monitor in a sleek, modern tech office. The screen shows complex algorithmic trading patterns with glowing orange and deep purple accents against a dark UI theme. The lighting is low and cinematic, emphasizing the high-performance engineering environment of a top-tier AdTech firm."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_12lHTwfARoDzvXd-TAV9HtMJo7hmVqlUsjNVnFgihqB83EjFHu1-ikL-08ct7VaCwmVKMvKbq8VNxvl-aRrF-Hu6GM5r9tfWW_OVbBN8rNkJsVO496XpTNLUUfVLMNomYQuwIC9ErR-ZZMmnQqQ_LO7f-_q0I93bwTA2QQE6vnYc9HLFRlZcM-Z2NcnV2JQHTeG4-caqWhVENkjbpNIn1LCOUXmbJwfTTQEHn3GX6pNzjhJRJuPcmSnfzkB-sIOJNqyFSqXfOHCH" />
+                    </div>
+                    <div class="p-md">
+                        <div class="flex items-center gap-base mb-base">
+                            <span
+                                class="font-label-sm text-secondary bg-secondary-container/20 px-2 py-0.5 rounded">ALGORITHMS</span>
+                            <span class="font-label-sm text-tertiary">Oct 24, 2024</span>
+                        </div>
+                        <h2
+                            class="font-headline-lg text-on-background mb-base group-hover:text-primary transition-colors">
+                            The Shift to Zero-Latency Bidding: How Neural Networks are Redefining the Auction.</h2>
+                        <p class="font-body-lg text-tertiary max-w-3xl mb-md">Deep dive into our latest architectural
+                            upgrade that reduces bid response times to under 15ms while maintaining 99.9% prediction
+                            accuracy for CPM optimization.</p>
+                        <div class="flex items-center gap-sm">
+                            <div
+                                class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center">
+                                <span class="material-symbols-outlined text-secondary">person</span>
+                            </div>
+                            <div>
+                                <p class="font-label-md text-on-background">Dr. Elena Volkov</p>
+                                <p class="font-label-sm text-tertiary">Chief AI Architect</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <!-- Sidebar Content -->
+                <div class="md:col-span-4 flex flex-col gap-gutter">
+                    <!-- Categories -->
+                    <div class="bg-surface-container-low p-md rounded-xl border border-slate-200">
+                        <h3 class="font-headline-md text-on-background mb-md">Categories</h3>
+                        <div class="flex flex-wrap gap-xs">
+                            <button
+                                class="px-4 py-2 bg-white border border-slate-200 rounded-lg font-label-md text-on-surface hover:border-primary hover:text-primary transition-all">Programmatic</button>
+                            <button
+                                class="px-4 py-2 bg-white border border-slate-200 rounded-lg font-label-md text-on-surface hover:border-primary hover:text-primary transition-all">Data
+                                Science</button>
+                            <button
+                                class="px-4 py-2 bg-white border border-slate-200 rounded-lg font-label-md text-on-surface hover:border-primary hover:text-primary transition-all">Product
+                                Updates</button>
+                            <button
+                                class="px-4 py-2 bg-white border border-slate-200 rounded-lg font-label-md text-on-surface hover:border-primary hover:text-primary transition-all">Engineering</button>
+                            <button
+                                class="px-4 py-2 bg-white border border-slate-200 rounded-lg font-label-md text-on-surface hover:border-primary hover:text-primary transition-all">Industry
+                                Trends</button>
+                        </div>
+                    </div>
+                    <!-- Newsletter -->
+                    <div class="bg-on-secondary-fixed-variant p-md rounded-xl text-white">
+                        <span class="material-symbols-outlined text-primary-container text-4xl mb-base"
+                            data-weight="fill">mail</span>
+                        <h3 class="font-headline-md mb-base">The Dynamic Digest</h3>
+                        <p class="font-body-md text-white/80 mb-md">Weekly engineering insights delivered to your inbox.
+                            No fluff, just precision data.</p>
+                        <div class="space-y-sm">
+                            <input
+                                class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder:text-white/40 focus:outline-none focus:border-primary-container"
+                                placeholder="Work email address" type="email" />
+                            <button
+                                class="w-full py-3 bg-primary-container text-white font-label-md rounded-lg hover:shadow-lg transition-all active:scale-95">Subscribe</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Blog Grid -->
+            <section class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+                <!-- Post 1 -->
+                <article
+                    class="group bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-md transition-all">
+                    <div class="aspect-video overflow-hidden">
+                        <img alt="Blog Post Image"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            data-alt="A high-tech server room with glowing blue and orange LED lights reflecting off clean metallic surfaces. The atmosphere is cold, precise, and highly technical, symbolizing the robust infrastructure required for real-time programmatic ad exchanges. Soft depth-of-field focuses on the intricate cabling and modern hardware architecture."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjw_ZDaCfn127mbH9luZD7zIfHWkWHlfVx4qkDlfFwn3f4cqXe3NKN25QOcIYjD6S3-0NVFtuIir2l7kVkNSWK04bcjfeUibpzDW3zrF-2hrAcOIPuZRNkb0TtE-W-EV69GVrEzsB0UJBOHRQIyhuF498cWeeRW6v4LBlzgVZo9DeBoyut10le65mJ2vpptaQ92cY3cGjM_AGw2hhexb_oBX2TYaInm2GorptxkUUwGxhEeJ4L2Avzveee2dq1z89YX6rYwzfgQYNs" />
+                    </div>
+                    <div class="p-md">
+                        <span class="font-label-sm text-primary mb-xs block">ENGINEERING</span>
+                        <h4
+                            class="font-headline-md text-on-background mb-base group-hover:text-primary transition-colors">
+                            Solving the Thundering Herd: Cluster Optimization.</h4>
+                        <p class="font-body-md text-tertiary mb-md">How we refactored our load balancers to handle 2
+                            million concurrent requests during Super Bowl LVIII.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="font-label-sm text-tertiary">5 min read</span>
+                            <span class="material-symbols-outlined text-on-secondary-container">arrow_forward</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Post 2 -->
+                <article
+                    class="group bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-md transition-all">
+                    <div class="aspect-video overflow-hidden">
+                        <img alt="Blog Post Image"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            data-alt="Abstract 3D digital art representing blockchain technology and encrypted data packets. Geometric crystal-like structures float in a dark, ethereal space with vibrant orange light rays cutting through a purple mist. The style is ultra-modern and corporate, evoking security and cutting-edge data processing in the digital advertising landscape."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0Cnl5WgwHquJjum90Yyfpc9iznjWq4V3s4R39WMnI_zbZZMZpi4MIfC93TmkgYJJgYtM9W13ZdYt-YLjvlsHiUSYB7KSAoVV5OppyVB5aEaCVzu19HTfYRoWeRylkm7uS1fF8aO9AHscTpTqrIELZxNFu1t1MIgEFc1AJvQeXrF9sFUp_pkat_aTGI_U_IVvarY9534OOcZ7VQJxnfEtCcijaJ1nnqzsde3kreCcFO7T8sgivrL5T-Ht2-b6_TyGD0Oxizh9OMND8" />
+                    </div>
+                    <div class="p-md">
+                        <span class="font-label-sm text-primary mb-xs block">DATA PRIVACY</span>
+                        <h4
+                            class="font-headline-md text-on-background mb-base group-hover:text-primary transition-colors">
+                            Privacy Sandboxes: Life After the Third-Party Cookie.</h4>
+                        <p class="font-body-md text-tertiary mb-md">Our roadmap for deterministic attribution in a
+                            cookie-less world using federated learning models.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="font-label-sm text-tertiary">8 min read</span>
+                            <span class="material-symbols-outlined text-on-secondary-container">arrow_forward</span>
+                        </div>
+                    </div>
+                </article>
+                <!-- Post 3 -->
+                <article
+                    class="group bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-md transition-all">
+                    <div class="aspect-video overflow-hidden">
+                        <img alt="Blog Post Image"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                            data-alt="A clean, minimalist high-key photograph of a modern workspace with a laptop showing financial growth charts. The palette is dominated by whites and soft grays, with bright orange data lines providing a sharp professional contrast. The setting is bright and airy, representing the clarity and stability AdTech Dynamics brings to complex market analytics."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAIYWGAtTQoKt_JrakGZaIxzuev7PNCTJ-jR5Zqp0yGX0qE1Corc4GoB1AgDXJJ3I-aoUI19S3awUGpVK0Wdu-rWqbpROEz90SsthTrCz9Qu6b7eALNT9IxSN-R1tyUSBCOpyQ5tLBDYywxiAmnF6Ujs3ftG1XHqAw93YmbUfsfSi0h2N5_XYY_HBJuw-6rj20-mavz0rcnUIGFoM3E1jxAbgM17DHbzKLZez6KFG-sXbGUaucwh8Z16HxRqm9mN0xvXplly3Yn_WIT" />
+                    </div>
+                    <div class="p-md">
+                        <span class="font-label-sm text-primary mb-xs block">INDUSTRY</span>
+                        <h4
+                            class="font-headline-md text-on-background mb-base group-hover:text-primary transition-colors">
+                            Q3 Programmatic Spend Trends: A Rebound Story.</h4>
+                        <p class="font-body-md text-tertiary mb-md">Market analysis shows a 14% uptick in connected TV
+                            inventory as brands pivot toward premium long-form video.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="font-label-sm text-tertiary">4 min read</span>
+                            <span class="material-symbols-outlined text-on-secondary-container">arrow_forward</span>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <!-- Pagination -->
+            <div class="flex items-center justify-center mt-xl gap-sm">
+                <button
+                    class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 text-slate-400 hover:bg-slate-50 transition-all">
+                    <span class="material-symbols-outlined">chevron_left</span>
+                </button>
+                <button
+                    class="w-10 h-10 flex items-center justify-center rounded-lg bg-on-secondary-fixed-variant text-white font-label-md">1</button>
+                <button
+                    class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50 transition-all">2</button>
+                <button
+                    class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50 transition-all">3</button>
+                <button
+                    class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50 transition-all">
+                    <span class="material-symbols-outlined">chevron_right</span>
+                </button>
+            </div>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer class="w-full border-t bg-slate-50 border-slate-200">
+        <div class="max-w-7xl mx-auto py-12 px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex flex-col items-center md:items-start gap-xs">
+                <div class="text-lg font-black text-purple-900">AdTech Dynamics</div>
+                <p
+                    class="font-['Space_Grotesk'] text-[10px] uppercase tracking-widest font-semibold text-slate-500 max-w-xs text-center md:text-left">
+                    © 2024 AdTech Dynamics. All rights reserved. Precision engineering for the programmatic era.
+                </p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-base">
+                <a class="font-['Space_Grotesk'] text-xs uppercase tracking-widest font-semibold text-slate-500 hover:text-purple-700 transition-opacity cursor-pointer"
+                    href="#">Terms of Service</a>
+                <a class="font-['Space_Grotesk'] text-xs uppercase tracking-widest font-semibold text-slate-500 hover:text-purple-700 transition-opacity cursor-pointer"
+                    href="#">Privacy Policy</a>
+                <a class="font-['Space_Grotesk'] text-xs uppercase tracking-widest font-semibold text-slate-500 hover:text-purple-700 transition-opacity cursor-pointer"
+                    href="#">Cookie Policy</a>
+                <a class="font-['Space_Grotesk'] text-xs uppercase tracking-widest font-semibold text-slate-500 hover:text-purple-700 transition-opacity cursor-pointer"
+                    href="#">GDPR</a>
+                <a class="font-['Space_Grotesk'] text-xs uppercase tracking-widest font-semibold text-slate-500 hover:text-purple-700 transition-opacity cursor-pointer"
+                    href="#">Data Processing</a>
+            </div>
+            <div class="flex gap-md">
+                <span
+                    class="material-symbols-outlined text-slate-400 hover:text-primary transition-colors cursor-pointer">share</span>
+                <span
+                    class="material-symbols-outlined text-slate-400 hover:text-primary transition-colors cursor-pointer">terminal</span>
+                <span
+                    class="material-symbols-outlined text-slate-400 hover:text-primary transition-colors cursor-pointer">monitoring</span>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#632892",
+                        "secondary": "#7c43ab",
+                        "outline-variant": "#e1bfb4",
+                        "on-background": "#0b1c30",
+                        "surface-container-high": "#dce9ff",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#ffdbcf",
+                        "tertiary-container": "#919191",
+                        "surface-container": "#e5eeff",
+                        "on-surface": "#0b1c30",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#cb8ffd",
+                        "surface-variant": "#d3e4fe",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-tint": "#a93800",
+                        "primary-container": "#f36428",
+                        "on-surface-variant": "#594139",
+                        "surface": "#f8f9ff",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "on-tertiary-container": "#2a2a2a",
+                        "primary": "#a93800",
+                        "secondary-fixed-dim": "#e0b6ff",
+                        "tertiary": "#5e5e5e",
+                        "primary-fixed-dim": "#ffb59b",
+                        "outline": "#8d7167",
+                        "on-primary-container": "#511600",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#eff4ff",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-tertiary-fixed": "#1b1b1b",
+                        "inverse-primary": "#ffb59b",
+                        "surface-dim": "#cbdbf5",
+                        "inverse-on-surface": "#eaf1ff",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#812900",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-secondary-fixed": "#2d004f",
+                        "background": "#f8f9ff",
+                        "secondary-fixed": "#f2daff",
+                        "inverse-surface": "#213145",
+                        "on-primary-fixed": "#380d00",
+                        "tertiary-fixed-dim": "#c6c6c6",
+                        "surface-bright": "#f8f9ff",
+                        "on-secondary-container": "#581d87",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "24px",
+                        "base": "8px",
+                        "lg": "40px",
+                        "xs": "4px",
+                        "max_width": "1440px",
+                        "xl": "64px",
+                        "margin": "32px",
+                        "sm": "12px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Space Grotesk"],
+                        "body-md": ["Manrope"],
+                        "display-lg": ["Space Grotesk"],
+                        "headline-lg": ["Space Grotesk"],
+                        "label-sm": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "label-md": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #f8f9ff;
+        }
+
+        .legal-content h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #0b1c30;
+        }
+
+        .legal-content p {
+            margin-bottom: 1.25rem;
+            line-height: 1.75;
+            color: #594139;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-background">
+    <!-- Top Navigation Bar -->
+    <nav class="fixed top-0 w-full z-50 border-b border-slate-200/60 bg-white/80 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto flex justify-between items-center h-16 px-6">
+            <div class="text-xl font-bold tracking-tighter text-slate-900">AdTech Dynamics</div>
+            <div class="hidden md:flex gap-8 items-center">
+                <a class="font-['Space_Grotesk'] text-sm font-medium tracking-tight text-slate-600 hover:text-orange-600 transition-colors"
+                    href="#">About</a>
+                <a class="font-['Space_Grotesk'] text-sm font-medium tracking-tight text-slate-600 hover:text-orange-600 transition-colors"
+                    href="#">Careers</a>
+                <a class="font-['Space_Grotesk'] text-sm font-medium tracking-tight text-slate-600 hover:text-orange-600 transition-colors"
+                    href="#">Blog</a>
+                <a class="font-['Space_Grotesk'] text-sm font-medium tracking-tight text-slate-600 hover:text-orange-600 transition-colors"
+                    href="#">Contact</a>
+            </div>
+            <div class="flex gap-4 items-center">
+                <button
+                    class="font-['Space_Grotesk'] text-sm font-medium px-4 py-2 text-slate-600 hover:bg-slate-50 rounded-lg transition-all active:scale-95">Login</button>
+                <button
+                    class="font-['Space_Grotesk'] text-sm font-medium px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-all active:scale-95">Get
+                    Started</button>
+            </div>
+        </div>
+    </nav>
+    <!-- Page Header Section -->
+    <header class="pt-32 pb-16 px-6 bg-surface-container-low border-b border-outline-variant/30">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                <div>
+                    <span class="font-label-md text-primary tracking-widest uppercase mb-2 block">Legal Resources</span>
+                    <h1 class="font-display-lg text-on-background">Privacy Policy</h1>
+                    <p class="font-body-lg text-tertiary mt-4 max-w-2xl">Last updated: October 24, 2024. This policy
+                        describes how AdTech Dynamics collects, uses, and protects your data across our programmatic
+                        advertising ecosystem.</p>
+                </div>
+                <div class="flex gap-3">
+                    <button
+                        class="flex items-center gap-2 px-4 py-2 border border-outline rounded-lg font-label-md text-on-background hover:bg-surface-container-high transition-all">
+                        <span class="material-symbols-outlined text-sm">download</span>
+                        Download PDF
+                    </button>
+                    <button
+                        class="flex items-center gap-2 px-4 py-2 border border-outline rounded-lg font-label-md text-on-background hover:bg-surface-container-high transition-all">
+                        <span class="material-symbols-outlined text-sm">print</span>
+                        Print
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="max-w-7xl mx-auto px-6 py-12 flex flex-col lg:flex-row gap-12">
+        <!-- Sticky Sidebar Navigation -->
+        <aside class="lg:w-64 flex-shrink-0">
+            <div class="sticky top-24 space-y-8">
+                <div>
+                    <h3 class="font-label-md text-primary uppercase mb-4">Quick Links</h3>
+                    <nav class="flex flex-col gap-1">
+                        <a class="px-4 py-2 rounded-lg font-label-md text-primary-container bg-primary/5 border-l-2 border-primary-container"
+                            href="#">Privacy Policy</a>
+                        <a class="px-4 py-2 rounded-lg font-label-md text-on-surface-variant hover:bg-surface-container transition-all"
+                            href="#">Terms of Service</a>
+                        <a class="px-4 py-2 rounded-lg font-label-md text-on-surface-variant hover:bg-surface-container transition-all"
+                            href="#">Cookie Policy</a>
+                        <a class="px-4 py-2 rounded-lg font-label-md text-on-surface-variant hover:bg-surface-container transition-all"
+                            href="#">Data Processing</a>
+                        <a class="px-4 py-2 rounded-lg font-label-md text-on-surface-variant hover:bg-surface-container transition-all"
+                            href="#">GDPR Compliance</a>
+                    </nav>
+                </div>
+                <div class="p-6 bg-surface-container rounded-xl border border-outline-variant/50">
+                    <h4 class="font-headline-md text-on-surface mb-2">Need Help?</h4>
+                    <p class="font-body-md text-on-surface-variant mb-4">Questions about our legal terms? Our compliance
+                        team is here to assist you.</p>
+                    <a class="font-label-md text-primary flex items-center gap-2" href="#">
+                        Contact Compliance
+                        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </a>
+                </div>
+                <div class="relative overflow-hidden rounded-xl h-48 group">
+                    <img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+                        data-alt="A close-up shot of a modern, minimal wooden gavel resting on a clean white marble surface in a high-key lit legal office. The lighting is soft and airy, creating a professional and trustworthy atmosphere for a corporate legal setting. The composition is clean with plenty of white space, reinforcing the modern corporate aesthetic of transparency and precision. Touches of soft orange light reflect on the polished wood, connecting to the brand identity."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKRLzCoM6xmdCari46uCIL9NibGtdYiUhkKWMHI8vHmfC5tMqDjWpy_DcfXLPsKOyXgu1KIJhAXFeAtLDvDSNxWM-bF6CztzvEn1JcycdnbpwSzazDdQPrPEGshOcmLoCQyNCqpcmNeOkDvaZsVujbAhc_JvwdEMcCgKR53lCjHq1ZKoj1ssQsZhk0w31C4SW5LPaw33Zl52Cx06-y2efgCKCOvgBqd-nUsfQki2u6Cf8xhw1okfhwD6YTa-N5F-AmaS5pfHIm4v2O" />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-on-background/80 to-transparent flex flex-col justify-end p-4">
+                        <span class="font-label-sm text-surface">Resource Center</span>
+                        <p class="font-label-md text-white">Legal Documentation</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+        <!-- Main Content Area -->
+        <article class="flex-1 max-w-3xl">
+            <div class="bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-slate-200 legal-content">
+                <section id="introduction">
+                    <h2 class="mt-0">1. Introduction</h2>
+                    <p>Welcome to AdTech Dynamics. We value your privacy and are committed to protecting your personal
+                        data. This Privacy Policy outlines how we collect, process, and store your information when you
+                        use our programmatic advertising platform, visit our website, or interact with our services.</p>
+                    <p>AdTech Dynamics operates as a technology intermediary between advertisers and publishers. In this
+                        capacity, we process large volumes of data to deliver high-performance advertising solutions
+                        while maintaining the highest standards of data integrity and regulatory compliance.</p>
+                </section>
+                <section id="data-collection">
+                    <h2>2. Data We Collect</h2>
+                    <p>To provide our services, we collect several types of information, including but not limited to:
+                    </p>
+                    <ul class="list-disc pl-6 space-y-3 mb-6 text-on-surface-variant font-body-md">
+                        <li><strong>Device Information:</strong> Type of device, operating system, and browser version.
+                        </li>
+                        <li><strong>Network Identifiers:</strong> IP addresses (anonymized where required) and unique
+                            device identifiers.</li>
+                        <li><strong>Interactions:</strong> Ad impressions, clicks, and conversion data within our
+                            ecosystem.</li>
+                        <li><strong>Technical Logs:</strong> Log files containing diagnostic and performance data.</li>
+                    </ul>
+                    <p>We do not collect sensitive personal information such as health records, religious beliefs, or
+                        biometric data unless explicitly required for a specific, consented campaign objective.</p>
+                </section>
+                <div class="my-10 p-6 bg-primary/5 border-l-4 border-primary rounded-r-xl">
+                    <div class="flex gap-4">
+                        <span class="material-symbols-outlined text-primary">info</span>
+                        <div>
+                            <h4 class="font-label-md text-primary mb-1">Important Note for EU Residents</h4>
+                            <p class="font-body-md text-on-surface-variant">Under the GDPR, you have specific rights
+                                regarding your personal data. Please refer to our GDPR section for detailed instructions
+                                on exercising your rights of access, correction, and erasure.</p>
+                        </div>
+                    </div>
+                </div>
+                <section id="data-usage">
+                    <h2>3. How We Use Your Data</h2>
+                    <p>The information we collect is used for the following purposes:</p>
+                    <ul class="list-decimal pl-6 space-y-3 mb-6 text-on-surface-variant font-body-md">
+                        <li>Optimizing real-time bidding (RTB) algorithms to ensure relevant ad placement.</li>
+                        <li>Preventing fraudulent activity and ensuring brand safety for our advertisers.</li>
+                        <li>Measuring campaign performance and providing detailed analytics to our clients.</li>
+                        <li>Maintaining and improving the security of our infrastructure.</li>
+                    </ul>
+                </section>
+                <section id="data-sharing">
+                    <h2>4. Data Sharing and Disclosure</h2>
+                    <p>We may share data with authorized third-party service providers who assist us in operating our
+                        platform. These providers are contractually obligated to protect your data and only use it for
+                        the purposes we specify.</p>
+                    <p>We do not sell personal data to third parties for their own marketing purposes. Data sharing
+                        occurs primarily within the programmatic chain to facilitate the delivery of digital
+                        advertisements.</p>
+                </section>
+                <section id="security">
+                    <h2>5. Security Measures</h2>
+                    <p>AdTech Dynamics employs industry-standard security measures, including end-to-end encryption,
+                        multi-factor authentication, and regular security audits. Our data centers are SOC 2 Type II
+                        compliant, ensuring the highest level of physical and digital security.</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                        <div class="flex items-center gap-3 p-4 bg-surface rounded-lg border border-outline-variant/30">
+                            <span class="material-symbols-outlined text-secondary"
+                                style="font-variation-settings: 'FILL' 1;">lock</span>
+                            <span class="font-label-md">AES-256 Encryption</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-4 bg-surface rounded-lg border border-outline-variant/30">
+                            <span class="material-symbols-outlined text-secondary"
+                                style="font-variation-settings: 'FILL' 1;">verified_user</span>
+                            <span class="font-label-md">24/7 Monitoring</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <!-- Helpful Navigation Footer for Policy -->
+            <div
+                class="mt-12 flex items-center justify-between p-8 bg-surface-container rounded-2xl border border-outline-variant/50">
+                <div>
+                    <p class="font-label-sm text-tertiary mb-1">Next Policy</p>
+                    <a class="font-headline-md text-on-surface flex items-center gap-2 group" href="#">
+                        Terms of Service
+                        <span
+                            class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <p class="font-body-md text-on-surface-variant text-right">Was this information helpful?</p>
+                    <div class="flex gap-2 justify-end mt-2">
+                        <button
+                            class="px-4 py-1 rounded-full border border-outline font-label-sm hover:bg-white transition-all">Yes</button>
+                        <button
+                            class="px-4 py-1 rounded-full border border-outline font-label-sm hover:bg-white transition-all">No</button>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+    <!-- Footer -->
+    <footer class="w-full border-t border-slate-200 bg-slate-50 mt-20">
+        <div class="max-w-7xl mx-auto py-12 px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex flex-col items-center md:items-start gap-4">
+                <div class="text-lg font-black text-purple-900 uppercase tracking-widest font-['Space_Grotesk']">ADTECH
+                    DYNAMICS</div>
+                <p
+                    class="font-['Space_Grotesk'] text-xs uppercase tracking-widest font-semibold text-slate-500 text-center md:text-left max-w-md">
+                    © 2024 AdTech Dynamics. All rights reserved. Precision engineering for the programmatic era.
+                </p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a class="font-['Space_Grotesk'] text-xs uppercase tracking-widest font-semibold text-orange-600 underline cursor-pointer"
+                    href="#">Privacy Policy</a>
+                <a class="font-['Space_Grotesk'] text-xs uppercase tracking-widest font-semibold text-slate-500 hover:text-purple-700 cursor-pointer transition-opacity hover:opacity-80"
+                    href="#">Terms of Service</a>
+                <a class="font-['Space_Grotesk'] text-xs uppercase tracking-widest font-semibold text-slate-500 hover:text-purple-700 cursor-pointer transition-opacity hover:opacity-80"
+                    href="#">Cookie Policy</a>
+                <a class="font-['Space_Grotesk'] text-xs uppercase tracking-widest font-semibold text-slate-500 hover:text-purple-700 cursor-pointer transition-opacity hover:opacity-80"
+                    href="#">GDPR</a>
+                <a class="font-['Space_Grotesk'] text-xs uppercase tracking-widest font-semibold text-slate-500 hover:text-purple-700 cursor-pointer transition-opacity hover:opacity-80"
+                    href="#">Data Processing</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

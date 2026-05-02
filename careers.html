@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Careers | AdTech Dynamics</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#632892",
+                        "secondary": "#7c43ab",
+                        "outline-variant": "#e1bfb4",
+                        "on-background": "#0b1c30",
+                        "surface-container-high": "#dce9ff",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#ffdbcf",
+                        "tertiary-container": "#919191",
+                        "surface-container": "#e5eeff",
+                        "on-surface": "#0b1c30",
+                        "on-tertiary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#cb8ffd",
+                        "surface-variant": "#d3e4fe",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-tint": "#a93800",
+                        "primary-container": "#f36428",
+                        "on-surface-variant": "#594139",
+                        "surface": "#f8f9ff",
+                        "on-tertiary-fixed-variant": "#474747",
+                        "on-tertiary-container": "#2a2a2a",
+                        "primary": "#a93800",
+                        "secondary-fixed-dim": "#e0b6ff",
+                        "tertiary": "#5e5e5e",
+                        "primary-fixed-dim": "#ffb59b",
+                        "outline": "#8d7167",
+                        "on-primary-container": "#511600",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#eff4ff",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-tertiary-fixed": "#1b1b1b",
+                        "inverse-primary": "#ffb59b",
+                        "surface-dim": "#cbdbf5",
+                        "inverse-on-surface": "#eaf1ff",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed-variant": "#812900",
+                        "on-secondary": "#ffffff",
+                        "tertiary-fixed": "#e2e2e2",
+                        "on-secondary-fixed": "#2d004f",
+                        "background": "#f8f9ff",
+                        "secondary-fixed": "#f2daff",
+                        "inverse-surface": "#213145",
+                        "on-primary-fixed": "#380d00",
+                        "tertiary-fixed-dim": "#c6c6c6",
+                        "surface-bright": "#f8f9ff",
+                        "on-secondary-container": "#581d87",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "24px",
+                        "base": "8px",
+                        "lg": "40px",
+                        "xs": "4px",
+                        "max_width": "1440px",
+                        "xl": "64px",
+                        "margin": "32px",
+                        "sm": "12px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Space Grotesk"],
+                        "body-md": ["Manrope"],
+                        "display-lg": ["Space Grotesk"],
+                        "headline-lg": ["Space Grotesk"],
+                        "label-sm": ["Manrope"],
+                        "body-lg": ["Manrope"],
+                        "label-md": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "label-sm": ["12px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "1.4", "letterSpacing": "0.01em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        body {
+            background-color: #f8f9ff;
+            color: #0b1c30;
+        }
+    </style>
+</head>
+
+<body class="font-body-md text-body-md selection:bg-primary-container selection:text-on-primary-container">
+    <!-- Top Navigation Header -->
+    <nav
+        class="fixed top-0 w-full z-50 border-b border-slate-200/60 dark:border-slate-800/60 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto flex justify-between items-center h-16 px-6">
+            <div class="text-xl font-bold tracking-tighter text-slate-900 dark:text-white font-headline-md">AdTech
+                Dynamics</div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a class="font-['Space_Grotesk'] text-sm font-medium tracking-tight text-slate-600 dark:text-slate-400 hover:text-orange-600 dark:hover:text-orange-500 transition-colors"
+                    href="#">About</a>
+                <a class="font-['Space_Grotesk'] text-sm font-medium tracking-tight text-orange-600 dark:text-orange-500 border-b-2 border-orange-600 pb-1"
+                    href="#">Careers</a>
+                <a class="font-['Space_Grotesk'] text-sm font-medium tracking-tight text-slate-600 dark:text-slate-400 hover:text-orange-600 dark:hover:text-orange-500 transition-colors"
+                    href="#">Blog</a>
+                <a class="font-['Space_Grotesk'] text-sm font-medium tracking-tight text-slate-600 dark:text-slate-400 hover:text-orange-600 dark:hover:text-orange-500 transition-colors"
+                    href="#">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button
+                    class="font-['Space_Grotesk'] text-sm font-medium tracking-tight text-slate-600 dark:text-slate-400 hover:text-orange-600 active:scale-95 transform transition-transform">Login</button>
+                <button
+                    class="bg-primary-container text-on-primary-container px-5 py-2 rounded-lg font-['Space_Grotesk'] text-sm font-medium tracking-tight active:scale-95 transform transition-transform shadow-md hover:brightness-110">Get
+                    Started</button>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <header class="pt-32 pb-20 px-6">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-lg items-center">
+            <div>
+                <span
+                    class="inline-block py-1 px-3 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md mb-md">WE
+                    ARE HIRING</span>
+                <h1 class="font-display-lg text-display-lg text-on-background mb-base">Engineer the future of
+                    programmatic advertising.</h1>
+                <p class="font-body-lg text-body-lg text-tertiary max-w-xl mb-lg leading-relaxed">Join a team of
+                    visionaries, data scientists, and engineers building the world's fastest real-time bidding
+                    infrastructure.</p>
+                <div class="flex flex-wrap gap-base">
+                    <button
+                        class="bg-primary-container text-on-primary-container px-8 py-3 rounded-xl font-headline-md text-label-md shadow-lg flex items-center gap-xs hover:brightness-105 active:scale-95 transition-all">
+                        View Open Roles
+                        <span class="material-symbols-outlined">arrow_downward</span>
+                    </button>
+                    <button
+                        class="bg-white border-2 border-secondary text-secondary px-8 py-3 rounded-xl font-headline-md text-label-md hover:bg-surface-container-low active:scale-95 transition-all">
+                        Our Culture
+                    </button>
+                </div>
+            </div>
+            <div class="relative group">
+                <div
+                    class="absolute -inset-4 bg-gradient-to-tr from-primary-container/20 to-secondary-container/20 rounded-3xl blur-2xl opacity-50">
+                </div>
+                <img alt="AdTech Dynamics Team"
+                    class="relative w-full h-[400px] object-cover rounded-2xl shadow-xl border border-white/40 grayscale-[20%] group-hover:grayscale-0 transition-all duration-700"
+                    data-alt="A diverse group of young software developers and data scientists collaborating in a high-tech, sun-drenched office. The setting is a minimalist, modern workspace with ergonomic furniture and glass partitions. The lighting is warm and natural, casting soft shadows across digital screens displaying complex code and data visualizations. The overall mood is energetic and collaborative, maintaining a clean light-mode aesthetic with vibrant orange accents."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUEPsLx0i3q6dXMou-PNc-wHj_HtXD6Jy6bVoH-FlGvfbfbhaHImfxgb22ZSI4HW8ZsKIlPnx5fC486XuGJtcRC8E9DJ79pfecYm80uGUmeSJMdI1a4XL2w-GCAJR4tv1w-MYyLXXEBQCIPf4zSdSHbsXDWH328P2BnNmYPr8YpESFIFA449XThqDNPoKyn5BPKhN8z8ZSODS20oOrT4rwolqwqT-JNLm-9Fy4tN_2XVvfdBu8HjsMkHeGOG6l3MudWseZAcU8Ew4Z" />
+            </div>
+        </div>
+    </header>
+    <!-- Bento Grid Culture Section -->
+    <section class="py-20 bg-surface-container-low">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-xl">
+                <h2 class="font-headline-lg text-headline-lg text-on-background">Innovation is our baseline.</h2>
+                <p class="font-body-md text-body-md text-tertiary mt-base">We foster an environment where technical
+                    excellence meets radical transparency.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-gutter h-auto md:h-[600px]">
+                <!-- Bento Cell 1 -->
+                <div
+                    class="md:col-span-2 md:row-span-1 bg-white p-lg rounded-2xl shadow-sm border border-slate-200/60 flex flex-col justify-end relative overflow-hidden group">
+                    <div class="absolute top-6 right-6 text-primary/20 group-hover:text-primary transition-colors">
+                        <span class="material-symbols-outlined text-6xl" data-weight="fill">bolt</span>
+                    </div>
+                    <h3 class="font-headline-md text-headline-md text-on-background relative z-10">High Velocity</h3>
+                    <p class="font-body-md text-body-md text-tertiary relative z-10">We ship code daily and iterate at
+                        the speed of the global market.</p>
+                </div>
+                <!-- Bento Cell 2 -->
+                <div
+                    class="md:col-span-1 md:row-span-1 bg-secondary-container p-lg rounded-2xl shadow-sm flex flex-col justify-between items-start">
+                    <span class="material-symbols-outlined text-on-secondary-container text-4xl">public</span>
+                    <div>
+                        <h3 class="font-headline-md text-headline-md text-on-secondary-container">Remote First</h3>
+                        <p class="font-body-md text-label-sm text-on-secondary-container/80">Talent has no borders. Work
+                            from anywhere in the world.</p>
+                    </div>
+                </div>
+                <!-- Bento Cell 3 -->
+                <div class="md:col-span-1 md:row-span-2 bg-slate-900 p-lg rounded-2xl shadow-sm flex flex-col gap-md">
+                    <img alt="Team Brainstorm" class="w-full h-48 object-cover rounded-xl grayscale opacity-60"
+                        data-alt="A close-up of a brainstorming session on a glass wall filled with vibrant orange and purple sticky notes and architectural diagrams. The background is a blurred office space with high-key lighting. The scene captures the essence of technical problem solving and creative engineering in a modern tech environment."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKdFq7t5wUB6lsFryiKZjbsgnN8NhhQQLmRIoP5n09BeKVeYNJJ8EUxfrWE8BdOyoEuVNbx7vwxahSvyScAriwkFgWw-XuZ0JIJZl7e69nCPVMUi0n-miCwhTQH5J5hUe_HmJ60rHNKF41HP7BV5hcx5aiUrVYj8aLNFAPf_-m6NuzWDkv37-snWWFWMkEGnsEKu_bOsRQTwUm9dkF1UGNZOYV-OLq7RNiPG4HOKPeVjxvtPehEAatDMkBJLtuPu82jtfEuUWR-14I" />
+                    <div>
+                        <h3 class="font-headline-md text-headline-md text-white">Continuous Growth</h3>
+                        <p class="font-body-md text-label-sm text-slate-400 mt-base">Dedicated annual budget for
+                            learning, conferences, and certifications for every team member.</p>
+                    </div>
+                    <div class="mt-auto pt-md border-t border-slate-800">
+                        <div class="flex -space-x-2">
+                            <div class="w-8 h-8 rounded-full border-2 border-slate-900 bg-slate-700"></div>
+                            <div class="w-8 h-8 rounded-full border-2 border-slate-900 bg-slate-600"></div>
+                            <div class="w-8 h-8 rounded-full border-2 border-slate-900 bg-slate-500"></div>
+                            <div
+                                class="w-8 h-8 rounded-full border-2 border-slate-900 bg-slate-800 flex items-center justify-center text-[10px] text-white">
+                                +42</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Bento Cell 4 -->
+                <div
+                    class="md:col-span-2 md:row-span-1 bg-white p-lg rounded-2xl shadow-sm border border-slate-200/60 flex items-center gap-lg">
+                    <div
+                        class="hidden sm:block w-32 h-32 rounded-full border-4 border-primary-container/20 p-2 shrink-0">
+                        <div class="w-full h-full rounded-full bg-primary-container flex items-center justify-center">
+                            <span class="material-symbols-outlined text-on-primary text-4xl"
+                                data-weight="fill">verified</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="font-headline-md text-headline-md text-on-background">Ownership Mindset</h3>
+                        <p class="font-body-md text-body-md text-tertiary">Every employee receives equity. You are an
+                            architect of the company’s success, not just a passenger.</p>
+                    </div>
+                </div>
+                <!-- Bento Cell 5 -->
+                <div
+                    class="md:col-span-1 md:row-span-1 bg-surface-container-high p-lg rounded-2xl shadow-sm flex flex-col justify-center text-center">
+                    <div class="text-on-surface-variant font-display-lg text-display-lg">0.2ms</div>
+                    <div class="text-on-surface-variant font-label-md uppercase tracking-widest text-xs">Our Latency
+                        Peak</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Benefits Section -->
+    <section class="py-20 px-6">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="font-headline-lg text-headline-lg text-on-background text-center mb-xl">Perks of being dynamic.
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-md">
+                <!-- Benefit 1 -->
+                <div
+                    class="p-lg bg-white rounded-2xl border border-slate-100 hover:border-primary-container transition-colors shadow-sm">
+                    <span class="material-symbols-outlined text-primary mb-md text-3xl"
+                        data-weight="fill">health_and_safety</span>
+                    <h4 class="font-headline-md text-body-lg mb-base">Global Healthcare</h4>
+                    <p class="text-tertiary font-body-md">Premium coverage for medical, dental, and vision for you and
+                        your dependents, wherever you are.</p>
+                </div>
+                <!-- Benefit 2 -->
+                <div
+                    class="p-lg bg-white rounded-2xl border border-slate-100 hover:border-primary-container transition-colors shadow-sm">
+                    <span class="material-symbols-outlined text-primary mb-md text-3xl"
+                        data-weight="fill">laptop_mac</span>
+                    <h4 class="font-headline-md text-body-lg mb-base">Home Office Stipend</h4>
+                    <p class="text-tertiary font-body-md">$5,000 setup stipend for your home workstation including the
+                        latest M3 MacBook Pro.</p>
+                </div>
+                <!-- Benefit 3 -->
+                <div
+                    class="p-lg bg-white rounded-2xl border border-slate-100 hover:border-primary-container transition-colors shadow-sm">
+                    <span class="material-symbols-outlined text-primary mb-md text-3xl"
+                        data-weight="fill">child_care</span>
+                    <h4 class="font-headline-md text-body-lg mb-base">Parental Support</h4>
+                    <p class="text-tertiary font-body-md">16 weeks of fully paid parental leave for all parents, plus
+                        gradual return options.</p>
+                </div>
+                <!-- Benefit 4 -->
+                <div
+                    class="p-lg bg-white rounded-2xl border border-slate-100 hover:border-primary-container transition-colors shadow-sm">
+                    <span class="material-symbols-outlined text-primary mb-md text-3xl"
+                        data-weight="fill">savings</span>
+                    <h4 class="font-headline-md text-body-lg mb-base">Equity &amp; 401(k)</h4>
+                    <p class="text-tertiary font-body-md">Stock options and 401(k) matching to ensure your financial
+                        future is as bright as our tech.</p>
+                </div>
+                <!-- Benefit 5 -->
+                <div
+                    class="p-lg bg-white rounded-2xl border border-slate-100 hover:border-primary-container transition-colors shadow-sm">
+                    <span class="material-symbols-outlined text-primary mb-md text-3xl"
+                        data-weight="fill">beach_access</span>
+                    <h4 class="font-headline-md text-body-lg mb-base">Unlimited PTO</h4>
+                    <p class="text-tertiary font-body-md">We believe in balance. Take the time you need, with a minimum
+                        required 3 weeks off yearly.</p>
+                </div>
+                <!-- Benefit 6 -->
+                <div
+                    class="p-lg bg-white rounded-2xl border border-slate-100 hover:border-primary-container transition-colors shadow-sm">
+                    <span class="material-symbols-outlined text-primary mb-md text-3xl"
+                        data-weight="fill">fitness_center</span>
+                    <h4 class="font-headline-md text-body-lg mb-base">Wellness Credits</h4>
+                    <p class="text-tertiary font-body-md">$150 monthly credit for gym memberships, therapy, or
+                        meditation apps.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Open Roles List -->
+    <section class="py-20 bg-on-background text-white rounded-t-[40px]">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-md mb-xl">
+                <div>
+                    <h2 class="font-display-lg text-display-lg mb-base">Current Openings</h2>
+                    <p class="text-slate-400 font-body-lg">Find your place in the programmatic revolution.</p>
+                </div>
+                <div class="flex items-center gap-base">
+                    <span class="text-sm font-label-md text-slate-400">Filter by:</span>
+                    <select
+                        class="bg-slate-800 border-none rounded-lg text-sm font-label-md py-2 pl-4 pr-10 focus:ring-primary">
+                        <option>All Departments</option>
+                        <option>Engineering</option>
+                        <option>Design</option>
+                        <option>Data Science</option>
+                    </select>
+                </div>
+            </div>
+            <div class="space-y-base">
+                <!-- Role Card 1 -->
+                <div
+                    class="group flex items-center justify-between p-lg rounded-2xl bg-slate-900/50 hover:bg-slate-800 transition-all cursor-pointer border border-slate-800 hover:border-primary-container/40">
+                    <div>
+                        <div class="flex items-center gap-sm mb-base">
+                            <span
+                                class="bg-primary/20 text-primary-container text-[10px] font-bold px-2 py-0.5 rounded tracking-widest uppercase">Engineering</span>
+                            <span class="text-slate-500 text-xs font-label-md flex items-center gap-1">
+                                <span class="material-symbols-outlined text-sm">location_on</span> Remote / London
+                            </span>
+                        </div>
+                        <h3
+                            class="font-headline-md text-headline-md group-hover:text-primary-container transition-colors">
+                            Senior Software Engineer, Core Systems</h3>
+                        <p class="text-slate-400 font-body-md mt-xs">Rust, WebAssembly, Distributed Systems</p>
+                    </div>
+                    <span
+                        class="material-symbols-outlined text-slate-600 group-hover:text-primary-container transform group-hover:translate-x-2 transition-all">arrow_forward</span>
+                </div>
+                <!-- Role Card 2 -->
+                <div
+                    class="group flex items-center justify-between p-lg rounded-2xl bg-slate-900/50 hover:bg-slate-800 transition-all cursor-pointer border border-slate-800 hover:border-primary-container/40">
+                    <div>
+                        <div class="flex items-center gap-sm mb-base">
+                            <span
+                                class="bg-secondary/20 text-secondary-container text-[10px] font-bold px-2 py-0.5 rounded tracking-widest uppercase">Design</span>
+                            <span class="text-slate-500 text-xs font-label-md flex items-center gap-1">
+                                <span class="material-symbols-outlined text-sm">location_on</span> Remote / San
+                                Francisco
+                            </span>
+                        </div>
+                        <h3
+                            class="font-headline-md text-headline-md group-hover:text-secondary-container transition-colors">
+                            Senior Product Designer</h3>
+                        <p class="text-slate-400 font-body-md mt-xs">Analytics Dashboards, Design Systems, UX</p>
+                    </div>
+                    <span
+                        class="material-symbols-outlined text-slate-600 group-hover:text-secondary-container transform group-hover:translate-x-2 transition-all">arrow_forward</span>
+                </div>
+                <!-- Role Card 3 -->
+                <div
+                    class="group flex items-center justify-between p-lg rounded-2xl bg-slate-900/50 hover:bg-slate-800 transition-all cursor-pointer border border-slate-800 hover:border-primary-container/40">
+                    <div>
+                        <div class="flex items-center gap-sm mb-base">
+                            <span
+                                class="bg-on-tertiary-fixed-variant/20 text-tertiary-fixed-dim text-[10px] font-bold px-2 py-0.5 rounded tracking-widest uppercase">Data
+                                Science</span>
+                            <span class="text-slate-500 text-xs font-label-md flex items-center gap-1">
+                                <span class="material-symbols-outlined text-sm">location_on</span> Remote / Berlin
+                            </span>
+                        </div>
+                        <h3
+                            class="font-headline-md text-headline-md group-hover:text-tertiary-fixed-dim transition-colors">
+                            Lead Data Scientist, Optimization</h3>
+                        <p class="text-slate-400 font-body-md mt-xs">ML Ops, PyTorch, Real-time Auctions</p>
+                    </div>
+                    <span
+                        class="material-symbols-outlined text-slate-600 group-hover:text-tertiary-fixed-dim transform group-hover:translate-x-2 transition-all">arrow_forward</span>
+                </div>
+            </div>
+            <div class="mt-xl text-center">
+                <p class="text-slate-500 font-body-md mb-md">Don't see a role that fits?</p>
+                <button class="text-primary-container font-headline-md hover:underline">Send us a speculative
+                    application</button>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="w-full border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950">
+        <div class="max-w-7xl mx-auto py-12 px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex flex-col gap-base">
+                <div class="text-lg font-black text-purple-900 dark:text-purple-400">AdTech Dynamics</div>
+                <p
+                    class="font-['Space_Grotesk'] text-xs uppercase tracking-widest font-semibold text-slate-500 max-w-sm">
+                    © 2024 AdTech Dynamics. All rights reserved. Precision engineering for the programmatic era.
+                </p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-lg">
+                <a class="font-['Space_Grotesk'] text-xs uppercase tracking-widest font-semibold text-slate-500 dark:text-slate-500 hover:text-purple-700 dark:hover:text-purple-300 transition-opacity cursor-pointer"
+                    href="#">Terms of Service</a>
+                <a class="font-['Space_Grotesk'] text-xs uppercase tracking-widest font-semibold text-slate-500 dark:text-slate-500 hover:text-purple-700 dark:hover:text-purple-300 transition-opacity cursor-pointer"
+                    href="#">Privacy Policy</a>
+                <a class="font-['Space_Grotesk'] text-xs uppercase tracking-widest font-semibold text-slate-500 dark:text-slate-500 hover:text-purple-700 dark:hover:text-purple-300 transition-opacity cursor-pointer"
+                    href="#">Cookie Policy</a>
+                <a class="font-['Space_Grotesk'] text-xs uppercase tracking-widest font-semibold text-slate-500 dark:text-slate-500 hover:text-purple-700 dark:hover:text-purple-300 transition-opacity cursor-pointer"
+                    href="#">GDPR</a>
+                <a class="font-['Space_Grotesk'] text-xs uppercase tracking-widest font-semibold text-slate-500 dark:text-slate-500 hover:text-purple-700 dark:hover:text-purple-300 transition-opacity cursor-pointer"
+                    href="#">Data Processing</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
