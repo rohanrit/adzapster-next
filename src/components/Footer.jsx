@@ -16,12 +16,7 @@ export default function Footer() {
         <div className="footer-grid">
           <div className="footer-brand">
             <Link href="/" className="nav-logo">
-              <svg className="logo-icon" viewBox="0 0 40 40" fill="none">
-                <circle cx="20" cy="20" r="18" stroke="currentColor" strokeWidth="2.5" />
-                <path d="M12 28L20 12L28 28" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                <line x1="15" y1="23" x2="25" y2="23" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-              </svg>
-              <span className="logo-text">AdTech <span className="accent">Dynamics</span></span>
+              <img src="/images/adzapster-logo-sm.png" alt="Adzapster Logo" style={{ height: '40px', width: 'auto' }} />
             </Link>
             <p>Engineering the future of programmatic advertising with precision and scale.</p>
             <div className="footer-socials">

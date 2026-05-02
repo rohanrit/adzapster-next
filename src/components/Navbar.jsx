@@ -6,11 +6,10 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 const links = [
-  { href: '/#services', label: 'Services' },
-  { href: '/#pricing', label: 'Pricing' },
+  { href: '/', label: 'Home' },
   { href: '/about-us', label: 'About' },
-  { href: '/careers', label: 'Careers' },
   { href: '/blog', label: 'Blog' },
+  { href: '/careers', label: 'Careers' },
   { href: '/contact-us', label: 'Contact' },
 ]
 
@@ -36,12 +35,7 @@ export default function Navbar() {
         >
           <div className="nav-container">
             <Link href="/" className="nav-logo">
-              <svg className="logo-icon" viewBox="0 0 40 40" fill="none">
-                <circle cx="20" cy="20" r="18" stroke="currentColor" strokeWidth="2.5" />
-                <path d="M12 28L20 12L28 28" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                <line x1="15" y1="23" x2="25" y2="23" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-              </svg>
-              <span className="logo-text">AdTech <span className="accent">Dynamics</span></span>
+              <img src="/images/adzapster-logo-sm.png" alt="Adzapster Logo" style={{ height: '40px', width: 'auto' }} />
             </Link>
 
             <ul className="nav-menu">
@@ -69,12 +63,7 @@ export default function Navbar() {
       {/* Mobile Top Header */}
       <div className="mobile-top-header mobile-only">
         <Link href="/" className="nav-logo">
-          <svg className="logo-icon" viewBox="0 0 40 40" fill="none">
-            <circle cx="20" cy="20" r="18" stroke="var(--primary)" strokeWidth="2.5" />
-            <path d="M12 28L20 12L28 28" stroke="var(--primary)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-            <line x1="15" y1="23" x2="25" y2="23" stroke="var(--primary)" strokeWidth="2" strokeLinecap="round" />
-          </svg>
-          <span className="logo-text">AdTech <span className="accent">Dynamics</span></span>
+          <img src="/images/adzapster-logo-sm.png" alt="Adzapster Logo" style={{ height: '40px', width: 'auto' }} />
         </Link>
         <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
           <span className="material-symbols-outlined">{menuOpen ? 'close' : 'menu'}</span>
