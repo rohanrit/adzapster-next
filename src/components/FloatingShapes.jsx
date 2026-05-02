@@ -253,6 +253,7 @@ function CursorTrail({ mousePos }) {
 export default function FloatingShapes({ shapes = [], patternType = null }) {
   const containerRef = useRef(null)
   const [mousePos, setMousePos] = useState({ x: 0, y: 0, isInSection: false })
+  const [parallax, setParallax] = useState({ x: 0, y: 0 })
   const [orbs, setOrbs] = useState(() =>
     shapes.filter(s => s.type === 'blob').map(() => ({ x: 0, y: 0 }))
   )
@@ -260,8 +261,9 @@ export default function FloatingShapes({ shapes = [], patternType = null }) {
     shapes.filter(s => s.type !== 'blob').map(() => ({ rotateX: 0, rotateY: 0, scale: 1 }))
   )
 
-  useEffect(() => {
-    const handleMouseMove = (e) => {
+  
+useEffect(() => {
+  const handleMouseMove = (e) => {
       const container = containerRef.current
       if (!container) return
 
@@ -270,6 +272,10 @@ export default function FloatingShapes({ shapes = [], patternType = null }) {
       const y = e.clientY - rect.top
 
       setMousePos({ x, y, isInSection: true })
+      setParallax({
+        x: ((x / (rect.width || 1)) - 0.5) * 60,
+        y: ((y / (rect.height || 1)) - 0.5) * 60,
+      })
 
       setOrbs((prev) =>
         prev.map((orb, i) => ({
@@ -296,6 +302,7 @@ export default function FloatingShapes({ shapes = [], patternType = null }) {
 
     const handleMouseLeave = () => {
       setMousePos({ x: 0, y: 0, isInSection: false })
+      setParallax({ x: 0, y: 0 })
       setOrbs((prev) =>
         prev.map((orb, i) => ({
           x: 0,
@@ -341,8 +348,25 @@ export default function FloatingShapes({ shapes = [], patternType = null }) {
     }
   }, [mousePos.isInSection, mousePos.x, mousePos.y])
 
-  const parallaxX = mousePos.isInSection ? (mousePos.x / (containerRef.current?.offsetWidth || 1) - 0.5) * 60 : 0
-  const parallaxY = mousePos.isInSection ? (mousePos.y / (containerRef.current?.offsetHeight || 1) - 0.5) * 60 : 0
+  // Compute parallax movement using state, not ref in render
+  const [containerDims, setContainerDims] = useState({ width: 1, height: 1 })
+  
+  useEffect(() => {
+    function updateDims() {
+      if (containerRef.current) {
+        setContainerDims({
+          width: containerRef.current.offsetWidth || 1,
+          height: containerRef.current.offsetHeight || 1,
+        })
+      }
+    }
+    updateDims()
+    window.addEventListener('resize', updateDims)
+    return () => window.removeEventListener('resize', updateDims)
+  }, [])
+
+  // Remove problematic effect; handle in event
+  // No-op here, event handler below will setParallax instead
 
   return (
     <div
@@ -382,8 +406,8 @@ export default function FloatingShapes({ shapes = [], patternType = null }) {
 
       {shapes.filter(s => s.type !== 'blob').map((s, i) => {
         const depth = s.depth || 0.2
-        const moveX = parallaxX * depth * 2
-        const moveY = parallaxY * depth * 2
+        const moveX = parallax.x * depth * 2
+        const moveY = parallax.y * depth * 2
         const shapeTransform = shapePositions[i] || { rotateX: 0, rotateY: 0, scale: 1 }
 
         return (

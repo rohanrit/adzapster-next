@@ -1,36 +1,45 @@
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import FloatingShapes from '@/components/FloatingShapes'
+import SectionHeading from '@/components/SectionHeading'
 
 export const metadata = {
   title: 'Careers | AdTech Dynamics',
   description: 'Join a team of visionaries, data scientists, and engineers building the world\'s fastest real-time bidding infrastructure.',
 }
 
+const careersShapes = [
+  { type: 'cube', size: 50, color: 'blue', position: { top: '10%', right: '10%' }, depth: 0.3, rotate: { x: 20, y: -25 } },
+  { type: 'donut', size: 80, thickness: 12, color: 'orange', position: { bottom: '15%', left: '5%' }, depth: 0.5, rotate: { x: 50, z: 40 } },
+  { type: 'pyramid', size: 40, color: 'purple', position: { top: '60%', right: '8%' }, depth: 0.4, rotate: { x: -12, y: 30 } },
+]
+
 export default function Careers() {
   return (
     <>
       <Navbar />
-      <header className="pt-32 pb-20 px-6">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-lg items-center">
-          <div>
-            <span className="inline-block py-1 px-3 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md mb-md">
-              WE ARE HIRING
-            </span>
-            <h1 className="font-display-lg text-display-lg text-on-background mb-base">Engineer the future of programmatic advertising.</h1>
-            <p className="font-body-lg text-body-lg text-tertiary max-w-xl mb-lg leading-relaxed">
-              Join a team of visionaries, data scientists, and engineers building the world's fastest real-time bidding infrastructure.
-            </p>
-            <div className="flex flex-wrap gap-base">
-              <button className="bg-primary-container text-on-primary-container px-8 py-3 rounded-xl font-headline-md text-label-md shadow-lg flex items-center gap-xs hover:brightness-105 active:scale-95 transition-all">
-                View Open Roles
-                <span className="material-symbols-outlined">arrow_downward</span>
-              </button>
-              <button className="bg-surface-container border-2 border-secondary text-secondary px-8 py-3 rounded-xl font-headline-md text-label-md hover:bg-surface-container-low active:scale-95 transition-all">
-                Our Culture
-              </button>
-            </div>
+      
+      {/* Hero Section - matches landing page Hero/About section style */}
+      <section className="section section--white">
+        <FloatingShapes shapes={careersShapes} />
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+          <span className="section-tag">WE ARE HIRING</span>
+          <SectionHeading>
+            Engineer the future of <span className="gradient-text">programmatic advertising</span>.
+          </SectionHeading>
+          <p className="section-subtitle">
+            Join a team of visionaries, data scientists, and engineers building the world's fastest real-time bidding infrastructure.
+          </p>
+          <div className="flex flex-wrap gap-base mt-xl">
+            <button className="btn btn-primary">
+              View Open Roles
+              <span className="material-symbols-outlined">arrow_downward</span>
+            </button>
+            <button className="btn btn-outline">
+              Our Culture
+            </button>
           </div>
-          <div className="relative group">
+          <div className="relative group mt-xl">
             <div className="absolute -inset-4 bg-gradient-to-tr from-primary/20 to-secondary/20 rounded-3xl blur-2xl opacity-50"></div>
             <img 
               className="relative w-full h-[400px] object-cover rounded-2xl shadow-xl border border-outline-variant/40 grayscale-[20%] group-hover:grayscale-0 transition-all duration-700"
@@ -39,30 +48,33 @@ export default function Careers() {
             />
           </div>
         </div>
-      </header>
+      </section>
 
-      <section className="py-20 bg-surface-container-low">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="text-center mb-xl">
-            <h2 className="font-headline-lg text-headline-lg text-on-background">Innovation is our baseline.</h2>
-            <p className="font-body-md text-body-md text-tertiary mt-base">We foster an environment where technical excellence meets radical transparency.</p>
+      {/* Innovation Section - matches landing page Services section style */}
+      <section className="section section--light">
+        <div className="container">
+          <div className="section-header">
+            <SectionHeading>
+              Innovation is our <span className="gradient-text">baseline</span>.
+            </SectionHeading>
+            <p className="section-subtitle">We foster an environment where technical excellence meets radical transparency.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-gutter h-auto md:h-[600px]">
-            <div className="md:col-span-2 md:row-span-1 bg-surface-container p-lg rounded-2xl shadow-sm border border-outline-variant flex flex-col justify-end relative overflow-hidden group">
+            <div className="md:col-span-2 md:row-span-1 card p-lg flex flex-col justify-end relative overflow-hidden group">
               <div className="absolute top-6 right-6 text-primary/20 group-hover:text-primary transition-colors">
                 <span className="material-symbols-outlined text-6xl">bolt</span>
               </div>
               <h3 className="font-headline-md text-headline-md text-on-background relative z-10">High Velocity</h3>
               <p className="font-body-md text-body-md text-tertiary relative z-10">We ship code daily and iterate at the speed of the global market.</p>
             </div>
-            <div className="md:col-span-1 md:row-span-1 bg-secondary text-on-primary p-lg rounded-2xl shadow-sm flex flex-col justify-between items-start">
+            <div className="md:col-span-1 md:row-span-1 card p-lg flex flex-col justify-between items-start bg-secondary text-on-primary">
               <span className="material-symbols-outlined text-on-primary text-4xl">public</span>
               <div>
                 <h3 className="font-headline-md text-headline-md text-on-primary">Remote First</h3>
                 <p className="font-body-md text-label-sm text-on-primary/80">Talent has no borders. Work from anywhere in the world.</p>
               </div>
             </div>
-            <div className="md:col-span-1 md:row-span-2 bg-on-background p-lg rounded-2xl shadow-sm flex flex-col gap-md">
+            <div className="md:col-span-1 md:row-span-2 card p-lg flex flex-col gap-md bg-on-background">
               <img 
                 className="w-full h-48 object-cover rounded-xl grayscale opacity-60"
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKdFq7t5wUB6lsFryiKZjbsgnN8NhhQQLmRIoP5n09BeKVeYNJJ8EUxfrWE8BdOyoEuVNbx7vwxahSvyScAriwkFgWw-XuZ0JIJZl7e69nCPVMUi0n-miCwhTQH5J5hUe_HmJ60rHNKF41HP7BV5hcx5aiUrVYj8aLNFAPf_-m6NuzWDkv37-snWWFWMkEGnsEKu_bOsRQTwUm9dkF1UGNZOYV-OLq7RNiPG4HOKPeVjxvtPehEAatDMkBJLtuPu82jtfEuUWR-14I"
@@ -81,7 +93,7 @@ export default function Careers() {
                 </div>
               </div>
             </div>
-            <div className="md:col-span-2 md:row-span-1 bg-surface-container p-lg rounded-2xl shadow-sm border border-outline-variant flex items-center gap-lg">
+            <div className="md:col-span-2 md:row-span-1 card p-lg flex items-center gap-lg">
               <div className="hidden sm:block w-32 h-32 rounded-full border-4 border-primary/20 p-2 shrink-0">
                 <div className="w-full h-full rounded-full bg-primary flex items-center justify-center">
                   <span className="material-symbols-outlined text-on-primary text-4xl">verified</span>
@@ -89,10 +101,10 @@ export default function Careers() {
               </div>
               <div>
                 <h3 className="font-headline-md text-headline-md text-on-background">Ownership Mindset</h3>
-                <p className="font-body-md text-body-md text-tertiary">Every employee receives equity. You are an architect of the company’s success, not just a passenger.</p>
+                <p className="font-body-md text-body-md text-tertiary">Every employee receives equity. You are an architect of the company's success, not just a passenger.</p>
               </div>
             </div>
-            <div className="md:col-span-1 md:row-span-1 bg-surface-container-high p-lg rounded-2xl shadow-sm flex flex-col justify-center text-center">
+            <div className="md:col-span-1 md:row-span-1 card p-lg flex flex-col justify-center text-center">
               <div className="text-on-background font-display-lg text-display-lg">0.2ms</div>
               <div className="text-on-background font-label-md uppercase tracking-widest text-xs opacity-60">Our Latency Peak</div>
             </div>
@@ -100,9 +112,14 @@ export default function Careers() {
         </div>
       </section>
 
-      <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="font-headline-lg text-headline-lg text-on-background text-center mb-xl">Perks of being dynamic.</h2>
+      {/* Perks Section - matches landing page WhyUs section style */}
+      <section className="section section--white">
+        <div className="container">
+          <div className="section-header">
+            <SectionHeading>
+              Perks of being <span className="gradient-text">dynamic</span>.
+            </SectionHeading>
+          </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-md">
             {[
               { icon: 'health_and_safety', title: 'Global Healthcare', desc: 'Premium coverage for medical, dental, and vision for you and your dependents, wherever you are.' },
@@ -112,7 +129,7 @@ export default function Careers() {
               { icon: 'beach_access', title: 'Unlimited PTO', desc: 'We believe in balance. Take the time you need, with a minimum required 3 weeks off yearly.' },
               { icon: 'fitness_center', title: 'Wellness Credits', desc: '$150 monthly credit for gym memberships, therapy, or meditation apps.' },
             ].map((perk, i) => (
-              <div key={i} className="p-lg bg-surface-container rounded-2xl border border-outline-variant/30 hover:border-primary transition-colors shadow-sm">
+              <div key={i} className="card p-lg">
                 <span className="material-symbols-outlined text-primary mb-md text-3xl">{perk.icon}</span>
                 <h4 className="font-headline-md text-body-lg mb-base text-on-background">{perk.title}</h4>
                 <p className="text-tertiary font-body-md">{perk.desc}</p>
@@ -122,12 +139,15 @@ export default function Careers() {
         </div>
       </section>
 
-      <section className="py-20 bg-on-background text-background rounded-t-[40px] pb-32">
-        <div className="max-w-4xl mx-auto px-6">
+      {/* Current Openings Section - matches landing page Pricing section style */}
+      <section className="section section--gradient rounded-t-[40px]">
+        <div className="container">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-md mb-xl">
             <div>
-              <h2 className="font-display-lg text-display-lg mb-base">Current Openings</h2>
-              <p className="text-tertiary font-body-lg">Find your place in the programmatic revolution.</p>
+              <SectionHeading>
+                Current <span className="gradient-text">Openings</span>
+              </SectionHeading>
+              <p className="section-subtitle text-left">Find your place in the programmatic revolution.</p>
             </div>
             <div className="flex items-center gap-base">
               <span className="text-sm font-label-md text-tertiary">Filter by:</span>
@@ -141,19 +161,19 @@ export default function Careers() {
           </div>
           <div className="space-y-base">
             {[
-              { dept: 'Engineering', loc: 'Remote / London', title: 'Senior Software Engineer, Core Systems', tags: 'Rust, WebAssembly, Distributed Systems', color: 'primary' },
-              { dept: 'Design', loc: 'Remote / San Francisco', title: 'Senior Product Designer', tags: 'Analytics Dashboards, Design Systems, UX', color: 'secondary' },
-              { dept: 'Data Science', loc: 'Remote / Berlin', title: 'Lead Data Scientist, Optimization', tags: 'ML Ops, PyTorch, Real-time Auctions', color: 'primary' },
+              { dept: 'Engineering', loc: 'Remote / London', title: 'Senior Software Engineer, Core Systems', tags: 'Rust, WebAssembly, Distributed Systems' },
+              { dept: 'Design', loc: 'Remote / San Francisco', title: 'Senior Product Designer', tags: 'Analytics Dashboards, Design Systems, UX' },
+              { dept: 'Data Science', loc: 'Remote / Berlin', title: 'Lead Data Scientist, Optimization', tags: 'ML Ops, PyTorch, Real-time Auctions' },
             ].map((role, i) => (
-              <div key={i} className="group flex items-center justify-between p-lg rounded-2xl bg-surface-container-low hover:bg-surface-container transition-all cursor-pointer border border-outline-variant/20 hover:border-primary/40">
+              <div key={i} className="card flex items-center justify-between p-lg group">
                 <div>
                   <div className="flex items-center gap-sm mb-base">
-                    <span className={`bg-primary/20 text-primary text-[10px] font-bold px-2 py-0.5 rounded tracking-widest uppercase`}>{role.dept}</span>
+                    <span className="bg-primary/20 text-primary text-[10px] font-bold px-2 py-0.5 rounded tracking-widest uppercase">{role.dept}</span>
                     <span className="text-tertiary text-xs font-label-md flex items-center gap-1">
                       <span className="material-symbols-outlined text-sm">location_on</span> {role.loc}
                     </span>
                   </div>
-                  <h3 className={`font-headline-md text-headline-md text-on-background group-hover:text-primary transition-colors`}>{role.title}</h3>
+                  <h3 className="font-headline-md text-headline-md text-on-background group-hover:text-primary transition-colors">{role.title}</h3>
                   <p className="text-tertiary font-body-md mt-xs">{role.tags}</p>
                 </div>
                 <span className="material-symbols-outlined text-tertiary group-hover:text-primary transform group-hover:translate-x-2 transition-all">arrow_forward</span>

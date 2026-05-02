@@ -32,7 +32,7 @@ export default function InteractiveSection({ children, className = '', parallaxI
     { x: 0, y: 0, size: 250, color: 'rgba(74, 144, 217, 0.1)', intensity: 0.4 },
   ])
 
-  const handleMouseMove = useCallback((e) => {
+const handleMouseMove = useCallback((e) => {
     if (!sectionRef.current) return
 
     const rect = sectionRef.current.getBoundingClientRect()
@@ -40,6 +40,10 @@ export default function InteractiveSection({ children, className = '', parallaxI
     const y = e.clientY - rect.top
 
     setMousePos({ x, y, isInSection: true })
+    setParallax({
+      x: ((x / (rect.width || 1)) - 0.5) * 100 * parallaxIntensity,
+      y: ((y / (rect.height || 1)) - 0.5) * 100 * parallaxIntensity
+    })
 
     setOrbs((prev) => {
       const offset = 100
@@ -53,10 +57,11 @@ export default function InteractiveSection({ children, className = '', parallaxI
         }
       })
     })
-  }, [])
+  }, [parallaxIntensity])
 
   const handleMouseLeave = useCallback(() => {
     setMousePos({ x: 0, y: 0, isInSection: false })
+    setParallax({ x: 0, y: 0 })
     setOrbs((prev) => prev.map(() => ({ x: 0, y: 0, size: 300, color: 'rgba(243, 100, 40, 0.15)', intensity: 0.3 })))
   }, [])
 
@@ -86,8 +91,22 @@ export default function InteractiveSection({ children, className = '', parallaxI
     }
   }, [mousePos.isInSection, mousePos.x, mousePos.y])
 
-  const parallaxX = mousePos.isInSection ? (mousePos.x / sectionRef.current?.offsetWidth - 0.5) * 100 * parallaxIntensity : 0
-  const parallaxY = mousePos.isInSection ? (mousePos.y / sectionRef.current?.offsetHeight - 0.5) * 100 * parallaxIntensity : 0
+  // Fix: Compute in state, not ref during render
+  const [sectionDims, setSectionDims] = useState({ width: 1, height: 1 })
+  useEffect(() => {
+    function updateDims() {
+      if (sectionRef.current) {
+        setSectionDims({
+          width: sectionRef.current.offsetWidth || 1,
+          height: sectionRef.current.offsetHeight || 1
+        })
+      }
+    }
+    updateDims();
+    window.addEventListener('resize', updateDims);
+    return () => window.removeEventListener('resize', updateDims);
+  }, [])
+  // Remove problematic effect; do this math in the mouseMove event instead.
 
   return (
     <section

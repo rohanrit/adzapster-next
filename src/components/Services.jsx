@@ -155,10 +155,19 @@ export default function Services() {
     setTimeout(() => setIsAutoScrolling(true), 5000)
   }
 
-  const offset = () => {
-    if (!trackRef.current?.children[0]) return 0
-    return index * (trackRef.current.children[0].offsetWidth + 24)
-  }
+  const [slideWidth, setSlideWidth] = useState(0)
+  useEffect(() => {
+    function updateWidth() {
+      if (trackRef.current?.children[0]) {
+        setSlideWidth(trackRef.current.children[0].offsetWidth + 24)
+      }
+    }
+    updateWidth();
+    window.addEventListener('resize', updateWidth)
+    return () => window.removeEventListener('resize', updateWidth)
+  }, [])
+  const offset = () => index * slideWidth
+
 
   return (
     <section ref={sectionRef} className="section section--light" id="services">

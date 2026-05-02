@@ -95,10 +95,20 @@ export default function Products() {
   const maxIndex = Math.max(0, products.length - perView)
   const goTo = (i) => setIndex(Math.max(0, Math.min(i, maxIndex)))
 
-  const offset = () => {
-    if (!trackRef.current?.children[0]) return 0
-    return index * (trackRef.current.children[0].offsetWidth + 24)
-  }
+  // Fix: Store slide width in state and only update in effect, not in render
+  const [slideWidth, setSlideWidth] = useState(0)
+  useEffect(() => {
+    function updateWidth() {
+      if (trackRef.current?.children[0]) {
+        setSlideWidth(trackRef.current.children[0].offsetWidth + 24)
+      }
+    }
+    updateWidth();
+    window.addEventListener('resize', updateWidth)
+    return () => window.removeEventListener('resize', updateWidth)
+  }, [])
+  const offset = () => index * slideWidth
+
 
   return (
     <section className="section section--light" id="products">      

@@ -1,0 +1,12 @@
+{
+  "root": true,
+  "extends": [
+    "next/core-web-vitals",
+    "prettier"
+  ],
+  "plugins": [],
+  "rules": {
+    "react/jsx-key": ["warn"],
+    "@next/next/no-img-element": 0
+  }
+}

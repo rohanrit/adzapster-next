@@ -1,30 +1,42 @@
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import FloatingShapes from '@/components/FloatingShapes'
+import SectionHeading from '@/components/SectionHeading'
 
 export const metadata = {
   title: 'Blog | AdTech Dynamics',
   description: 'Engineering the Future of Programmatic Advertising. Insights and innovation from our team.',
 }
 
+const blogShapes = [
+  { type: 'cube', size: 45, color: 'purple', position: { top: '15%', right: '8%' }, depth: 0.3, rotate: { x: -15, y: 40 } },
+  { type: 'donut', size: 70, thickness: 12, color: 'orange', position: { bottom: '20%', left: '10%' }, depth: 0.5, rotate: { x: 50, z: 40 } },
+  { type: 'pyramid', size: 35, color: 'blue', position: { top: '60%', right: '12%' }, depth: 0.4, rotate: { x: -12, y: 30 } },
+]
+
 export default function Blog() {
   return (
     <>
       <Navbar />
-      <main className="pt-32 pb-32">
-        <div className="max-w-7xl mx-auto px-6">
-          {/* Header Section */}
-          <header className="mb-xl">
-            <span className="font-label-md text-primary bg-primary-container/10 px-3 py-1 rounded-full uppercase tracking-wider mb-base inline-block">
-              Insights & Innovation
-            </span>
-            <h1 className="font-display-lg text-on-background max-w-2xl mt-base">
-              Engineering the Future of Programmatic Advertising.
-            </h1>
-          </header>
+      
+      {/* Header Section - matches landing page Hero/About style */}
+      <section className="section section--white">
+        <FloatingShapes shapes={blogShapes} />
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+          <span className="section-tag">Insights & Innovation</span>
+          <SectionHeading>
+            Engineering the Future of <span className="gradient-text">Programmatic Advertising</span>.
+          </SectionHeading>
+          <p className="section-subtitle">Insights and innovation from our team of experts.</p>
+        </div>
+      </section>
 
-          {/* Featured Post */}
-          <section className="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-xl">
-            <article className="md:col-span-8 group relative overflow-hidden rounded-xl bg-surface-container border border-outline-variant/30 shadow-sm hover:shadow-md transition-all">
+      {/* Featured Post & Sidebar Section - matches landing page Services style */}
+      <section className="section section--light">
+        <div className="container">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+            {/* Featured Post */}
+            <article className="md:col-span-8 card group relative overflow-hidden">
               <div className="aspect-[16/9] overflow-hidden">
                 <img 
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -58,7 +70,7 @@ export default function Blog() {
             {/* Sidebar Content */}
             <div className="md:col-span-4 flex flex-col gap-gutter">
               {/* Categories */}
-              <div className="bg-surface-container-low p-md rounded-xl border border-outline-variant/30">
+              <div className="card p-md">
                 <h3 className="font-headline-md text-on-background mb-md">Categories</h3>
                 <div className="flex flex-wrap gap-xs">
                   {['Programmatic', 'Data Science', 'Product Updates', 'Engineering', 'Industry Trends'].map((cat) => (
@@ -69,7 +81,7 @@ export default function Blog() {
                 </div>
               </div>
               {/* Newsletter */}
-              <div className="bg-on-background p-md rounded-xl text-background">
+              <div className="card p-md bg-on-background text-background">
                 <span className="material-symbols-outlined text-primary text-4xl mb-base">mail</span>
                 <h3 className="font-headline-md mb-base text-background">The Dynamic Digest</h3>
                 <p className="font-body-md text-tertiary mb-md">Weekly engineering insights delivered to your inbox. No fluff, just precision data.</p>
@@ -85,10 +97,17 @@ export default function Blog() {
                 </div>
               </div>
             </div>
-          </section>
+          </div>
+        </div>
+      </section>
 
-          {/* Blog Grid */}
-          <section className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+      {/* Blog Grid Section - matches landing page Products style */}
+      <section className="section section--white">
+        <div className="container">
+          <SectionHeading>
+            Latest <span className="gradient-text">Insights</span>
+          </SectionHeading>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
             {[
               {
                 category: 'ENGINEERING',
@@ -112,7 +131,7 @@ export default function Blog() {
                 img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAIYWGAtTQoKt_JrakGZaIxzuev7PNCTJ-jR5Zqp0yGX0qE1Corc4GoB1AgDXJJ3I-aoUI19S3awUGpVK0Wdu-rWqbpROEz90SsthTrCz9Qu6b7eALNT9IxSN-R1tyUSBCOpyQ5tLBDYywxiAmnF6Ujs3ftG1XHqAw93YmbUfsfSi0h2N5_XYY_HBJuw-6rj20-mavz0rcnUIGFoM3E1jxAbgM17DHbzKLZez6KFG-sXbGUaucwh8Z16HxRqm9mN0xvXplly3Yn_WIT'
               }
             ].map((post, i) => (
-              <article key={i} className="group bg-surface-container rounded-xl border border-outline-variant/30 overflow-hidden hover:shadow-md transition-all">
+              <article key={i} className="card group overflow-hidden">
                 <div className="aspect-video overflow-hidden">
                   <img 
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -133,7 +152,7 @@ export default function Blog() {
                 </div>
               </article>
             ))}
-          </section>
+          </div>
 
           {/* Pagination */}
           <div className="flex items-center justify-center mt-xl gap-sm">
@@ -148,7 +167,8 @@ export default function Blog() {
             </button>
           </div>
         </div>
-      </main>
+      </section>
+
       <Footer />
     </>
   )
