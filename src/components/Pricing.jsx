@@ -6,21 +6,21 @@ import TiltCard from './TiltCard'
 import SectionHeading from './SectionHeading'
 
 const shapes = [
-  { type: 'donut', size: 100, thickness: 16, color: 'purple', position: { top: '8%', left: '4%' }, depth: 0.4 },
-  { type: 'cube', size: 60, color: 'orange', position: { bottom: '12%', right: '5%' }, depth: 0.35 },
+  { type: 'donut', size: 100, thickness: 16, color: 'blue', position: { top: '8%', left: '4%' }, depth: 0.4 },
+  { type: 'cube', size: 60, color: 'blue', position: { bottom: '12%', right: '5%' }, depth: 0.35 },
   { type: 'pyramid', size: 50, color: 'blue', position: { top: '12%', right: '15%' }, depth: 0.28, rotate: { x: -15, y: 25 } },
-  { type: 'donut', size: 55, thickness: 9, color: 'orange', position: { top: '25%', left: '10%' }, depth: 0.22, rotate: { x: 35, z: 20 } },
-  { type: 'cube', size: 45, color: 'purple', position: { bottom: '20%', left: '12%' }, depth: 0.3, rotate: { x: 10, y: -30 } },
-  { type: 'pyramid', size: 40, color: 'orange', position: { top: '55%', right: '8%' }, depth: 0.18, rotate: { x: 5, y: 30 } },
+  { type: 'donut', size: 55, thickness: 9, color: 'blue', position: { top: '25%', left: '10%' }, depth: 0.22, rotate: { x: 35, z: 20 } },
+  { type: 'cube', size: 45, color: 'blue', position: { bottom: '20%', left: '12%' }, depth: 0.3, rotate: { x: 10, y: -30 } },
+  { type: 'pyramid', size: 40, color: 'blue', position: { top: '55%', right: '8%' }, depth: 0.18, rotate: { x: 5, y: 30 } },
   { type: 'donut', size: 45, thickness: 7, color: 'blue', position: { bottom: '35%', right: '12%' }, depth: 0.2, rotate: { x: 40, z: 25 } },
   { type: 'cube', size: 35, color: 'blue', position: { top: '70%', left: '15%' }, depth: 0.15, rotate: { x: -20, y: 20 } },
-  { type: 'pyramid', size: 55, color: 'purple', position: { bottom: '5%', left: '18%' }, depth: 0.12, rotate: { x: 10, y: -20 } },
-  { type: 'donut', size: 35, thickness: 5, color: 'orange', position: { top: '80%', right: '18%' }, depth: 0.1, rotate: { x: 25, z: 30 } },
-  { type: 'cube', size: 25, color: 'purple', position: { bottom: '50%', right: '20%' }, depth: 0.08, rotate: { x: -15, y: 25 } },
+  { type: 'pyramid', size: 55, color: 'blue', position: { bottom: '5%', left: '18%' }, depth: 0.12, rotate: { x: 10, y: -20 } },
+  { type: 'donut', size: 35, thickness: 5, color: 'blue', position: { top: '80%', right: '18%' }, depth: 0.1, rotate: { x: 25, z: 30 } },
+  { type: 'cube', size: 25, color: 'blue', position: { bottom: '50%', right: '20%' }, depth: 0.08, rotate: { x: -15, y: 25 } },
   { type: 'pyramid', size: 28, color: 'blue', position: { top: '40%', right: '10%' }, depth: 0.15, rotate: { x: 10, y: -30 } },
-  { type: 'donut', size: 28, thickness: 4, color: 'purple', position: { bottom: '30%', left: '10%' }, depth: 0.08, rotate: { x: 20, z: 25 } },
-  { type: 'cube', size: 22, color: 'orange', position: { top: '85%', left: '12%' }, depth: 0.1, rotate: { x: -10, y: 30 } },
-  { type: 'pyramid', size: 20, color: 'orange', position: { bottom: '60%', right: '10%' }, depth: 0.06, rotate: { x: 5, y: 15 } },
+  { type: 'donut', size: 28, thickness: 4, color: 'blue', position: { bottom: '30%', left: '10%' }, depth: 0.08, rotate: { x: 20, z: 25 } },
+  { type: 'cube', size: 22, color: 'blue', position: { top: '85%', left: '12%' }, depth: 0.1, rotate: { x: -10, y: 30 } },
+  { type: 'pyramid', size: 20, color: 'blue', position: { bottom: '60%', right: '10%' }, depth: 0.06, rotate: { x: 5, y: 15 } },
 ]
 
 const check = <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" strokeWidth="2"><polyline points="20 6 9 17 4 12" /></svg>

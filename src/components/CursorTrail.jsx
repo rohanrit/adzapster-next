@@ -54,7 +54,7 @@ export default function CursorTrail() {
           width: 24,
           height: 24,
           borderRadius: '50%',
-          border: '2px solid var(--accent-purple)',
+          border: '2px solid var(--primary)',
           transform: 'translate(-50%, -50%)',
           pointerEvents: 'none',
           zIndex: 9998,

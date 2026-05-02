@@ -20,13 +20,13 @@
 }
 
 :root {
-  --primary: #F36428;
-  --primary-dark: #d4541e;
-  --primary-light: #FF8A50;
-  --primary-glow: rgba(243, 100, 40, 0.18);
-  --accent-purple: #6C5CE7;
-  --accent-blue: #4A90D9;
-  --accent-green: #00B894;
+  --primary: #13e195;
+  --primary-dark: #0fb177;
+  --primary-light: #67f3c1;
+  --primary-glow: rgba(19, 225, 149, 0.18);
+  --accent-purple: #13e195;
+  --accent-blue: #13e195;
+  --accent-green: #13e195;
 
   --bg-primary: #FAFBFF;
   --bg-secondary: #F0F4FF;
@@ -41,7 +41,7 @@
   --icon-bg: rgba(27, 27, 58, 0.06);
 
   --border: var(--primary-light);
-  --border-hover: rgba(243, 100, 40, 0.25);
+  --border-hover: rgba(19, 225, 149, 0.25);
 
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
   --shadow-md: 0 4px 24px rgba(0, 0, 0, 0.06);
@@ -82,7 +82,7 @@
   --icon-bg: rgba(248, 250, 252, 0.06);
 
   --border: rgba(255, 255, 255, 0.08);
-  --border-hover: rgba(243, 100, 40, 0.4);
+  --border-hover: rgba(19, 225, 149, 0.4);
 
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.5);
   --shadow-md: 0 4px 24px rgba(0, 0, 0, 0.7);
@@ -90,7 +90,7 @@
   --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.3);
   --shadow-card-hover: 0 12px 48px rgba(0, 0, 0, 0.5), 0 0 20px var(--shape-primary-bg);
 
-  --shape-primary-bg: rgba(243, 100, 40, 0.12);
+  --shape-primary-bg: rgba(19, 225, 149, 0.12);
   --blob-mix: screen;
 }
 
@@ -273,12 +273,12 @@ button {
   background: linear-gradient(135deg, var(--primary), var(--primary-dark));
   color: #fff;
   border-color: var(--primary-light) !important;
-  box-shadow: 0 4px 20px rgba(243, 100, 40, 0.3);
+  box-shadow: 0 4px 20px rgba(19, 225, 149, 0.3);
 }
 
 .btn-primary:hover {
   transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 12px 40px rgba(243, 100, 40, 0.45);
+  box-shadow: 0 12px 40px rgba(19, 225, 149, 0.45);
   background: linear-gradient(135deg, var(--primary-light), var(--primary));
   border-color: #fff !important;
 }
@@ -298,7 +298,7 @@ button {
   color: #fff !important;
   border-color: var(--primary-light) !important;
   transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 12px 40px rgba(243, 100, 40, 0.3);
+  box-shadow: 0 12px 40px rgba(19, 225, 149, 0.3);
 }
 
 .btn-block {
@@ -327,7 +327,7 @@ button {
 }
 
 .multi-gradient-card {
-  box-shadow: 0 20px 40px rgba(243, 100, 40, 0.15) !important;
+  box-shadow: 0 20px 40px rgba(19, 225, 149, 0.15) !important;
   color: #fff !important;
 }
 
@@ -345,7 +345,7 @@ button {
 [data-theme='dark'] .multi-gradient-card {
   background:var(--bg-secondary);
   border: 1px solid rgba(255, 255, 255, 0.15) !important;
-  box-shadow: 0 8px 32px rgba(243, 100, 40, 0.2) !important;
+  box-shadow: 0 8px 32px rgba(19, 225, 149, 0.2) !important;
 }
 
 [data-theme='dark'] .multi-gradient-card::before {
@@ -362,7 +362,7 @@ button {
 
 .card:hover {
   border-color: var(--primary);
-  box-shadow: -10px 15px 40px rgba(243, 100, 40, 0.15);
+  box-shadow: -10px 15px 40px rgba(19, 225, 149, 0.15);
   transform: translateY(-8px) rotateX(4deg) rotateY(-4deg) scale(1.02);
   z-index: 10;
 }
@@ -621,7 +621,7 @@ button {
 
 .nav-link:hover {
   color: var(--primary);
-  background: rgba(243, 100, 40, 0.05);
+  background: rgba(19, 225, 149, 0.05);
 }
 
 .nav-actions {
@@ -638,7 +638,7 @@ button {
   font-weight: 700;
   font-size: .9rem;
   border: 2.5px solid var(--primary-light);
-  box-shadow: 0 4px 14px rgba(243, 100, 40, 0.25);
+  box-shadow: 0 4px 14px rgba(19, 225, 149, 0.25);
   transition: all .4s var(--ease-out);
   white-space: nowrap;
   text-transform: uppercase;
@@ -652,7 +652,7 @@ button {
 }
 
 .nav-cta:hover {
-  box-shadow: 0 8px 25px rgba(243, 100, 40, 0.4);
+  box-shadow: 0 8px 25px rgba(19, 225, 149, 0.4);
   transform: translateY(-2px) scale(1.05);
   border-color: #fff;
   background: linear-gradient(135deg, var(--primary-light), var(--primary));
@@ -1805,7 +1805,7 @@ justify-content: center;
 .form-group input:focus,
 .form-group select:focus {
   border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(243, 100, 40, 0.08);
+  box-shadow: 0 0 0 3px rgba(19, 225, 149, 0.08);
   background: var(--bg-white);
 }
 
@@ -1870,7 +1870,7 @@ justify-content: center;
 .social-link:hover {
   border-color: var(--primary);
   color: var(--primary);
-  background: rgba(243, 100, 40, 0.1);
+  background: rgba(19, 225, 149, 0.1);
 }
 
 .footer-links h4 {

@@ -10,8 +10,8 @@ export const metadata = {
 
 const careersShapes = [
   { type: 'cube', size: 50, color: 'blue', position: { top: '10%', right: '10%' }, depth: 0.3, rotate: { x: 20, y: -25 } },
-  { type: 'donut', size: 80, thickness: 12, color: 'orange', position: { bottom: '15%', left: '5%' }, depth: 0.5, rotate: { x: 50, z: 40 } },
-  { type: 'pyramid', size: 40, color: 'purple', position: { top: '60%', right: '8%' }, depth: 0.4, rotate: { x: -12, y: 30 } },
+  { type: 'donut', size: 80, thickness: 12, color: 'blue', position: { bottom: '15%', left: '5%' }, depth: 0.5, rotate: { x: 50, z: 40 } },
+  { type: 'pyramid', size: 40, color: 'blue', position: { top: '60%', right: '8%' }, depth: 0.4, rotate: { x: -12, y: 30 } },
 ]
 
 export default function Careers() {

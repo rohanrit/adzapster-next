@@ -4,24 +4,14 @@ import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 
 const SHAPE_COLORS = {
-  orange: {
-    border: 'var(--shape-primary-border, rgba(255, 107, 0, 0.4))',
-    bg: 'var(--shape-primary-bg, rgba(255, 107, 0, 0.08))',
-    shadow: 'var(--primary-glow, rgba(255, 107, 0, 0.15))',
-  },
-  purple: {
-    border: 'rgba(162, 0, 255, 0.4)',
-    bg: 'rgba(162, 0, 255, 0.08)',
-    shadow: 'rgba(162, 0, 255, 0.15)',
-  },
   blue: {
-    border: 'rgba(0, 163, 255, 0.4)',
-    bg: 'rgba(0, 163, 255, 0.08)',
-    shadow: 'rgba(0, 163, 255, 0.15)',
+    border: 'var(--shape-primary-border, rgba(19, 225, 149, 0.4))',
+    bg: 'var(--shape-primary-bg, rgba(19, 225, 149, 0.08))',
+    shadow: 'var(--primary-glow, rgba(19, 225, 149, 0.15))',
   },
 }
 
-function CubeShape({ size = 60, color = 'orange', rotate = { x: -20, y: 30 } }) {
+function CubeShape({ size = 60, color = 'blue', rotate = { x: -20, y: 30 } }) {
   const c = SHAPE_COLORS[color]
   const half = size / 2
   const faceStyle = {
@@ -53,7 +43,7 @@ function CubeShape({ size = 60, color = 'orange', rotate = { x: -20, y: 30 } }) 
   )
 }
 
-function DonutShape({ size = 80, thickness = 12, color = 'orange', rotate = { x: 30, y: 30, z: 0 } }) {
+function DonutShape({ size = 80, thickness = 12, color = 'blue', rotate = { x: 30, y: 30, z: 0 } }) {
   const c = SHAPE_COLORS[color]
   const radius = size / 2
 
@@ -72,7 +62,7 @@ function DonutShape({ size = 80, thickness = 12, color = 'orange', rotate = { x:
   )
 }
 
-function PyramidShape({ size = 60, color = 'orange', rotate = { x: -15, y: 30 } }) {
+function PyramidShape({ size = 60, color = 'blue', rotate = { x: -15, y: 30 } }) {
   const c = SHAPE_COLORS[color]
   const half = size / 2
   const height = size * 0.85
@@ -109,7 +99,7 @@ function PyramidShape({ size = 60, color = 'orange', rotate = { x: -15, y: 30 } 
   )
 }
 
-function BlobShape({ size = 400, color = 'orange', opacity = 1 }) {
+function BlobShape({ size = 400, color = 'blue', opacity = 1 }) {
   const c = SHAPE_COLORS[color]
 
   const clampedOpacity = Math.min(Math.max(opacity, 0.75), 1)
@@ -132,7 +122,7 @@ function BlobShape({ size = 400, color = 'orange', opacity = 1 }) {
   )
 }
 
-function GradientOrb({ x = 0, y = 0, size = 300, color = 'orange' }) {
+function GradientOrb({ x = 0, y = 0, size = 300, color = 'blue' }) {
   const c = SHAPE_COLORS[color]
 
   return (
@@ -210,7 +200,7 @@ function CursorTrail({ mousePos }) {
           pointerEvents: 'none',
           zIndex: 9999,
           opacity: 0.8,
-          boxShadow: '0 0 20px var(--primary), 0 0 40px var(--accent-purple)',
+          boxShadow: '0 0 20px var(--primary), 0 0 40px var(--primary)',
         }}
         className="cursor-trail"
       />
@@ -222,7 +212,7 @@ function CursorTrail({ mousePos }) {
           width: 24,
           height: 24,
           borderRadius: '50%',
-          border: '2px solid var(--accent-purple)',
+          border: '2px solid var(--primary)',
           transform: 'translate(-50%, -50%)',
           pointerEvents: 'none',
           zIndex: 9998,
@@ -399,7 +389,7 @@ useEffect(() => {
             x={orb.x}
             y={orb.y}
             size={shapes.filter(s => s.type === 'blob')[i]?.size || 300}
-            color={shapes.filter(s => s.type === 'blob')[i]?.color || 'orange'}
+            color={shapes.filter(s => s.type === 'blob')[i]?.color || 'blue'}
           />
         ))}
       </div>

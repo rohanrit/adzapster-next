@@ -27,9 +27,9 @@ export default function InteractiveSection({ children, className = '', parallaxI
   const sectionRef = useRef(null)
   const [mousePos, setMousePos] = useState({ x: 0, y: 0, isInSection: false })
   const [orbs, setOrbs] = useState([
-    { x: 0, y: 0, size: 300, color: 'rgba(243, 100, 40, 0.15)', intensity: 0.6 },
-    { x: 0, y: 0, size: 400, color: 'rgba(108, 92, 231, 0.12)', intensity: 0.5 },
-    { x: 0, y: 0, size: 250, color: 'rgba(74, 144, 217, 0.1)', intensity: 0.4 },
+    { x:0, y:0, size: 300, color: 'rgba(19, 225, 149, 0.15)', intensity:0.6 },
+    { x:0, y:0, size: 400, color: 'rgba(19, 225, 149, 0.12)', intensity:0.5 },
+    { x:0, y:0, size: 250, color: 'rgba(19, 225, 149, 0.1)', intensity:0.4 },
   ])
 
 const handleMouseMove = useCallback((e) => {
@@ -62,7 +62,7 @@ const handleMouseMove = useCallback((e) => {
   const handleMouseLeave = useCallback(() => {
     setMousePos({ x: 0, y: 0, isInSection: false })
     setParallax({ x: 0, y: 0 })
-    setOrbs((prev) => prev.map(() => ({ x: 0, y: 0, size: 300, color: 'rgba(243, 100, 40, 0.15)', intensity: 0.3 })))
+    setOrbs((prev) => prev.map(() => ({ x: 0, y: 0, size: 300, color: 'rgba(19, 225, 149, 0.15)', intensity: 0.3 })))
   }, [])
 
   useEffect(() => {

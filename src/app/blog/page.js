@@ -9,8 +9,8 @@ export const metadata = {
 }
 
 const blogShapes = [
-  { type: 'cube', size: 45, color: 'purple', position: { top: '15%', right: '8%' }, depth: 0.3, rotate: { x: -15, y: 40 } },
-  { type: 'donut', size: 70, thickness: 12, color: 'orange', position: { bottom: '20%', left: '10%' }, depth: 0.5, rotate: { x: 50, z: 40 } },
+  { type: 'cube', size: 45, color: 'blue', position: { top: '15%', right: '8%' }, depth: 0.3, rotate: { x: -15, y: 40 } },
+  { type: 'donut', size: 70, thickness: 12, color: 'blue', position: { bottom: '20%', left: '10%' }, depth: 0.5, rotate: { x: 50, z: 40 } },
   { type: 'pyramid', size: 35, color: 'blue', position: { top: '60%', right: '12%' }, depth: 0.4, rotate: { x: -12, y: 30 } },
 ]
 
