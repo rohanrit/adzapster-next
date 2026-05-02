@@ -12,6 +12,18 @@ function Year() {
 export default function Footer() {
   return (
     <footer className="footer">
+      {/* Background Grid Pattern */}
+      <div className="footer-grid-pattern">
+        <svg width="100%" height="100%" viewBox="0 0 400 400" fill="none">
+          <defs>
+            <pattern id="footerGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="var(--border)" strokeWidth="1.5" />
+            </pattern>
+          </defs>
+          <rect width="400" height="400" fill="url(#footerGrid)" />
+        </svg>
+      </div>
+
       <div className="container">
         <div className="footer-grid">
           <div className="footer-brand">

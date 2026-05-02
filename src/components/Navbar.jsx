@@ -9,6 +9,7 @@ import ThemeSwitcher from './ThemeSwitcher'
 const links = [
   { href: '/', label: 'Home' },
   { href: '/about-us', label: 'About' },
+  { href: '/services', label: 'Services' },
   { href: '/blog', label: 'Blog' },
   { href: '/careers', label: 'Careers' },
   { href: '/contact-us', label: 'Contact' },
