@@ -9,9 +9,9 @@ export const metadata = {
 }
 
 const contactShapes = [
-  { type: 'cube', size: 50, color: 'blue', position: { top: '10%', left: '8%' }, depth: 0.3, rotate: { x: 20, y: -25 } },
-  { type: 'donut', size: 70, thickness: 12, color: 'blue', position: { bottom: '20%', right: '10%' }, depth: 0.5, rotate: { x: 50, z: 40 } },
-  { type: 'pyramid', size: 45, color: 'blue', position: { top: '60%', left: '15%' }, depth: 0.4, rotate: { x: -12, y: 30 } },
+  { type: 'cube', size: 50, color: 'purple', position: { top: '10%', left: '8%' }, depth: 0.3, rotate: { x: 20, y: -25 } },
+  { type: 'donut', size: 70, thickness: 12, color: 'pink', position: { bottom: '20%', right: '10%' }, depth: 0.5, rotate: { x: 50, z: 40 } },
+  { type: 'pyramid', size: 45, color: 'orange', position: { top: '60%', left: '15%' }, depth: 0.4, rotate: { x: -12, y: 30 } },
 ]
 
 export default function ContactUs() {

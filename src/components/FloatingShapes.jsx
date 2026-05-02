@@ -4,10 +4,20 @@ import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 
 const SHAPE_COLORS = {
-  blue: {
-    border: 'var(--shape-primary-border, rgba(19, 225, 149, 0.4))',
-    bg: 'var(--shape-primary-bg, rgba(19, 225, 149, 0.08))',
-    shadow: 'var(--primary-glow, rgba(19, 225, 149, 0.15))',
+  pink: {
+    border: 'rgba(255, 105, 180, 0.4)',
+    bg: 'rgba(255, 105, 180, 0.08)',
+    shadow: 'rgba(255, 105, 180, 0.15)',
+  },
+  purple: {
+    border: 'rgba(139, 92, 246, 0.4)',
+    bg: 'rgba(139, 92, 246, 0.08)',
+    shadow: 'rgba(139, 92, 246, 0.15)',
+  },
+  orange: {
+    border: 'rgba(249, 115, 22, 0.4)',
+    bg: 'rgba(249, 115, 22, 0.08)',
+    shadow: 'rgba(249, 115, 22, 0.15)',
   },
 }
 
@@ -200,7 +210,7 @@ function CursorTrail({ mousePos }) {
           pointerEvents: 'none',
           zIndex: 9999,
           opacity: 0.8,
-          boxShadow: '0 0 20px var(--primary), 0 0 40px var(--primary)',
+          boxShadow: '0 0 20px rgba(255, 105, 180, 0.5), 0 0 40px rgba(139, 92, 246, 0.5)',
         }}
         className="cursor-trail"
       />
@@ -212,7 +222,7 @@ function CursorTrail({ mousePos }) {
           width: 24,
           height: 24,
           borderRadius: '50%',
-          border: '2px solid var(--primary)',
+          border: '2px solid rgba(139, 92, 246, 0.6)',
           transform: 'translate(-50%, -50%)',
           pointerEvents: 'none',
           zIndex: 9998,

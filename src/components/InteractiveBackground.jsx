@@ -25,11 +25,12 @@ function GradientOrb({ x, y, size, color, intensity }) {
 
 export default function InteractiveSection({ children, className = '', parallaxIntensity = 0.02 }) {
   const sectionRef = useRef(null)
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0, isInSection: false })
+  const [mousePos, setMousePos] = useState({ x:0, y:0, isInSection: false })
+  const [parallax, setParallax] = useState({ x:0, y:0 })
   const [orbs, setOrbs] = useState([
-    { x:0, y:0, size: 300, color: 'rgba(19, 225, 149, 0.15)', intensity:0.6 },
-    { x:0, y:0, size: 400, color: 'rgba(19, 225, 149, 0.12)', intensity:0.5 },
-    { x:0, y:0, size: 250, color: 'rgba(19, 225, 149, 0.1)', intensity:0.4 },
+    { x:0, y:0, size: 300, color: 'rgba(255, 105, 180, 0.15)', intensity:0.6 },
+    { x:0, y:0, size: 400, color: 'rgba(139, 92, 246, 0.12)', intensity:0.5 },
+    { x:0, y:0, size: 250, color: 'rgba(249, 115, 22, 0.1)', intensity:0.4 },
   ])
 
 const handleMouseMove = useCallback((e) => {
@@ -60,9 +61,9 @@ const handleMouseMove = useCallback((e) => {
   }, [parallaxIntensity])
 
   const handleMouseLeave = useCallback(() => {
-    setMousePos({ x: 0, y: 0, isInSection: false })
-    setParallax({ x: 0, y: 0 })
-    setOrbs((prev) => prev.map(() => ({ x: 0, y: 0, size: 300, color: 'rgba(19, 225, 149, 0.15)', intensity: 0.3 })))
+    setMousePos({ x:0, y:0, isInSection: false })
+    setParallax({ x:0, y:0 })
+    setOrbs((prev) => prev.map(() => ({ x:0, y:0, size: 300, color: 'rgba(255, 105, 180, 0.15)', intensity: 0.3 })))
   }, [])
 
   useEffect(() => {
@@ -140,7 +141,7 @@ const handleMouseMove = useCallback((e) => {
         style={{
           position: 'relative',
           zIndex: 1,
-          transform: `translate3d(${parallaxX}px, ${parallaxY}px, 0)`,
+          transform: `translate3d(${parallax.x}px, ${parallax.y}px, 0)`,
           transition: 'transform 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
         }}
       >

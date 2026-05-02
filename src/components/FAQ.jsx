@@ -7,21 +7,21 @@ import TiltCard from './TiltCard'
 import SectionHeading from './SectionHeading'
 
 const shapes = [
-  { type: 'cube', size: 70, color: 'blue', position: { top: '10%', right: '5%' }, depth: 0.3 },
-  { type: 'donut', size: 90, thickness: 14, color: 'blue', position: { bottom: '15%', left: '4%' }, depth: 0.4 },
-  { type: 'pyramid', size: 50, color: 'blue', position: { top: '5%', left: '12%' }, depth: 0.25, rotate: { x: -10, y: 30 } },
-  { type: 'donut', size: 55, thickness: 9, color: 'blue', position: { top: '20%', right: '15%' }, depth: 0.3, rotate: { x: 40, z: 20 } },
-  { type: 'cube', size: 45, color: 'blue', position: { bottom: '25%', right: '10%' }, depth: 0.22, rotate: { x: 15, y: -25 } },
-  { type: 'pyramid', size: 40, color: 'blue', position: { top: '50%', left: '8%' }, depth: 0.18, rotate: { x: 5, y: 35 } },
-  { type: 'donut', size: 45, thickness: 7, color: 'blue', position: { bottom: '35%', left: '15%' }, depth: 0.2, rotate: { x: 30, z: 25 } },
-  { type: 'cube', size: 35, color: 'blue', position: { top: '65%', right: '12%' }, depth: 0.15, rotate: { x: -20, y: 20 } },
-  { type: 'pyramid', size: 55, color: 'blue', position: { bottom: '5%', right: '20%' }, depth: 0.12, rotate: { x: 10, y: -15 } },
-  { type: 'donut', size: 35, thickness: 5, color: 'blue', position: { top: '75%', left: '18%' }, depth: 0.1, rotate: { x: 25, z: 30 } },
-  { type: 'cube', size: 25, color: 'blue', position: { bottom: '55%', left: '10%' }, depth: 0.08, rotate: { x: -15, y: 25 } },
-  { type: 'pyramid', size: 28, color: 'blue', position: { top: '35%', right: '10%' }, depth: 0.15, rotate: { x: 10, y: -20 } },
-  { type: 'donut', size: 28, thickness: 4, color: 'blue', position: { bottom: '45%', right: '15%' }, depth: 0.08, rotate: { x: 20, z: 25 } },
-  { type: 'cube', size: 22, color: 'blue', position: { top: '80%', left: '8%' }, depth: 0.1, rotate: { x: -10, y: 30 } },
-  { type: 'pyramid', size: 20, color: 'blue', position: { bottom: '60%', right: '8%' }, depth: 0.06, rotate: { x: 5, y: 15 } },
+  { type: 'cube', size: 70, color: 'orange', position: { top: '10%', right: '5%' }, depth: 0.3 },
+  { type: 'donut', size: 90, thickness: 14, color: 'pink', position: { bottom: '15%', left: '4%' }, depth: 0.4 },
+  { type: 'pyramid', size: 50, color: 'purple', position: { top: '5%', left: '12%' }, depth: 0.25, rotate: { x: -10, y: 30 } },
+  { type: 'donut', size: 55, thickness: 9, color: 'orange', position: { top: '20%', right: '15%' }, depth: 0.3, rotate: { x: 40, z: 20 } },
+  { type: 'cube', size: 45, color: 'pink', position: { bottom: '25%', right: '10%' }, depth: 0.22, rotate: { x: 15, y: -25 } },
+  { type: 'pyramid', size: 40, color: 'purple', position: { top: '50%', left: '8%' }, depth: 0.18, rotate: { x: 5, y: 35 } },
+  { type: 'donut', size: 45, thickness: 7, color: 'orange', position: { bottom: '35%', left: '15%' }, depth: 0.2, rotate: { x: 30, z: 25 } },
+  { type: 'cube', size: 35, color: 'pink', position: { top: '65%', right: '12%' }, depth: 0.15, rotate: { x: -20, y: 20 } },
+  { type: 'pyramid', size: 55, color: 'purple', position: { bottom: '5%', right: '20%' }, depth: 0.12, rotate: { x: 10, y: -15 } },
+  { type: 'donut', size: 35, thickness: 5, color: 'orange', position: { top: '75%', left: '18%' }, depth: 0.1, rotate: { x: 25, z: 30 } },
+  { type: 'cube', size: 25, color: 'pink', position: { bottom: '55%', left: '10%' }, depth: 0.08, rotate: { x: -15, y: 25 } },
+  { type: 'pyramid', size: 28, color: 'purple', position: { top: '35%', right: '10%' }, depth: 0.15, rotate: { x: 10, y: -20 } },
+  { type: 'donut', size: 28, thickness: 4, color: 'orange', position: { bottom: '45%', right: '15%' }, depth: 0.08, rotate: { x: 20, z: 25 } },
+  { type: 'cube', size: 22, color: 'pink', position: { top: '80%', left: '8%' }, depth: 0.1, rotate: { x: -10, y: 30 } },
+  { type: 'pyramid', size: 20, color: 'purple', position: { bottom: '60%', right: '8%' }, depth: 0.06, rotate: { x: 5, y: 15 } },
 ]
 
 const faqs = [

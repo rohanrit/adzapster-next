@@ -9,9 +9,9 @@ export const metadata = {
 }
 
 const legalShapes = [
-  { type: 'cube', size: 45, color: 'blue', position: { top: '12%', right: '10%' }, depth: 0.3, rotate: { x: -15, y: 40 } },
-  { type: 'donut', size: 65, thickness: 10, color: 'blue', position: { bottom: '25%', left: '8%' }, depth: 0.5, rotate: { x: 50, z: 40 } },
-  { type: 'pyramid', size: 38, color: 'blue', position: { top: '65%', right: '15%' }, depth: 0.4, rotate: { x: -12, y: 30 } },
+  { type: 'cube', size: 45, color: 'pink', position: { top: '12%', right: '10%' }, depth: 0.3, rotate: { x: -15, y: 40 } },
+  { type: 'donut', size: 65, thickness: 10, color: 'purple', position: { bottom: '25%', left: '8%' }, depth: 0.5, rotate: { x: 50, z: 40 } },
+  { type: 'pyramid', size: 38, color: 'orange', position: { top: '65%', right: '15%' }, depth: 0.4, rotate: { x: -12, y: 30 } },
 ]
 
 export default function LegalPolicies() {

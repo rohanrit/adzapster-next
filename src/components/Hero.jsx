@@ -6,14 +6,14 @@ import gsap from 'gsap'
 import FloatingShapes from './FloatingShapes'
 
 const heroShapes = [
-  { type: 'cube', size: 80, color: 'blue', position: { top: '12%', left: '6%' }, depth: 0.4, rotate: { x: -25, y: 35 } },
-  { type: 'donut', size: 130, thickness: 20, color: 'blue', position: { top: '18%', right: '8%' }, depth: 0.6, rotate: { x: 55, z: 25 } },
-  { type: 'pyramid', size: 75, color: 'blue', position: { bottom: '22%', left: '12%' }, depth: 0.35, rotate: { x: -15, y: 20 } },
-  { type: 'cube', size: 55, color: 'blue', position: { bottom: '15%', right: '15%' }, depth: 0.5, rotate: { x: 15, y: -20 } },
-  { type: 'donut', size: 75, thickness: 12, color: 'blue', position: { top: '55%', left: '3%' }, depth: 0.25, rotate: { x: 70, z: 45 } },
-  { type: 'pyramid', size: 60, color: 'blue', position: { top: '8%', right: '30%' }, depth: 0.45, rotate: { x: -5, y: 40 } },
-  { type: 'blob', size: 900, color: 'blue', position: { top: '-10%', left: '-5%' }, depth: 0.1, opacity: 0.12 },
-  { type: 'blob', size: 750, color: 'blue', position: { bottom: '10%', right: '-5%' }, depth: 0.15, opacity: 0.1 },
+  { type: 'cube', size: 80, color: 'pink', position: { top: '12%', left: '6%' }, depth: 0.4, rotate: { x: -25, y: 35 } },
+  { type: 'donut', size: 130, thickness: 20, color: 'purple', position: { top: '18%', right: '8%' }, depth: 0.6, rotate: { x: 55, z: 25 } },
+  { type: 'pyramid', size: 75, color: 'orange', position: { bottom: '22%', left: '12%' }, depth: 0.35, rotate: { x: -15, y: 20 } },
+  { type: 'cube', size: 55, color: 'purple', position: { bottom: '15%', right: '15%' }, depth: 0.5, rotate: { x: 15, y: -20 } },
+  { type: 'donut', size: 75, thickness: 12, color: 'pink', position: { top: '55%', left: '3%' }, depth: 0.25, rotate: { x: 70, z: 45 } },
+  { type: 'pyramid', size: 60, color: 'orange', position: { top: '8%', right: '30%' }, depth: 0.45, rotate: { x: -5, y: 40 } },
+  { type: 'blob', size: 900, color: 'pink', position: { top: '-10%', left: '-5%' }, depth: 0.1, opacity: 0.12 },
+  { type: 'blob', size: 750, color: 'purple', position: { bottom: '10%', right: '-5%' }, depth: 0.15, opacity: 0.1 },
 ]
 
 const stats = [
@@ -177,10 +177,9 @@ export default function Hero() {
             {/* Floating Metric Nodes */}
             <div className="engine-nodes">
               {[
-                { label: 'CPC', val: '$0.12', color: 'blue', pos: { top: '15%', left: '15%' }, delay: 0 },
-                { label: 'ROAS', val: '12.4x', color: 'blue', pos: { top: '15%', right: '15%' }, delay: 0.5 },
-                { label: 'CTR', val: '4.8%', color: 'blue', pos: { bottom: '15%', left: '15%' }, delay: 1 },
-                { label: 'VCR', val: '92%', color: 'blue', pos: { bottom: '15%', right: '15%' }, delay: 1.5 },
+                { label: 'CPC', val: '$0.12', color: 'pink', pos: { top: '15%', left: '15%' }, delay: 0 },
+                { label: 'ROAS', val: '12.4x', color: 'purple', pos: { top: '15%', right: '15%' }, delay: 0.5 },
+                { label: 'VCR', val: '92%', color: 'orange', pos: { bottom: '15%', right: '15%' }, delay: 1.5 },
               ].map((node, i) => (
                 <motion.div
                   key={node.label}

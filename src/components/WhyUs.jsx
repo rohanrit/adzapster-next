@@ -6,22 +6,22 @@ import FloatingShapes from './FloatingShapes'
 import SectionHeading from './SectionHeading'
 
 const shapes = [
-  { type: 'pyramid', size: 80, color: 'blue', position: { top: '10%', left: '5%' }, depth: 0.35 },
-  { type: 'donut', size: 75, thickness: 12, color: 'blue', position: { bottom: '10%', right: '6%' }, depth: 0.45 },
-  { type: 'cube', size: 55, color: 'blue', position: { top: '5%', right: '12%' }, depth: 0.3, rotate: { x: -20, y: 30 } },
-  { type: 'donut', size: 55, thickness: 9, color: 'blue', position: { top: '30%', left: '8%' }, depth: 0.25, rotate: { x: 35, z: 25 } },
-  { type: 'pyramid', size: 45, color: 'blue', position: { bottom: '25%', left: '20%' }, depth: 0.32, rotate: { x: -15, y: 40 } },
-  { type: 'cube', size: 40, color: 'blue', position: { top: '50%', right: '3%' }, depth: 0.22, rotate: { x: 10, y: -25 } },
-  { type: 'donut', size: 45, thickness: 7, color: 'blue', position: { bottom: '35%', right: '15%' }, depth: 0.28, rotate: { x: 50, z: 15 } },
-  { type: 'pyramid', size: 35, color: 'blue', position: { top: '15%', left: '18%' }, depth: 0.18, rotate: { x: -5, y: 20 } },
-  { type: 'cube', size: 30, color: 'blue', position: { top: '65%', left: '10%' }, depth: 0.2, rotate: { x: -15, y: 35 } },
-  { type: 'donut', size: 35, thickness: 5, color: 'blue', position: { top: '40%', right: '10%' }, depth: 0.15, rotate: { x: 25, z: 30 } },
-  { type: 'pyramid', size: 50, color: 'blue', position: { top: '70%', right: '20%' }, depth: 0.12, rotate: { x: 10, y: -30 } },
-  { type: 'cube', size: 28, color: 'blue', position: { bottom: '45%', right: '15%' }, depth: 0.1, rotate: { x: -20, y: 25 } },
-  { type: 'donut', size: 30, thickness: 4, color: 'blue', position: { top: '60%', left: '20%' }, depth: 0.12, rotate: { x: 15, z: 20 } },
-  { type: 'pyramid', size: 25, color: 'blue', position: { bottom: '40%', left: '15%' }, depth: 0.15, rotate: { x: 5, y: 15 } },
-  { type: 'cube', size: 22, color: 'blue', position: { top: '80%', left: '25%' }, depth: 0.1, rotate: { x: -10, y: 30 } },
-  { type: 'donut', size: 28, thickness: 4, color: 'blue', position: { bottom: '55%', left: '10%' }, depth: 0.08, rotate: { x: 20, z: 25 } },
+  { type: 'pyramid', size: 80, color: 'pink', position: { top: '10%', left: '5%' }, depth: 0.35 },
+  { type: 'donut', size: 75, thickness: 12, color: 'purple', position: { bottom: '10%', right: '6%' }, depth: 0.45 },
+  { type: 'cube', size: 55, color: 'orange', position: { top: '5%', right: '12%' }, depth: 0.3, rotate: { x: -20, y: 30 } },
+  { type: 'donut', size: 55, thickness: 9, color: 'pink', position: { top: '30%', left: '8%' }, depth: 0.25, rotate: { x: 35, z: 25 } },
+  { type: 'pyramid', size: 45, color: 'purple', position: { bottom: '25%', left: '20%' }, depth: 0.32, rotate: { x: -15, y: 40 } },
+  { type: 'cube', size: 40, color: 'orange', position: { top: '50%', right: '3%' }, depth: 0.22, rotate: { x: 10, y: -25 } },
+  { type: 'donut', size: 45, thickness: 7, color: 'pink', position: { bottom: '35%', right: '15%' }, depth: 0.28, rotate: { x: 50, z: 15 } },
+  { type: 'pyramid', size: 35, color: 'purple', position: { top: '15%', left: '18%' }, depth: 0.18, rotate: { x: -5, y: 20 } },
+  { type: 'cube', size: 30, color: 'orange', position: { top: '65%', left: '10%' }, depth: 0.2, rotate: { x: -15, y: 35 } },
+  { type: 'donut', size: 35, thickness: 5, color: 'pink', position: { top: '40%', right: '10%' }, depth: 0.15, rotate: { x: 25, z: 30 } },
+  { type: 'pyramid', size: 50, color: 'purple', position: { top: '70%', right: '20%' }, depth: 0.12, rotate: { x: 10, y: -30 } },
+  { type: 'cube', size: 28, color: 'orange', position: { bottom: '45%', right: '15%' }, depth: 0.1, rotate: { x: -20, y: 25 } },
+  { type: 'donut', size: 30, thickness: 4, color: 'pink', position: { top: '60%', left: '20%' }, depth: 0.12, rotate: { x: 15, z: 20 } },
+  { type: 'pyramid', size: 25, color: 'purple', position: { bottom: '40%', left: '15%' }, depth: 0.15, rotate: { x: 5, y: 15 } },
+  { type: 'cube', size: 22, color: 'orange', position: { top: '80%', left: '25%' }, depth: 0.1, rotate: { x: -10, y: 30 } },
+  { type: 'donut', size: 28, thickness: 4, color: 'pink', position: { bottom: '55%', left: '10%' }, depth: 0.08, rotate: { x: 20, z: 25 } },
 ]
 
 const items = [
