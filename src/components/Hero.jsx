@@ -92,7 +92,7 @@ export default function Hero() {
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
             </a>
             <a href="#contact" className="btn btn-outline" id="heroCta2">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z" /></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2c-8.36.87-16.36-5.43-16.36-13.79a2 2 0 0 1 2-2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11l1.27 1.27a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
               <span>Book Free Call</span>
             </a>
           </motion.div>
@@ -179,6 +179,7 @@ export default function Hero() {
               {[
                 { label: 'CPC', val: '$0.12', color: 'pink', pos: { top: '15%', left: '15%' }, delay: 0 },
                 { label: 'ROAS', val: '12.4x', color: 'purple', pos: { top: '15%', right: '15%' }, delay: 0.5 },
+                { label: 'CTR', val: '4.8%', color: 'blue', pos: { bottom: '15%', left: '15%' }, delay: 1 },
                 { label: 'VCR', val: '92%', color: 'orange', pos: { bottom: '15%', right: '15%' }, delay: 1.5 },
               ].map((node, i) => (
                 <motion.div

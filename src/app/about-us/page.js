@@ -2,8 +2,8 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
 export const metadata = {
-  title: 'About Us | AdTech Dynamics',
-  description: 'AdTech Dynamics bridges the gap between massive algorithmic data and human-centric marketing.',
+  title: 'About Us | Adzapster',
+  description: 'Adzapster bridges the gap between massive algorithmic data and human-centric marketing.',
 }
 
 import FloatingShapes from '@/components/FloatingShapes'
@@ -22,9 +22,9 @@ export default function AboutUs() {
               <span className="section-tag">Who We Are</span>
               <SectionHeading>
                 About
-                <span className="gradient-text"> AdTech Dynamics</span>
+                <span className="gradient-text"> Adzapster</span>
               </SectionHeading>
-              <p className="section-subtitle">AdTech Dynamics bridges the gap between massive algorithmic data and human-centric marketing. We empower global brands with precision engineering for the programmatic era.</p>
+              <p className="section-subtitle">Adzapster bridges the gap between massive algorithmic data and human-centric marketing. We empower global brands with precision engineering for the programmatic era.</p>
             </div>
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center about-identity">
               <div className="lg:col-span-7 flex flex-col gap-md">
@@ -162,7 +162,7 @@ export default function AboutUs() {
               <div className="absolute bottom-0 left-0 w-64 h-64 bg-secondary/20 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl"></div>
               <h2 className="font-display-lg text-display-lg mb-md relative z-10">Ready to accelerate your dynamic campaigns?</h2>
               <p className="font-body-lg text-body-lg opacity-90 max-w-2xl mb-lg relative z-10">
-                Join over 500+ global brands leveraging AdTech Dynamics to scale their programmatic presence with absolute precision.
+                Join over 500+ global brands leveraging Adzapster to scale their programmatic presence with absolute precision.
               </p>
               <div className="flex flex-wrap gap-md relative z-10">
                 <button className="bg-white text-primary-container font-bold px-8 py-4 rounded-lg hover:bg-surface-container transition-all active:scale-95 shadow-lg">

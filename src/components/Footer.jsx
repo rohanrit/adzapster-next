@@ -76,7 +76,7 @@ export default function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <p>&copy; <Year /> AdTech Dynamics. All rights reserved. Precision in Every Impression.</p>
+          <p>&copy; <Year /> Adzapster. All rights reserved. Precision in Every Impression.</p>
         </div>
       </div>
     </footer>

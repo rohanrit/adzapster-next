@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import ThemeSwitcher from './ThemeSwitcher'
 
 const links = [
   { href: '/', label: 'Home' },
@@ -55,20 +56,24 @@ export default function Navbar() {
               <Link href="/contact-us" className="nav-cta">
                 Get Started
               </Link>
+              <ThemeSwitcher />
             </div>
           </div>
         </motion.nav>
       </div>
 
-      {/* Mobile Top Header */}
-      <div className="mobile-top-header mobile-only">
-        <Link href="/" className="nav-logo">
-          <img src="/images/adzapster-logo-sm.png" alt="Adzapster Logo" style={{ height: '40px', width: 'auto' }} />
-        </Link>
-        <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
-          <span className="material-symbols-outlined">{menuOpen ? 'close' : 'menu'}</span>
-        </button>
-      </div>
+       {/* Mobile Top Header */}
+       <div className="mobile-top-header mobile-only">
+         <Link href="/" className="nav-logo">
+           <img src="/images/adzapster-logo-sm.png" alt="Adzapster Logo" style={{ height: '40px', width: 'auto' }} />
+         </Link>
+         <div className="mobile-header-actions">
+           <ThemeSwitcher />
+           <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
+             <span className="material-symbols-outlined">{menuOpen ? 'close' : 'menu'}</span>
+           </button>
+         </div>
+       </div>
 
       {/* Mobile Menu Overlay */}
       <AnimatePresence>

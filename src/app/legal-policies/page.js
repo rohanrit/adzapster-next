@@ -5,7 +5,7 @@ import TiltCard from '@/components/TiltCard'
 import SectionHeading from '@/components/SectionHeading'
 
 export const metadata = {
-  title: 'Legal Policies | AdTech Dynamics',
+  title: 'Legal Policies | Adzapster',
   description: 'Our commitment to data privacy, ethical advertising, and regulatory compliance.',
 }
 
@@ -63,7 +63,7 @@ export default function LegalPolicies() {
                 </div>
                 <div className="font-body-md text-tertiary space-y-md">
                   <p>Last Updated: October 24, 2024</p>
-                  <p>AdTech Dynamics operates with a "Privacy by Design" philosophy. This section outlines how we collect, process, and protect data across our programmatic ecosystem.</p>
+                  <p>Adzapster operates with a "Privacy by Design" philosophy. This section outlines how we collect, process, and protect data across our programmatic ecosystem.</p>
                   <h3 className="font-headline-md text-on-background text-body-lg">1. Data Collection</h3>
                   <p>We collect non-personally identifiable information (Non-PII) to facilitate real-time bidding, including device type, operating system, and IP address (anonymized).</p>
                   <h3 className="font-headline-md text-on-background text-body-lg">2. Data Usage</h3>
@@ -81,7 +81,7 @@ export default function LegalPolicies() {
                 </div>
                 <div className="font-body-md text-tertiary space-y-md">
                   <h3 className="font-headline-md text-on-background text-body-lg">1. Platform Usage</h3>
-                  <p>By accessing the AdTech Dynamics DSP/SSP, users agree to abide by our fair-use policy. Automated scraping or reverse engineering of our bidding algorithms is strictly prohibited.</p>
+                  <p>By accessing the Adzapster DSP/SSP, users agree to abide by our fair-use policy. Automated scraping or reverse engineering of our bidding algorithms is strictly prohibited.</p>
                   <h3 className="font-headline-md text-on-background text-body-lg">2. Financial Terms</h3>
                   <p>Net-30 payment terms apply to all managed service contracts unless otherwise specified in the signed Insertion Order (IO).</p>
                 </div>

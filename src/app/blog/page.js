@@ -5,7 +5,7 @@ import TiltCard from '@/components/TiltCard'
 import SectionHeading from '@/components/SectionHeading'
 
 export const metadata = {
-  title: 'Blog | AdTech Dynamics',
+  title: 'Blog | Adzapster',
   description: 'Engineering the Future of Programmatic Advertising. Insights and innovation from our team.',
 }
 

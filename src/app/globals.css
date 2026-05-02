@@ -313,18 +313,19 @@ button {
 
 /* ─── CARD BASE ────────────────────────────────────────── */
 .card {
-  background: var(--bg-card);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-card);
-  transition: all .5s var(--ease-out);
-  position: relative;
-  overflow: hidden;
-  transform-style: preserve-3d;
-  perspective: 1000px;
-  z-index: 1;
+  background:var(--bg-card);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border:1px solid var(--border);
+  border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-card);
+  transition:all .5s var(--ease-out);
+  position:relative;
+  overflow:hidden;
+  transform-style:preserve-3d;
+  perspective:1000px;
+  z-index:1;
+  padding:36px 28px;
 }
 
 .card:hover::before {
@@ -715,6 +716,12 @@ button {
   border-radius: 100px;
   z-index: 1000;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.mobile-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 [data-theme='dark'] .mobile-top-header {
@@ -1155,7 +1162,7 @@ button {
   justify-content: center;
   width: 64px;
   height: 64px;
-  background: linear-gradient(135deg, var(--primary) 0%, var(--accent-purple) 100%);
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
   border-radius: 50%;
 }
 
@@ -1228,7 +1235,7 @@ button {
 .flow-icon {
   width: 64px;
   height: 64px;
-  background: linear-gradient(135deg, var(--pink) 0%, var(--purple) 100%);
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1288,14 +1295,14 @@ button {
 }
 
 .service-icon {
-  margin-bottom: 20px;
-  width: 64px;
-  height: 64px;
-  background: linear-gradient(135deg, var(--pink) 0%, var(--purple) 100%);
-  border-radius: 50%;
-  display: flex;
+  margin-bottom:20px;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  width:64px;
+  height:64px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  border-radius:50%;
 }
 
 .service-icon svg {
@@ -1344,7 +1351,7 @@ button {
   transform: translateY(-50%);
   width: 16px;
   height: 16px;
-  background: linear-gradient(135deg, var(--pink) 0%, var(--purple) 100%);
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1444,7 +1451,7 @@ button {
   flex-shrink: 0;
   width: 58px;
   height: 58px;
-  background: linear-gradient(135deg, var(--pink), var(--purple));
+  background:linear-gradient(135deg, var(--primary), var(--primary-dark));
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1472,7 +1479,7 @@ button {
   flex-shrink: 0;
   width: 52px;
   height: 52px;
-  background: linear-gradient(135deg, var(--pink) 0%, var(--purple) 100%);
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1551,26 +1558,26 @@ button {
 }
 
 .perk-icon {
-  margin-bottom: 20px;
+  margin-bottom:20px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 64px;
-  height: 64px;
-  background: linear-gradient(135deg, var(--primary) 0%, var(--accent-purple) 100%);
-  border-radius: 50%;
+  width:64px;
+  height:64px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  border-radius:50%;
 }
 
 
 .product-icon {
-  margin-bottom: 20px;
+  margin-bottom:20px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 64px;
-  height: 64px;
-  background: linear-gradient(135deg, var(--primary) 0%, var(--accent-purple) 100%);
-  border-radius: 50%;
+  width:64px;
+  height:64px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  border-radius:50%;
 }
 
 .product-icon svg {
@@ -1644,7 +1651,7 @@ button {
   justify-content: center;
   width: 64px;
   height: 64px;
-  background: linear-gradient(135deg, var(--primary) 0%, var(--accent-purple) 100%);
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
   border-radius: 50%;
 }
 

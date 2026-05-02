@@ -5,7 +5,7 @@ import TiltCard from '@/components/TiltCard'
 import SectionHeading from '@/components/SectionHeading'
 
 export const metadata = {
-  title: 'Careers | AdTech Dynamics',
+  title: 'Careers | Adzapster',
   description: 'Join a team of visionaries, data scientists, and engineers building the world\'s fastest real-time bidding infrastructure.',
 }
 
@@ -45,7 +45,7 @@ export default function Careers() {
             <img 
               className="relative w-full h-[400px] object-cover rounded-2xl shadow-xl border border-outline-variant/40 grayscale-[20%] group-hover:grayscale-0 transition-all duration-700"
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUEPsLx0i3q6dXMou-PNc-wHj_HtXD6Jy6bVoH-FlGvfbfbhaHImfxgb22ZSI4HW8ZsKIlPnx5fC486XuGJtcRC8E9DJ79pfecYm80uGUmeSJMdI1a4XL2w-GCAJR4tv1w-MYyLXXEBQCIPf4zSdSHbsXDWH328P2BnNmYPr8YpESFIFA449XThqDNPoKyn5BPKhN8z8ZSODS20oOrT4rwolqwqT-JNLm-9Fy4tN_2XVvfdBu8HjsMkHeGOG6l3MudWseZAcU8Ew4Z"
-              alt="AdTech Dynamics Team"
+              alt="Adzapster Team"
             />
           </div>
         </div>

@@ -1,6 +1,5 @@
 import { Space_Grotesk, Manrope } from 'next/font/google'
 import './globals.css'
-import ThemeSwitcher from '@/components/ThemeSwitcher'
 import AnimatedDots from '@/components/AnimatedDots'
 import CursorTrail from '@/components/CursorTrail'
 
@@ -18,8 +17,8 @@ const manrope = Manrope({
 
 export const metadata = {
   title: {
-    default: 'AdTech Dynamics — Precision Programmatic Advertising',
-    template: '%s | AdTech Dynamics'
+    default: 'Adzapster — Precision Programmatic Advertising',
+    template: '%s | Adzapster'
   },
   description:
     'Engineering the future of programmatic advertising. Data-driven precision, high-velocity bidding, and ethical performance marketing.',
@@ -29,7 +28,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${manrope.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${spaceGrotesk.variable} ${manrope.variable}`} suppressHydrationWarning data-scroll-behavior="smooth">
       <head>
         <link
           rel="stylesheet"
@@ -39,7 +38,6 @@ export default function RootLayout({ children }) {
       <body suppressHydrationWarning>
         <CursorTrail />
         <AnimatedDots />
-        <ThemeSwitcher />
         {children}
       </body>
     </html>

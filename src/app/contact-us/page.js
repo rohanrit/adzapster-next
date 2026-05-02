@@ -5,7 +5,7 @@ import TiltCard from '@/components/TiltCard'
 import SectionHeading from '@/components/SectionHeading'
 
 export const metadata = {
-  title: 'Contact Us | AdTech Dynamics',
+  title: 'Contact Us | Adzapster',
   description: 'Let\'s engineer your programmatic future. Our specialists are ready to help you optimize campaign performance.',
 }
 
@@ -107,7 +107,7 @@ export default function ContactUs() {
                   </div>
                   <div>
                     <p className="font-label-md text-label-md text-primary">Technical Assistance</p>
-                    <p className="font-body-md text-body-md text-on-background">support@adtechdynamics.com</p>
+                    <p className="font-body-md text-body-md text-on-background">support@adzapster.com</p>
                     <p className="font-label-sm text-label-sm text-tertiary mt-xs">24/7 Priority support for Enterprise clients.</p>
                   </div>
                 </div>
