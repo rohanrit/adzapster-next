@@ -25,58 +25,57 @@ const shapes = [
 ]
 
 const products = [
-  { 
-    badge: 'AI', 
+  {
     icon: (
-      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="2" y="2" width="20" height="20" rx="4" stroke="var(--icon-color)" strokeWidth="1.5" />
+        <path d="M12 18V12M12 12L9 15M12 12L15 15" stroke="var(--icon-color)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M16 6L12 10L8 6" stroke="var(--icon-color)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        <circle cx="12" cy="12" r="9" stroke="var(--icon-color)" strokeWidth="1" strokeDasharray="2 2" />
+      </svg>
+    ),
+    title: 'AI Targeting Platform',
+    desc: 'Contextual + behavioral targeting powered by machine learning. Reach the right user at the right moment.',
+    features: ['Real-time bid optimization', 'Contextual targeting', 'Behavioral segmentation'],
+  },
+  {
+    icon: (
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="12" cy="12" r="10" stroke="var(--icon-color)" strokeWidth="1.5" />
-        <path d="M12 6V18M6 12H18" stroke="var(--icon-color)" strokeWidth="1.5" strokeLinecap="round" />
-        <circle cx="12" cy="12" r="4" stroke="var(--icon-color)" strokeWidth="1.5" />
-        <path d="M12 12L16 16" stroke="var(--icon-color)" strokeWidth="1" />
-        <circle cx="12" cy="12" r="1.5" fill="var(--icon-color)" />
+        <path d="M15 12L10 15L15 12L15 12Z" fill="var(--icon-color)" />
+        <path d="M2 12H5M19 12H22M12 2V5M12 19V22" stroke="var(--icon-color)" strokeWidth="1.5" strokeLinecap="round" />
+        <path d="M12 12L18 18" stroke="var(--icon-color)" strokeWidth="1" strokeDasharray="3 3" />
       </svg>
-    ), 
-    title: 'AI Targeting Platform', 
-    desc: 'Contextual + behavioral targeting powered by machine learning. Reach the right user at the right moment.' 
+    ),
+    title: 'Campaign Analytics Dashboard',
+    desc: 'Real-time reporting with granular insights. Track impressions, clicks, conversions, and ROAS in one view.',
+    features: ['Real-time reporting', 'Granular insights', 'Multi-channel tracking'],
   },
-  { 
-    badge: 'Analytics', 
+  {
     icon: (
-      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="2" y="3" width="20" height="15" rx="2" stroke="var(--icon-color)" strokeWidth="1.5" />
-        <path d="M6 14L9 11L12 14L18 8" stroke="var(--icon-color)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M2 18H22" stroke="var(--icon-color)" strokeWidth="1.5" strokeLinecap="round" />
-        <rect x="9" y="20" width="6" height="2" rx="1" fill="var(--icon-color)" />
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="3" y="4" width="18" height="12" rx="2" stroke="var(--icon-color)" strokeWidth="1.5" />
+        <path d="M7 20L12 16L17 20" stroke="var(--icon-color)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        <circle cx="12" cy="10" r="3" fill="var(--icon-color)" fillOpacity="0.2" stroke="var(--icon-color)" strokeWidth="1" />
+        <rect x="9" y="13" width="6" height="1" rx="0.5" fill="var(--icon-color)" />
       </svg>
-    ), 
-    title: 'Campaign Analytics Dashboard', 
-    desc: 'Real-time reporting with granular insights. Track impressions, clicks, conversions, and ROAS in one view.' 
+    ),
+    title: 'Audience Intelligence Engine',
+    desc: 'Predictive audience segmentation. Build lookalike models and discover high-value user cohorts.',
+    features: ['Lookalike modeling', 'Predictive segmentation', 'High-value cohorts'],
   },
-  { 
-    badge: 'DMP', 
+  {
     icon: (
-      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="9" cy="7" r="4" stroke="var(--icon-color)" strokeWidth="1.5" />
-        <path d="M17 21V19C17 16.7909 15.2091 15 13 15H5C2.79086 15 1 16.7909 1 19V21" stroke="var(--icon-color)" strokeWidth="1.5" />
-        <circle cx="18" cy="12" r="3" stroke="var(--icon-color)" strokeWidth="1.5" />
-        <path d="M23 21V20C23 18.3431 21.6569 17 20 17H16" stroke="var(--icon-color)" strokeWidth="1.5" strokeLinecap="round" />
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="var(--icon-color)" strokeWidth="1.5" />
+        <path d="M2 12L12 17L22 12" stroke="var(--icon-color)" strokeWidth="1.5" />
+        <path d="M2 17L12 22L22 17" stroke="var(--icon-color)" strokeWidth="1.5" />
+        <circle cx="12" cy="7" r="2" fill="var(--icon-color)" />
       </svg>
-    ), 
-    title: 'Audience Intelligence Engine', 
-    desc: 'Predictive audience segmentation. Build lookalike models and discover high-value user cohorts.' 
-  },
-  { 
-    badge: 'CTV', 
-    icon: (
-      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="2" y="7" width="20" height="13" rx="2" stroke="var(--icon-color)" strokeWidth="1.5" />
-        <path d="M7 21L12 17L17 21" stroke="var(--icon-color)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        <rect x="9" y="10" width="6" height="6" rx="1" stroke="var(--icon-color)" strokeWidth="1.5" strokeDasharray="2 2" />
-        <circle cx="12" cy="13" r="1.5" fill="var(--icon-color)" />
-      </svg>
-    ), 
-    title: 'CTV Ad Builder', 
-    desc: 'Create interactive CTV ad formats with QR overlays, shoppable elements, and dynamic creatives.' 
+    ),
+    title: 'CTV Ad Builder',
+    desc: 'Create interactive CTV ad formats with QR overlays, shoppable elements, and dynamic creatives.',
+    features: ['Interactive CTV formats', 'QR overlays', 'Shoppable elements'],
   },
 ]
 
@@ -125,12 +124,13 @@ export default function Products() {
         <div className="products-carousel">
           <div ref={trackRef} className="carousel-track" style={{ transform: `translateX(-${offset()}px)` }}>
             {products.map((p, i) => (
-              <TiltCard key={p.title} className="product-card card multi-gradient-card" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1, duration: 0.6 }}>
-                <div className="product-card-badge">{p.badge}</div>
+              <TiltCard key={p.title} className="product-card card multi-gradient-card" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08, duration: 0.6 }}>
                 <div className="product-icon">{p.icon}</div>
                 <h3>{p.title}</h3>
                 <p>{p.desc}</p>
-                <a href="#contact" className="product-link">Learn More →</a>
+                <ul className="service-features">
+                  {p.features.map((f) => <li key={f}>{f}</li>)}
+                </ul>
               </TiltCard>
             ))}
           </div>

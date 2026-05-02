@@ -1112,7 +1112,7 @@ button {
   justify-content: center;
   width: 64px;
   height: 64px;
-  background: linear-gradient(135deg, var(--pink) 0%, var(--purple) 100%);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent-purple) 100%);
   border-radius: 50%;
 }
 
@@ -1121,11 +1121,26 @@ button {
 }
 
 .about-card-number {
+  display: block;
   font-family: var(--font-heading);
   font-size: 2.5rem;
   font-weight: 700;
   color: var(--primary);
+  line-height: 1;
   margin-bottom: 4px;
+}
+
+.about-card-label {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+
+.about-card-desc {
+  font-size: .85rem;
+  line-height: 1.6;
 }
 
 .about-card-label {
@@ -1465,28 +1480,54 @@ button {
 }
 
 .product-card-badge {
+  font-size: .75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--primary);
+  background: var(--shape-primary-bg);
+  border: 1px solid var(--shape-primary-border);
+  padding: 6px 20px;
+  border-radius: 100px;    
+  margin-bottom: 20px;
+  width: fit-content;
+}
+
+.blog-card-badge {
   font-size: .7rem;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: var(--primary);
   background: var(--shape-primary-bg);
   border: 1px solid var(--shape-primary-border);
   padding: 4px 12px;
-  border-radius: 100px;    
-  margin-bottom: 20px;
+  border-radius: 100px;
+  margin-bottom: 16px;
   width: fit-content;
 }
 
-.product-icon {
-  margin: 0 auto 24px;
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(135deg, var(--pink) 0%, var(--purple) 100%);
-  border-radius: 50%;
-  display: flex;
+.perk-icon {
+  margin-bottom: 20px;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent-purple) 100%);
+  border-radius: 50%;
+}
+
+
+.product-icon {
+  margin-bottom: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent-purple) 100%);
+  border-radius: 50%;
 }
 
 .product-icon svg {
@@ -1543,7 +1584,7 @@ button {
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, var(--pink), var(--purple));
+  background: linear-gradient(90deg, var(--primary), var(--primary-light));
   border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   opacity: 0;
   transition: opacity .4s ease;
@@ -1555,13 +1596,13 @@ button {
 
 .why-card-icon {
   margin-bottom: 20px;
-  width: 60px;
-  height: 60px;
-  background: linear-gradient(135deg, var(--pink) 0%, var(--purple) 100%);
-  border-radius: 50%;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--accent-purple) 100%);
+  border-radius: 50%;
 }
 
 .why-card-icon svg {

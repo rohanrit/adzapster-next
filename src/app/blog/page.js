@@ -1,6 +1,7 @@
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import FloatingShapes from '@/components/FloatingShapes'
+import TiltCard from '@/components/TiltCard'
 import SectionHeading from '@/components/SectionHeading'
 
 export const metadata = {
@@ -110,47 +111,55 @@ export default function Blog() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
             {[
               {
-                category: 'ENGINEERING',
+                icon: (
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="2" width="20" height="20" rx="4" stroke="var(--icon-color)" strokeWidth="1.5" />
+                    <path d="M7 11V13M10 10V14M13 9V15M17 7V17" stroke="var(--icon-color)" strokeWidth="2" strokeLinecap="round" />
+                    <circle cx="17" cy="7" r="1" fill="var(--icon-color)" />
+                  </svg>
+                ),
+                badge: 'ENGINEERING',
                 title: 'Solving the Thundering Herd: Cluster Optimization.',
                 desc: 'How we refactored our load balancers to handle 2 million concurrent requests during Super Bowl LVIII.',
-                readTime: '5 min read',
-                img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCjw_ZDaCfn127mbH9luZD7zIfHWkWHlfVx4qkDlfFwn3f4cqXe3NKN25QOcIYjD6S3-0NVFtuIir2l7kVkNSWK04bcjfeUibpzDW3zrF-2hrAcOIPuZRNkb0TtE-W-EV69GVrEzsB0UJBOHRQIyhuF498cWeeRW6v4LBlzgVZo9DeBoyut10le65mJ2vpptaQ92cY3cGjM_AGw2hhexb_oBX2TYaInm2GorptxkUUwGxhEeJ4L2Avzveee2dq1z89YX6rYwzfgQYNs'
+                features: ['2M+ concurrent requests', 'Load balancer refactor', 'Super Bowl LVIII ready']
               },
               {
-                category: 'DATA PRIVACY',
+                icon: (
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="10" stroke="var(--icon-color)" strokeWidth="1.5" />
+                    <path d="M12 2V4M12 20V22M2 12H4M20 12H22" stroke="var(--icon-color)" strokeWidth="1" strokeLinecap="round" />
+                    <path d="M12 2C5 2 2 12 12 22" stroke="var(--icon-color)" strokeWidth="1" />
+                  </svg>
+                ),
+                badge: 'DATA PRIVACY',
                 title: 'Privacy Sandboxes: Life After the Third-Party Cookie.',
                 desc: 'Our roadmap for deterministic attribution in a cookie-less world using federated learning models.',
-                readTime: '8 min read',
-                img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC0Cnl5WgwHquJjum90Yyfpc9iznjWq4V3s4R39WMnI_zbZZMZpi4MIfC93TmkgYJJgYtM9W13ZdYt-YLjvlsHiUSYB7KSAoVV5OppyVB5aEaCVzu19HTfYRoWeRylkm7uS1fF8aO9AHscTpTqrIELZxNFu1t1MIgEFc1AJvQeXrF9sFUp_pkat_aTGI_U_IVvarY9534OOcZ7VQJxnfEtCcijaJ1nnqzsde3kreCcFO7T8sgivrL5T-Ht2-b6_TyGD0Oxizh9OMND8'
+                features: ['Cookie-less attribution', 'Federated learning', 'Privacy-first design']
               },
               {
-                category: 'INDUSTRY',
+                icon: (
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="var(--icon-color)" strokeWidth="1.5" />
+                    <path d="M2 12L12 17L22 12" stroke="var(--icon-color)" strokeWidth="1.5" />
+                    <path d="M2 17L12 22L22 17" stroke="var(--icon-color)" strokeWidth="1.5" />
+                    <circle cx="12" cy="7" r="2" fill="var(--icon-color)" />
+                  </svg>
+                ),
+                badge: 'INDUSTRY',
                 title: 'Q3 Programmatic Spend Trends: A Rebound Story.',
                 desc: 'Market analysis shows a 14% uptick in connected TV inventory as brands pivot toward premium long-form video.',
-                readTime: '4 min read',
-                img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAIYWGAtTQoKt_JrakGZaIxzuev7PNCTJ-jR5Zqp0yGX0qE1Corc4GoB1AgDXJJ3I-aoUI19S3awUGpVK0Wdu-rWqbpROEz90SsthTrCz9Qu6b7eALNT9IxSN-R1tyUSBCOpyQ5tLBDYywxiAmnF6Ujs3ftG1XHqAw93YmbUfsfSi0h2N5_XYY_HBJuw-6rj20-mavz0rcnUIGFoM3E1jxAbgM17DHbzKLZez6KFG-sXbGUaucwh8Z16HxRqm9mN0xvXplly3Yn_WIT'
+                features: ['14% CTV inventory uptick', 'Premium long-form video', 'Market analysis ready']
               }
             ].map((post, i) => (
-              <article key={i} className="card group overflow-hidden">
-                <div className="aspect-video overflow-hidden">
-                  <img 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    src={post.img}
-                    alt={post.title}
-                  />
-                </div>
-                <div className="p-md">
-                  <span className="font-label-sm text-primary mb-xs block">{post.category}</span>
-                  <h4 className="font-headline-md text-on-background mb-base group-hover:text-primary transition-colors">
-                    {post.title}
-                  </h4>
-                  <p className="font-body-md text-tertiary mb-md">{post.desc}</p>
-                  <div className="flex items-center justify-between">
-                    <span className="font-label-sm text-tertiary">{post.readTime}</span>
-                    <span className="material-symbols-outlined text-primary">arrow_forward</span>
-                  </div>
-                </div>
-              </article>
+              <TiltCard key={i} className="blog-card card multi-gradient-card">
+                <div className="blog-card-badge">{post.badge}</div>
+                <div className="blog-card-icon">{post.icon}</div>
+                <h3>{post.title}</h3>
+                <p>{post.desc}</p>
+                <ul className="service-features">
+                  {post.features.map((f) => <li key={f}>{f}</li>)}
+                </ul>
+              </TiltCard>
             ))}
           </div>
 

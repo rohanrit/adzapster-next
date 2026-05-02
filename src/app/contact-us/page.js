@@ -1,6 +1,7 @@
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import FloatingShapes from '@/components/FloatingShapes'
+import TiltCard from '@/components/TiltCard'
 import SectionHeading from '@/components/SectionHeading'
 
 export const metadata = {

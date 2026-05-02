@@ -33,56 +33,55 @@ const shapes = [
 const cards = [
   {
     icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="12" cy="12" r="10" stroke="var(--icon-color)" strokeWidth="1.5" />
-        <path d="M12 7V12L15 15" stroke="var(--icon-color)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M12 2V4M12 20V22M2 12H4M20 12H22" stroke="var(--icon-color)" strokeWidth="1" strokeLinecap="round" />
-      </svg>
-    ),
-    number: 10,
-    suffix: '+',
-    label: 'Years of Experience',
-    desc: 'Deep expertise in performance marketing, video, and CTV advertising ecosystems.',
-  },
-  {
-    icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect x="2" y="2" width="20" height="20" rx="4" stroke="var(--icon-color)" strokeWidth="1.5" />
-        <path d="M7 11V13M10 10V14M13 9V15M17 7V17" stroke="var(--icon-color)" strokeWidth="2" strokeLinecap="round" />
-        <circle cx="17" cy="7" r="1" fill="var(--icon-color)" />
+        <path d="M12 18V12M12 12L9 15M12 12L15 15" stroke="var(--icon-color)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M16 6L12 10L8 6" stroke="var(--icon-color)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        <circle cx="12" cy="12" r="9" stroke="var(--icon-color)" strokeWidth="1" strokeDasharray="2 2" />
       </svg>
     ),
-    number: 200,
-    suffix: '+',
-    label: 'Brands Served',
-    desc: 'Trusted by 200+ brands across verticals — from startups to Fortune 500 enterprises.',
+    title: 'Performance Marketing',
+    desc: 'CPL, CPA, CPS models tailored to your goals. Every dollar tracked, every conversion measured.',
+    features: ['10+ years experience', '200+ brands served', '30+ countries reached', 'AI-powered targeting'],
   },
   {
     icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="12" cy="12" r="10" stroke="var(--icon-color)" strokeWidth="1.5" />
-        <path d="M2 12H22M12 2C14.5 5 16 8.5 16 12C16 15.5 14.5 19 12 22M12 2C9.5 5 8 8.5 8 12C8 15.5 9.5 19 12 22" stroke="var(--icon-color)" strokeWidth="1" />
-        <circle cx="12" cy="12" r="3" stroke="var(--icon-color)" strokeWidth="1" />
+        <path d="M15 12L10 15L15 12L15 12Z" fill="var(--icon-color)" />
+        <path d="M2 12H5M19 12H22M12 2V5M12 19V22" stroke="var(--icon-color)" strokeWidth="1.5" strokeLinecap="round" />
+        <path d="M12 12L18 18" stroke="var(--icon-color)" strokeWidth="1" strokeDasharray="3 3" />
       </svg>
     ),
-    number: 30,
-    suffix: '+',
-    label: 'Countries Reached',
-    desc: 'Multi-country campaign management with localized targeting and compliance.',
+    title: 'Video Advertising',
+    desc: 'YouTube, OTT, in-stream & out-stream video ads that captivate and convert across platforms.',
+    features: ['High VTR optimization', 'Pre-roll & mid-roll', 'YouTube TrueView & Bumper'],
   },
   {
     icon: (
-      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="3" y="4" width="18" height="12" rx="2" stroke="var(--icon-color)" strokeWidth="1.5" />
+        <path d="M7 20L12 16L17 20" stroke="var(--icon-color)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        <circle cx="12" cy="10" r="3" fill="var(--icon-color)" fillOpacity="0.2" stroke="var(--icon-color)" strokeWidth="1" />
+        <rect x="9" y="13" width="6" height="1" rx="0.5" fill="var(--icon-color)" />
+      </svg>
+    ),
+    title: 'Connected TV (CTV)',
+    desc: 'Full-screen, non-skippable ads on premium CTV inventory with interactive QR-based engagement.',
+    features: ['Premium CTV inventory', 'QR-based interaction', 'Household targeting'],
+  },
+  {
+    icon: (
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="var(--icon-color)" strokeWidth="1.5" />
         <path d="M2 12L12 17L22 12" stroke="var(--icon-color)" strokeWidth="1.5" />
         <path d="M2 17L12 22L22 17" stroke="var(--icon-color)" strokeWidth="1.5" />
         <circle cx="12" cy="7" r="2" fill="var(--icon-color)" />
       </svg>
     ),
-    number: 50,
-    suffix: '+',
-    label: 'AI-Powered Targeting',
-    desc: 'Machine learning algorithms for real-time bid optimization and audience segmentation.',
+    title: 'Programmatic Advertising',
+    desc: 'Real-time bidding powered by AI for precision targeting at scale across formats and platforms.',
+    features: ['RTB & private deals', 'AI-driven targeting', 'Cross-format reach'],
   },
 ]
 
@@ -156,17 +155,19 @@ export default function About() {
         <div className="about-grid">
           {cards.map((card, i) => (
             <TiltCard
-              key={card.label}
-              className="about-card card"
+              key={card.title}
+              className="about-card card multi-gradient-card"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
-              transition={{ delay: i * 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              transition={{ delay: i * 0.08, duration: 0.6 }}
             >
               <div className="about-card-icon">{card.icon}</div>
-              <Counter target={card.number} suffix={card.suffix} />
-              <p className="about-card-label">{card.label}</p>
-              <p className="about-card-desc">{card.desc}</p>
+              <h3>{card.title}</h3>
+              <p>{card.desc}</p>
+              <ul className="service-features">
+                {card.features.map((f) => <li key={f}>{f}</li>)}
+              </ul>
             </TiltCard>
           ))}
         </div>

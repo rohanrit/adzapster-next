@@ -1,6 +1,7 @@
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import FloatingShapes from '@/components/FloatingShapes'
+import TiltCard from '@/components/TiltCard'
 import SectionHeading from '@/components/SectionHeading'
 
 export const metadata = {
@@ -53,9 +54,11 @@ export default function LegalPolicies() {
             {/* Content Area */}
             <div className="md:w-3/4 space-y-xl">
               {/* Privacy Policy */}
-              <section className="card p-lg" id="privacy">
+              <section className="card p-lg multi-gradient-card" id="privacy">
                 <div className="flex items-center gap-base mb-md">
-                  <span className="material-symbols-outlined text-primary text-3xl">policy</span>
+                  <div className="w-12 h-12 flex items-center justify-center bg-surface-container-high border border-outline-variant rounded-lg shadow-sm shrink-0">
+                    <span className="material-symbols-outlined text-primary">policy</span>
+                  </div>
                   <h2 className="font-headline-lg text-on-background">Privacy Policy</h2>
                 </div>
                 <div className="font-body-md text-tertiary space-y-md">
@@ -69,9 +72,11 @@ export default function LegalPolicies() {
               </section>
 
               {/* Terms of Service */}
-              <section className="card p-lg" id="terms">
+              <section className="card p-lg multi-gradient-card" id="terms">
                 <div className="flex items-center gap-base mb-md">
-                  <span className="material-symbols-outlined text-primary text-3xl">gavel</span>
+                  <div className="w-12 h-12 flex items-center justify-center bg-surface-container-high border border-outline-variant rounded-lg shadow-sm shrink-0">
+                    <span className="material-symbols-outlined text-primary">gavel</span>
+                  </div>
                   <h2 className="font-headline-lg text-on-background">Terms of Service</h2>
                 </div>
                 <div className="font-body-md text-tertiary space-y-md">
@@ -83,9 +88,11 @@ export default function LegalPolicies() {
               </section>
 
               {/* Cookie Policy */}
-              <section className="card p-lg" id="cookie">
+              <section className="card p-lg multi-gradient-card" id="cookie">
                 <div className="flex items-center gap-base mb-md">
-                  <span className="material-symbols-outlined text-primary text-3xl">cookie</span>
+                  <div className="w-12 h-12 flex items-center justify-center bg-surface-container-high border border-outline-variant rounded-lg shadow-sm shrink-0">
+                    <span className="material-symbols-outlined text-primary">cookie</span>
+                  </div>
                   <h2 className="font-headline-lg text-on-background">Cookie Policy</h2>
                 </div>
                 <div className="font-body-md text-tertiary space-y-md">
