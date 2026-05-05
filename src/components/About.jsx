@@ -93,7 +93,6 @@ const flows = [
   { label: 'Growth & Scale', icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12" /></svg> },
 ]
 
-
 const arrow = (
   <svg width="40" height="12" viewBox="0 0 40 12"><path d="M0 6h36m-4-4l4 4-4 4" stroke="var(--primary)" strokeWidth="1.5" fill="none" /></svg>
 )
@@ -123,20 +122,13 @@ function Counter({ target, suffix }) {
   return <h3 ref={ref} className="about-card-number">0</h3>
 }
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 40 },
-  visible: (i) => ({
-    opacity: 1,
-    y: 0,
-    transition: { delay: i * 0.1, duration: 0.6, ease: [0.16, 1, 0.3, 1] },
-  }),
-}
-
 export default function About() {
   return (
     <section className="section section--white" id="about">
       <FloatingShapes shapes={shapes} />
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+
+        {/* Existing Hero Section */}
         <motion.div
           className="section-header"
           initial={{ opacity: 0, y: 30 }}
@@ -152,6 +144,7 @@ export default function About() {
           <p className="section-subtitle">A decade of transforming digital advertising with data-driven precision and creative excellence.</p>
         </motion.div>
 
+        {/* Existing Cards Grid */}
         <div className="about-grid">
           {cards.map((card, i) => (
             <TiltCard
@@ -172,6 +165,7 @@ export default function About() {
           ))}
         </div>
 
+        {/* Existing Infographic */}
         <motion.div
           className="about-infographic"
           initial={{ opacity: 0, y: 30 }}
@@ -191,6 +185,7 @@ export default function About() {
             ))}
           </div>
         </motion.div>
+
       </div>
     </section>
   )

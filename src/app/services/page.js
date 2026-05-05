@@ -6,6 +6,8 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import SectionHeading from '@/components/SectionHeading'
 import FloatingShapes from '@/components/FloatingShapes'
+import ServicesHeroInfographic from '@/components/services/ServicesHeroInfographic'
+import ServicesGridInfographic from '@/components/services/ServicesGridInfographic'
 
 const services = [
   {
@@ -140,7 +142,7 @@ export default function Services() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="hero" id="services-hero">
+      <section className="hero" id="services-hero">        
         <FloatingShapes shapes={[
           { type: 'cube', size: 60, color: 'purple', position: { top: '20%', left: '10%' }, depth: 0.4, rotate: { x: -25, y: 35 } },
           { type: 'donut', size: 100, thickness: 15, color: 'pink', position: { top: '15%', right: '8%' }, depth: 0.6, rotate: { x: 55, z: 25 } },
@@ -148,7 +150,7 @@ export default function Services() {
         ]} />
 
         <motion.div
-          className="hero-container"
+          className="hero-container relative z-10"
           variants={stagger}
           initial="hidden"
           animate="visible"
@@ -178,12 +180,16 @@ export default function Services() {
               </a>
             </motion.div>
           </div>
+          <div className='relative overflow-hidden w-full h-full'>            
+            <ServicesHeroInfographic />
+          </div>
         </motion.div>
       </section>
 
       {/* Services Grid */}
-      <section className="section" id="services-grid">
-        <div className="section-container">
+      <section className="section relative" id="services-grid">
+        {/* <ServicesGridInfographic services={services} /> */}
+        <div className="container relative z-10">
           <SectionHeading
             tag="Our Services"
             title="Complete Ad Tech Solutions"
@@ -228,7 +234,7 @@ export default function Services() {
 
       {/* Why Choose Us */}
       <section className="section bg-[var(--bg-secondary)]">
-        <div className="section-container">
+        <div className="container">
           <SectionHeading
             tag="Why Choose Us"
             title="Why Adzapster Services?"
@@ -260,7 +266,7 @@ export default function Services() {
 
       {/* FAQ Section */}
       <section className="section">
-        <div className="section-container max-w-4xl mx-auto">
+        <div className="container max-w-4xl mx-auto">
           <SectionHeading
             tag="FAQ"
             title="Frequently Asked Questions"

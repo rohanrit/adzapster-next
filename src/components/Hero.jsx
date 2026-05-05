@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import gsap from 'gsap'
 import FloatingShapes from './FloatingShapes'
+import { ChevronsDownIcon, ArrowRightIcon, PhoneIcon } from 'lucide-react'
 
 const heroShapes = [
   { type: 'cube', size: 80, color: 'pink', position: { top: '12%', left: '6%' }, depth: 0.4, rotate: { x: -25, y: 35 } },
@@ -61,6 +62,16 @@ function AnimatedCounter({ target, suffix }) {
 }
 
 export default function Hero() {
+  const handleScrollToNextSection = () => {
+    const heroSection = document.getElementById('hero')
+    if (!heroSection) return
+
+    const nextSection = heroSection.nextElementSibling
+    if (nextSection instanceof HTMLElement) {
+      nextSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
+
   return (
     <section className="hero" id="hero">
       <FloatingShapes shapes={heroShapes} />
@@ -89,10 +100,10 @@ export default function Hero() {
           <motion.div className="hero-cta-group" variants={fadeUp}>
             <a href="#contact" className="btn btn-primary" id="heroCta1">
               <span>Start Campaign</span>
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" /></svg>
+              <ArrowRightIcon />
             </a>
             <a href="#contact" className="btn btn-outline" id="heroCta2">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2c-8.36.87-16.36-5.43-16.36-13.79a2 2 0 0 1 2-2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11l1.27 1.27a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <PhoneIcon className='w-4 h-4'/>
               <span>Book Free Call</span>
             </a>
           </motion.div>
@@ -214,10 +225,9 @@ export default function Hero() {
         </motion.div>
       </motion.div>
 
-      <div className="hero-scroll-indicator">
-        <span>Scroll to explore</span>
-        <div className="scroll-arrow">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="6 9 12 15 18 9" /></svg>
+      <div className="hero-scroll-indicator" onClick={handleScrollToNextSection}>
+        <div className="scroll-arrow border border-white/60 rounded-full p-2 hover:bg-white/10 transition-all duration-300">
+          <ChevronsDownIcon className='w-6 h-6'/>
         </div>
       </div>
     </section>

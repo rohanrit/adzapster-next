@@ -4,6 +4,16 @@ import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 
 const SHAPE_COLORS = {
+  blue: {
+    border: 'rgba(59, 130, 246, 0.4)',
+    bg: 'rgba(59, 130, 246, 0.08)',
+    shadow: 'rgba(59, 130, 246, 0.15)',
+  },
+  emerald: {
+    border: 'rgba(16, 185, 129, 0.4)',
+    bg: 'rgba(16, 185, 129, 0.08)',
+    shadow: 'rgba(16, 185, 129, 0.15)',
+  },
   pink: {
     border: 'rgba(255, 105, 180, 0.4)',
     bg: 'rgba(255, 105, 180, 0.08)',

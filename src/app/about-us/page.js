@@ -1,5 +1,6 @@
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import AboutUsContent from '@/components/AboutUsContent'
 
 export const metadata = {
   title: 'About Us | Adzapster',
@@ -13,7 +14,7 @@ export default function AboutUs() {
   return (
     <>
       <Navbar />
-      <main>
+       <main>
         {/* HERO section (styled to match homepage Hero/About) */}
         <section className="section section--white pb-0">
           <FloatingShapes shapes={[]} />
@@ -176,6 +177,7 @@ export default function AboutUs() {
           </div>
         </section>
       </main>
+      <AboutUsContent />
       <Footer />
     </>
   )
