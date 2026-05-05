@@ -30,7 +30,7 @@ export default function AboutUsContent() {
   }, [])
 
   return (
-    <main className="bg-black text-white">
+    <main className="bg-black text-white" suppressHydrationWarning>
       <BuiltProperly />
       <Challenges />
       <BetterWay />

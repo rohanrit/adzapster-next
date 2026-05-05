@@ -28,7 +28,7 @@ export default function AboutUsParallax() {
   const missionScale = useTransform(scroll2, [0, 0.5, 1], [1, 1, 1])
 
   const teamY = useTransform(scroll3, [0, 1], [80, -100])
-  const teamOpacity = useTransform(scroll3, [0, 0.3, 0.7, 1], [1, 1, 1, 1])
+  const teamOpacity = useTransform(scroll3, [0, 0.5, 1, 1], [1, 1, 1, 1])
   const teamScale = useTransform(scroll3, [0, 0.5, 1], [1, 1, 1])
 
   const ctaY = useTransform(scroll4, [0, 1], [60, -120])
@@ -37,7 +37,7 @@ export default function AboutUsParallax() {
   return (
     <>
       <Navbar />
-      <main ref={containerRef} className="relative" style={{ position: 'relative' }}>
+      <main ref={containerRef} className="relative" style={{ position: 'relative' }} suppressHydrationWarning>
         {/* Hero section - overlapped first */}
         <motion.section
           ref={section1Ref}
@@ -97,9 +97,11 @@ export default function AboutUsParallax() {
           style={{
             y: missionY,
             opacity: missionOpacity,
-            position: 'relative',
+            position: 'sticky',
+            top: 0,
             zIndex: 20,
-            marginTop: '-30vh'
+            marginTop: '-30vh',
+            height: '100vh'
           }}
         >
           <FloatingShapes shapes={[]} />
@@ -158,13 +160,15 @@ export default function AboutUsParallax() {
         {/* Leadership Team Section - overlaps mission */}
         <motion.section
           ref={section3Ref}
-          className="section"
+          className="sectionsection section--light"
           style={{
             y: teamY,
             opacity: teamOpacity,
-            position: 'relative',
+            position: 'sticky',
+            top: 0,
             zIndex: 30,
-            marginTop: '-20vh'
+            marginTop: '-20vh',
+            height: '100vh'
           }}
         >
           <div className="container relative z-10">
@@ -228,15 +232,17 @@ export default function AboutUsParallax() {
         </motion.section>
 
         {/* CTA Section - overlaps team */}
-        <motion.section
+        {/* <motion.section
           ref={section4Ref}
-          className="section mb-0"
+          className="section section--light mb-0"
           style={{
             y: ctaY,
             opacity: ctaOpacity,
-            position: 'relative',
+            position: 'sticky',
+            top: 0,
             zIndex: 40,
-            marginTop: '-15vh'
+            marginTop: '-15vh',
+            height: '100vh'
           }}
         >
           <div className="container">
@@ -263,10 +269,7 @@ export default function AboutUsParallax() {
               </div>
             </motion.div>
           </div>
-        </motion.section>
-
-        {/* Extra scroll space for parallax effect */}
-        <div className="h-[150vh]" />
+        </motion.section> */}
       </main>
       <AboutUsContent />
       <Footer />
