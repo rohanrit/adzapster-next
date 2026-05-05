@@ -6,8 +6,8 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import SectionHeading from '@/components/SectionHeading'
 import FloatingShapes from '@/components/FloatingShapes'
-import ServicesHeroInfographic from '@/components/services/ServicesHeroInfographic'
-import ServicesGridInfographic from '@/components/services/ServicesGridInfographic'
+import HeroInfographic from '@/components/services/HeroInfographic'
+import GridInfographic from '@/components/services/GridInfographic'
 
 const services = [
   {
@@ -142,7 +142,7 @@ export default function Services() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="hero" id="services-hero">        
+      <section className="hero" id="services-hero">
         <FloatingShapes shapes={[
           { type: 'cube', size: 60, color: 'purple', position: { top: '20%', left: '10%' }, depth: 0.4, rotate: { x: -25, y: 35 } },
           { type: 'donut', size: 100, thickness: 15, color: 'pink', position: { top: '15%', right: '8%' }, depth: 0.6, rotate: { x: 55, z: 25 } },
@@ -180,15 +180,15 @@ export default function Services() {
               </a>
             </motion.div>
           </div>
-          <div className='relative overflow-hidden w-full h-full'>            
-            <ServicesHeroInfographic />
+          <div className='relative overflow-hidden w-full h-full'>
+            <HeroInfographic />
           </div>
         </motion.div>
       </section>
 
       {/* Services Grid */}
       <section className="section relative" id="services-grid">
-        {/* <ServicesGridInfographic services={services} /> */}
+        {/* <GridInfographic services={services} /> */}
         <div className="container relative z-10">
           <SectionHeading
             tag="Our Services"

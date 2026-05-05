@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, useInView } from 'framer-motion'
+import { motion, useInView, useScroll, useTransform } from 'framer-motion'
 import { useRef, useEffect, useMemo } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
@@ -8,6 +8,11 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 export default function BuiltProperly() {
+  const parallaxRef = useRef(null)
+  const { scrollYProgress } = useScroll({ target: parallaxRef, offset: ['start start', 'end start'] })
+  const sectionY = useTransform(scrollYProgress, [0, 1], [0, -100])
+  const sectionOpacity = useTransform(scrollYProgress, [0, 0.5, 1, 1], [1, 1, 1, 1])
+
   const sectionRef = useRef(null)
   const titleRef = useRef(null)
   const lines = [
@@ -42,7 +47,21 @@ export default function BuiltProperly() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="relative py-32 md:py-40 bg-black text-white overflow-hidden">
+    <motion.div
+      ref={parallaxRef}
+      style={{
+        y: sectionY,
+        opacity: sectionOpacity,
+        position: 'sticky',
+        top: 0,
+        zIndex: 40,
+        marginTop: '-20vh',
+        minHeight: '100vh',
+        backgroundColor: 'black'
+      }}
+      className="w-full flex flex-col justify-center"
+    >
+      <section ref={sectionRef} className="relative py-32 md:py-40 bg-black text-white overflow-hidden w-full">
       {/* Background noise overlay */}
       <div className="absolute inset-0 opacity-[0.03]" style={{
         backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
@@ -96,6 +115,7 @@ export default function BuiltProperly() {
           </div>
         </div>
       </div>
-    </section>
+      </section>
+    </motion.div>
   )
 }

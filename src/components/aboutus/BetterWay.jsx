@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, useInView } from 'framer-motion'
+import { motion, useInView, useScroll, useTransform } from 'framer-motion'
 import { useRef, useEffect } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
@@ -27,6 +27,11 @@ const items = [
 ]
 
 export default function BetterWay() {
+  const parallaxRef = useRef(null)
+  const { scrollYProgress } = useScroll({ target: parallaxRef, offset: ['start start', 'end start'] })
+  const sectionY = useTransform(scrollYProgress, [0, 1], [0, -100])
+  const sectionOpacity = useTransform(scrollYProgress, [0, 0.5, 1, 1], [1, 1, 1, 1])
+
   const sectionRef = useRef(null)
   const inView = useInView(sectionRef, { once: true, margin: '-100px' })
 
@@ -55,7 +60,21 @@ export default function BetterWay() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="relative py-32 md:py-40 bg-black text-white overflow-hidden">
+    <motion.div
+      ref={parallaxRef}
+      style={{
+        y: sectionY,
+        opacity: sectionOpacity,
+        position: 'sticky',
+        top: 0,
+        zIndex: 60,
+        marginTop: '-20vh',
+        minHeight: '100vh',
+        backgroundColor: 'black'
+      }}
+      className="w-full flex flex-col justify-center"
+    >
+      <section ref={sectionRef} className="relative py-32 md:py-40 bg-black text-white overflow-hidden w-full">
       <div className="container max-w-[1200px] mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 40, filter: 'blur(8px)' }}
@@ -90,6 +109,7 @@ export default function BetterWay() {
           ))}
         </div>
       </div>
-    </section>
+      </section>
+    </motion.div>
   )
 }

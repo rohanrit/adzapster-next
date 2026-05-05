@@ -17,7 +17,7 @@ const connectorData = [
   { from: 2, to: 5, delay: 0.9 },
 ]
 
-export default function ServicesGridInfographic({ services }) {
+export default function GridInfographic({ services }) {
   const getPosition = (index) => {
     const col = index % 3
     const row = Math.floor(index / 3)

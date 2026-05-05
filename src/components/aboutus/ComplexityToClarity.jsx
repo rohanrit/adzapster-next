@@ -8,6 +8,11 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 export default function ComplexityToClarity() {
+  const parallaxRef = useRef(null)
+  const { scrollYProgress: parallaxScrollYProgress } = useScroll({ target: parallaxRef, offset: ['start start', 'end start'] })
+  const sectionY = useTransform(parallaxScrollYProgress, [0, 1], [0, -100])
+  const sectionOpacity = useTransform(parallaxScrollYProgress, [0, 0.5, 1, 1], [1, 1, 1, 1])
+
   const sectionRef = useRef(null)
   const containerRef = useRef(null)
   const inView = useInView(sectionRef, { once: true, margin: '-100px' })
@@ -45,7 +50,21 @@ export default function ComplexityToClarity() {
   }, [])
 
   return (
-    <section ref={sectionRef} className="relative py-32 md:py-40 bg-black text-white overflow-hidden">
+    <motion.div
+      ref={parallaxRef}
+      style={{
+        y: sectionY,
+        opacity: sectionOpacity,
+        position: 'sticky',
+        top: 0,
+        zIndex: 80,
+        marginTop: '-20vh',
+        minHeight: '100vh',
+        backgroundColor: 'black'
+      }}
+      className="w-full flex flex-col justify-center"
+    >
+      <section ref={sectionRef} className="relative py-32 md:py-40 bg-black text-white overflow-hidden w-full">
       <div className="container max-w-[1200px] mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 40, filter: 'blur(8px)' }}
@@ -105,6 +124,7 @@ export default function ComplexityToClarity() {
           <div className="divider-line absolute top-1/2 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-emerald-400/50 to-transparent origin-center" />
         </div>
       </div>
-    </section>
+      </section>
+    </motion.div>
   )
 }

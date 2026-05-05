@@ -28,77 +28,77 @@ function drawIcon(ctx, iconType, x, y, size, color) {
   ctx.lineCap = 'round'
   ctx.lineJoin = 'round'
 
-  switch(iconType) {
+  switch (iconType) {
     case 'display': // Monitor
       ctx.beginPath()
-      ctx.rect(x - size/2, y - size/3, size, size * 0.7)
+      ctx.rect(x - size / 2, y - size / 3, size, size * 0.7)
       ctx.stroke()
       ctx.beginPath()
-      ctx.moveTo(x - size/4, y + size/2 * 0.7)
-      ctx.lineTo(x + size/4, y + size/2 * 0.7)
+      ctx.moveTo(x - size / 4, y + size / 2 * 0.7)
+      ctx.lineTo(x + size / 4, y + size / 2 * 0.7)
       ctx.stroke()
       break
 
     case 'video': // Play button
       ctx.beginPath()
-      ctx.moveTo(x - size/3, y - size/3)
-      ctx.lineTo(x + size/3, y)
-      ctx.lineTo(x - size/3, y + size/3)
+      ctx.moveTo(x - size / 3, y - size / 3)
+      ctx.lineTo(x + size / 3, y)
+      ctx.lineTo(x - size / 3, y + size / 3)
       ctx.closePath()
       ctx.fill()
       break
 
     case 'ctv': // TV
       ctx.beginPath()
-      ctx.rect(x - size/2, y - size/3, size, size * 0.6)
+      ctx.rect(x - size / 2, y - size / 3, size, size * 0.6)
       ctx.stroke()
       // Stand
       ctx.beginPath()
-      ctx.moveTo(x - size/4, y + size/3 * 0.6)
-      ctx.lineTo(x + size/4, y + size/3 * 0.6)
+      ctx.moveTo(x - size / 4, y + size / 3 * 0.6)
+      ctx.lineTo(x + size / 4, y + size / 3 * 0.6)
       ctx.stroke()
       ctx.beginPath()
-      ctx.moveTo(x, y + size/3 * 0.6)
-      ctx.lineTo(x, y + size/2)
+      ctx.moveTo(x, y + size / 3 * 0.6)
+      ctx.lineTo(x, y + size / 2)
       ctx.stroke()
       break
 
     case 'native': // Document
       ctx.beginPath()
-      ctx.rect(x - size/3, y - size/3, size * 0.66, size * 0.66)
+      ctx.rect(x - size / 3, y - size / 3, size * 0.66, size * 0.66)
       ctx.stroke()
       // Lines
       for (let i = 0; i < 3; i++) {
         ctx.beginPath()
-        ctx.moveTo(x - size/5, y - size/6 + i * size/5)
-        ctx.lineTo(x + size/5, y - size/6 + i * size/5)
+        ctx.moveTo(x - size / 5, y - size / 6 + i * size / 5)
+        ctx.lineTo(x + size / 5, y - size / 6 + i * size / 5)
         ctx.stroke()
       }
       break
 
     case 'mobile': // Phone
       ctx.beginPath()
-      ctx.rect(x - size/3, y - size/2 * 0.8, size * 0.66, size * 0.8)
+      ctx.rect(x - size / 3, y - size / 2 * 0.8, size * 0.66, size * 0.8)
       ctx.stroke()
       // Screen
       ctx.beginPath()
-      ctx.rect(x - size/4, y - size/4, size/2, size/3)
+      ctx.rect(x - size / 4, y - size / 4, size / 2, size / 3)
       ctx.stroke()
       // Home button
       ctx.beginPath()
-      ctx.arc(x, y + size/4, size/8, 0, Math.PI * 2)
+      ctx.arc(x, y + size / 4, size / 8, 0, Math.PI * 2)
       ctx.stroke()
       break
 
     case 'dooh': // Billboard
       // Post
       ctx.beginPath()
-      ctx.moveTo(x, y + size/2)
-      ctx.lineTo(x, y - size/6)
+      ctx.moveTo(x, y + size / 2)
+      ctx.lineTo(x, y - size / 6)
       ctx.stroke()
       // Sign
       ctx.beginPath()
-      ctx.rect(x - size/3, y - size/2, size * 0.66, size * 0.66)
+      ctx.rect(x - size / 3, y - size / 2, size * 0.66, size * 0.66)
       ctx.stroke()
       break
   }
@@ -168,7 +168,7 @@ function drawBeam(ctx, x1, y1, x2, y2, color, progress) {
   ctx.restore()
 }
 
-export default function ServicesHeroInfographic() {
+export default function HeroInfographic() {
   const canvasRef = useRef(null)
   const animationRef = useRef(null)
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 })
@@ -257,26 +257,26 @@ export default function ServicesHeroInfographic() {
 
       // Draw cursor arrow
       ctx.beginPath()
-      ctx.moveTo(cx - cursorSize/2, cy - cursorSize/2)
-      ctx.lineTo(cx + cursorSize/2, cy)
-      ctx.lineTo(cx - cursorSize/2, cy + cursorSize/2)
+      ctx.moveTo(cx - cursorSize / 2, cy - cursorSize / 2)
+      ctx.lineTo(cx + cursorSize / 2, cy)
+      ctx.lineTo(cx - cursorSize / 2, cy + cursorSize / 2)
       ctx.closePath()
       ctx.fill()
 
       // Draw cursor line (click indicator)
       ctx.beginPath()
-      ctx.moveTo(cx - cursorSize/2 + 2, cy + cursorSize/2 + 3)
-      ctx.lineTo(cx - cursorSize/2 - 4, cy + cursorSize/2 + 9)
+      ctx.moveTo(cx - cursorSize / 2 + 2, cy + cursorSize / 2 + 3)
+      ctx.lineTo(cx - cursorSize / 2 - 4, cy + cursorSize / 2 + 9)
       ctx.stroke()
 
       ctx.beginPath()
-      ctx.moveTo(cx - cursorSize/2 - 4, cy + cursorSize/2 + 9)
-      ctx.lineTo(cx - cursorSize/2 + 2, cy + cursorSize/2 + 9)
+      ctx.moveTo(cx - cursorSize / 2 - 4, cy + cursorSize / 2 + 9)
+      ctx.lineTo(cx - cursorSize / 2 + 2, cy + cursorSize / 2 + 9)
       ctx.stroke()
 
       ctx.beginPath()
-      ctx.moveTo(cx - cursorSize/2 - 4, cy + cursorSize/2 + 9)
-      ctx.lineTo(cx - cursorSize/2 - 4, cy + cursorSize/2 + 3)
+      ctx.moveTo(cx - cursorSize / 2 - 4, cy + cursorSize / 2 + 9)
+      ctx.lineTo(cx - cursorSize / 2 - 4, cy + cursorSize / 2 + 3)
       ctx.stroke()
       ctx.restore()
 
