@@ -2,9 +2,9 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import FloatingShapes from './FloatingShapes'
-import TiltCard from './TiltCard'
-import SectionHeading from './SectionHeading'
+import FloatingShapes from '@/components/FloatingShapes'
+import TiltCard from '@/components/TiltCard'
+import SectionHeading from '@/components/SectionHeading'
 
 const shapes = [
   { type: 'cube', size: 70, color: 'orange', position: { top: '10%', right: '5%' }, depth: 0.3 },

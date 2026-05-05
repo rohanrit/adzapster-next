@@ -1,4 +1,4 @@
-import ContactUsContent from '@/components/ContactUsContent'
+import ContactUsContent from '@/components/contactus/ContactUsContent'
 
 export const metadata = {
   title: 'Contact Us | Adzapster',

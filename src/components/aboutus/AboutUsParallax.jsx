@@ -4,7 +4,7 @@ import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import AboutUsContent from '@/components/AboutUsContent'
+import AboutUsContent from '@/components/aboutus/AboutUsContent'
 import FloatingShapes from '@/components/FloatingShapes'
 import SectionHeading from '@/components/SectionHeading'
 
@@ -21,27 +21,23 @@ export default function AboutUsParallax() {
   const { scrollYProgress: scroll4 } = useScroll({ target: section4Ref, offset: ['start start', 'end start'] })
 
   const heroY = useTransform(scroll1, [0, 1], [0, -150])
-  const heroOpacity = useTransform(scroll1, [0, 0.8], [1, 0])
-  const heroScale = useTransform(scroll1, [0, 1], [1, 0.9])
+  const heroOpacity = useTransform(scroll1, [0, 0.8], [1, 1])
 
   const missionY = useTransform(scroll2, [0, 1], [100, -80])
-  const missionOpacity = useTransform(scroll2, [0, 0.3, 0.8, 1], [0, 1, 1, 0])
-  const missionScale = useTransform(scroll2, [0, 0.5, 1], [0.95, 1, 0.98])
+  const missionOpacity = useTransform(scroll2, [0, 0.3, 0.8, 1], [1, 1, 1, 1])
+  const missionScale = useTransform(scroll2, [0, 0.5, 1], [1, 1, 1])
 
   const teamY = useTransform(scroll3, [0, 1], [80, -100])
-  const teamOpacity = useTransform(scroll3, [0, 0.3, 0.7, 1], [0, 1, 1, 0.8])
-  const teamScale = useTransform(scroll3, [0, 0.5, 1], [0.9, 1, 0.95])
+  const teamOpacity = useTransform(scroll3, [0, 0.3, 0.7, 1], [1, 1, 1, 1])
+  const teamScale = useTransform(scroll3, [0, 0.5, 1], [1, 1, 1])
 
   const ctaY = useTransform(scroll4, [0, 1], [60, -120])
-  const ctaScale = useTransform(scroll4, [0, 0.5, 1], [0.95, 1, 0.98])
+  const ctaOpacity = useTransform(scroll4, [0, 0.3, 1], [1, 1, 1])
 
   return (
     <>
       <Navbar />
       <main ref={containerRef} className="relative" style={{ position: 'relative' }}>
-        {/* Spacer for scroll */}
-        <div className="h-[50vh]" />
-
         {/* Hero section - overlapped first */}
         <motion.section
           ref={section1Ref}
@@ -49,7 +45,6 @@ export default function AboutUsParallax() {
           style={{
             y: heroY,
             opacity: heroOpacity,
-            scale: heroScale,
             position: 'sticky',
             top: 0,
             zIndex: 10,
@@ -102,7 +97,6 @@ export default function AboutUsParallax() {
           style={{
             y: missionY,
             opacity: missionOpacity,
-            scale: missionScale,
             position: 'relative',
             zIndex: 20,
             marginTop: '-30vh'
@@ -168,7 +162,6 @@ export default function AboutUsParallax() {
           style={{
             y: teamY,
             opacity: teamOpacity,
-            scale: teamScale,
             position: 'relative',
             zIndex: 30,
             marginTop: '-20vh'
@@ -240,7 +233,7 @@ export default function AboutUsParallax() {
           className="section mb-0"
           style={{
             y: ctaY,
-            scale: ctaScale,
+            opacity: ctaOpacity,
             position: 'relative',
             zIndex: 40,
             marginTop: '-15vh'

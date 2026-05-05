@@ -1,9 +1,9 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import TiltCard from './TiltCard'
-import FloatingShapes from './FloatingShapes'
-import SectionHeading from './SectionHeading'
+import TiltCard from '@/components/TiltCard'
+import FloatingShapes from '@/components/FloatingShapes'
+import SectionHeading from '@/components/SectionHeading'
 
 const shapes = [
   { type: 'pyramid', size: 80, color: 'pink', position: { top: '10%', left: '5%' }, depth: 0.35 },

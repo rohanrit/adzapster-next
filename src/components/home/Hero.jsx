@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import gsap from 'gsap'
-import FloatingShapes from './FloatingShapes'
+import FloatingShapes from '@/components/FloatingShapes'
 import { ChevronsDownIcon, ArrowRightIcon, PhoneIcon } from 'lucide-react'
 
 const heroShapes = [

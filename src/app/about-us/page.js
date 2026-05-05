@@ -1,4 +1,4 @@
-import AboutUsParallax from '@/components/AboutUsParallax'
+import AboutUsParallax from '@/components/aboutus/AboutUsParallax'
 
 export const metadata = {
   title: 'About Us | Adzapster',

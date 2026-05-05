@@ -3,9 +3,9 @@
 import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import gsap from 'gsap'
-import FloatingShapes from './FloatingShapes'
-import TiltCard from './TiltCard'
-import SectionHeading from './SectionHeading'
+import FloatingShapes from '@/components/FloatingShapes'
+import TiltCard from '@/components/TiltCard'
+import SectionHeading from '@/components/SectionHeading'
 
 const shapes = [
   { type: 'donut', size: 100, thickness: 15, color: 'pink', position: { bottom: '10%', left: '4%' }, depth: 0.5, rotate: { x: 50, z: 40 } },

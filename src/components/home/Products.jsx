@@ -2,9 +2,9 @@
 
 import { useState, useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import FloatingShapes from './FloatingShapes'
-import TiltCard from './TiltCard'
-import SectionHeading from './SectionHeading'
+import FloatingShapes from '@/components/FloatingShapes'
+import TiltCard from '@/components/TiltCard'
+import SectionHeading from '@/components/SectionHeading'
 
 const shapes = [
   { type: 'cube', size: 75, color: 'purple', position: { top: '8%', left: '4%' }, depth: 0.4 },

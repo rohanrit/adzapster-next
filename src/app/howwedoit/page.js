@@ -1,4 +1,4 @@
-import HowWeDoItContent from '@/components/HowWeDoItContent'
+import HowWeDoItContent from '@/components/howwedoit/HowWeDoItContent'
 
 export const metadata = {
   title: 'How We Do It | Adzapster',

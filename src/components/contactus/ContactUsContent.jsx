@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
-import ContactHero from '@/components/ContactHero'
 import FloatingShapes from '@/components/FloatingShapes'
 import SectionHeading from '@/components/SectionHeading'
 import { MailIcon, PhoneIcon, MapPinIcon, MessageSquareIcon, ArrowRightIcon, Clock10Icon, CheckCheckIcon } from 'lucide-react'
@@ -30,9 +29,6 @@ export default function ContactUsContent() {
   return (
     <>
       <Navbar />
-            {/* <ContactHero /> */}
-
-
       <section className="contact-hero" id="contact-hero">
             <FloatingShapes shapes={contactShapes} />
 

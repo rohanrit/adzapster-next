@@ -3,12 +3,12 @@
 import { useEffect } from 'react'
 import Lenis from 'lenis'
 import 'lenis/dist/lenis.css'
-import BuiltProperly from './sections/BuiltProperly'
-import Challenges from './sections/Challenges'
-import BetterWay from './sections/BetterWay'
-import InHouseTeam from './sections/InHouseTeam'
-import ComplexityToClarity from './sections/ComplexityToClarity'
-import GreatThingsSection from './sections/GreatThingsSection'
+import BuiltProperly from '@/components/aboutus/sections/BuiltProperly'
+import Challenges from '@/components/aboutus/sections/Challenges'
+import BetterWay from '@/components/aboutus/sections/BetterWay'
+import InHouseTeam from '@/components/aboutus/sections/InHouseTeam'
+import ComplexityToClarity from '@/components/aboutus/sections/ComplexityToClarity'
+import GreatThingsSection from '@/components/aboutus/sections/GreatThingsSection'
 
 export default function AboutUsContent() {
   useEffect(() => {

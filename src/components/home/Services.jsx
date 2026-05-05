@@ -2,9 +2,9 @@
 
 import { useState, useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
-import FloatingShapes from './FloatingShapes'
-import TiltCard from './TiltCard'
-import SectionHeading from './SectionHeading'
+import FloatingShapes from '@/components/FloatingShapes'
+import TiltCard from '@/components/TiltCard'
+import SectionHeading from '@/components/SectionHeading'
 
 const shapes = [
   { type: 'pyramid', size: 70, color: 'pink', position: { top: '5%', right: '4%' }, depth: 0.35 },
