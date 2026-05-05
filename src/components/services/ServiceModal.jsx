@@ -21,7 +21,7 @@ export default function ServiceModal({ service, onClose }) {
 
         {/* Modal Content */}
         <motion.div
-          className="relative z-10 w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-white dark:bg-[#1B1B3A] rounded-3xl shadow-2xl border border-[var(--border)]"
+          className="relative z-10 w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-black/90 dark:bg-secondary rounded-3xl shadow-2xl border border-[var(--border)]"
           initial={{ scale: 0.9, opacity: 0, y: 20 }}
           animate={{ scale: 1, opacity: 1, y: 0 }}
           exit={{ scale: 0.9, opacity: 0, y: 20 }}
@@ -91,7 +91,7 @@ export default function ServiceModal({ service, onClose }) {
               <a href="/contact-us" className="btn btn-primary flex-1 text-center">
                 Get Started
               </a>
-              <button onClick={onClose} className="btn btn-outline flex-1 text-center">
+              <button onClick={onClose} className="btn btn-outline flex-1 text-center text-gray/20">
                 Close
               </button>
             </div>
