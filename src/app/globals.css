@@ -859,6 +859,238 @@ button {
   100% { transform: translate(0, 0) rotate(0deg) scale(1); }
 }
 
+.robolabs-hero {
+  min-height: 78vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  isolation: isolate;
+  background: linear-gradient(160deg, var(--bg-white) 0%, var(--bg-secondary) 55%, var(--bg-white) 100%);
+}
+
+.robolabs-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.robolabs-hero-bg::before,
+.robolabs-hero-bg::after {
+  content: '';
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(80px);
+}
+
+.robolabs-hero-bg::before {
+  width: 460px;
+  height: 460px;
+  top: -140px;
+  left: -80px;
+  background: rgba(19, 225, 149, 0.16);
+}
+
+.robolabs-hero-bg::after {
+  width: 420px;
+  height: 420px;
+  right: -80px;
+  bottom: -120px;
+  background: rgba(139, 92, 246, 0.14);
+}
+
+.robolabs-hero-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: 56px 56px;
+  opacity: 0.08;
+  mask-image: radial-gradient(circle at center, black 40%, transparent 90%);
+}
+
+
+.robolabs-oval {
+  position: absolute;
+  border-radius: 999px;
+  opacity: 0.4;
+  z-index: 0;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.robolabs-oval--1 {
+  width: 280px;
+  height: 180px;
+  background: rgba(19, 225, 149, 0.22);
+  top: 10%;
+  left: 6%;
+  transform: rotate(19deg);
+  animation: robolabs-blob-float-1 14s ease-in-out infinite;
+}
+
+.robolabs-oval--2 {
+  width: 250px;
+  height: 170px;
+  background: rgba(139, 92, 246, 0.2);
+  top: 18%;
+  right: 12%;
+  transform: rotate(-30deg);
+  animation: robolabs-blob-float-2 16s ease-in-out infinite;
+}
+
+.robolabs-oval--3 {
+  width: 290px;
+  height: 190px;
+  background: rgba(103, 243, 193, 0.18);
+  bottom: 24%;
+  left: 16%;
+  transform: rotate(-23deg);
+  animation: robolabs-blob-float-3 18s ease-in-out infinite;
+}
+
+.robolabs-oval--4 {
+  width: 280px;
+  height: 180px;
+  background: rgba(249, 115, 22, 0.16);
+  bottom: 10%;
+  right: 10%;
+  animation: robolabs-blob-float-4 15s ease-in-out infinite;
+}
+
+.robolabs-oval--5 {
+  width: 220px;
+  height: 150px;
+  background: rgba(139, 92, 246, 0.14);
+  top: 46%;
+  right: 36%;
+  transform: rotate(-31deg);
+  animation: robolabs-blob-float-5 17s ease-in-out infinite;
+}
+
+@keyframes robolabs-blob-float-1 {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(19deg) scale(1); }
+  50% { transform: translate3d(20px, -14px, 0) rotate(25deg) scale(1.05); }
+}
+
+@keyframes robolabs-blob-float-2 {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(-30deg) scale(1); }
+  50% { transform: translate3d(-24px, 16px, 0) rotate(-22deg) scale(1.06); }
+}
+
+@keyframes robolabs-blob-float-3 {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(-23deg) scale(1); }
+  50% { transform: translate3d(18px, 18px, 0) rotate(-15deg) scale(1.04); }
+}
+
+@keyframes robolabs-blob-float-4 {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg) scale(1); }
+  50% { transform: translate3d(-16px, -20px, 0) rotate(8deg) scale(1.05); }
+}
+
+@keyframes robolabs-blob-float-5 {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(-31deg) scale(1); }
+  50% { transform: translate3d(14px, -16px, 0) rotate(-23deg) scale(1.03); }
+}
+
+.robolabs-hero-bottom-gradient {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 180px;
+  background: linear-gradient(to top, var(--bg-white), rgba(255, 255, 255, 0));
+  z-index: 0;
+  pointer-events: none;
+}
+
+.robolabs-online-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--shape-primary-bg);
+  border: 1px solid var(--shape-primary-border);
+  border-radius: 33px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  padding: 8px 16px;
+  margin-bottom: 24px;
+}
+
+.robolabs-online-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--primary);
+  box-shadow: 0 0 0 6px var(--shape-primary-border);
+}
+
+.robolabs-hero .hero-title {
+  color: var(--text-dark);
+}
+
+.robolabs-hero-title-lead {
+  color: var(--text-dark);
+}
+
+.robolabs-hero .hero-subtitle {
+  color: var(--text-body);
+}
+
+.robolabs-hero .btn-outline {
+  color: var(--text-dark);
+  border-color: var(--primary) !important;
+  background: transparent;
+}
+
+.robolabs-hero .btn-outline:hover {
+  color: #fff !important;
+  border-color: var(--primary-light) !important;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  box-shadow: 0 10px 24px rgba(19, 225, 149, 0.3);
+}
+
+.robolabs-core-tech {
+  margin-top: 48px;
+}
+
+.robolabs-core-tech p {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin-bottom: 18px;
+}
+
+.robolabs-logo-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+}
+
+.robolabs-logo-strip img {
+  width: 120px;
+  height: 35px;
+  object-fit: contain;
+  opacity: 0.9;
+}
+
+[data-theme='dark'] .robolabs-hero-grid {
+  opacity: 0.16;
+}
+
+[data-theme='dark'] .robolabs-hero-bottom-gradient {
+  background: linear-gradient(to top, var(--bg-white), rgba(0, 0, 0, 0));
+}
+
+[data-theme='dark'] .robolabs-hero .btn-outline {
+  color: #fff;
+}
+
 .hero-container {
   max-width: var(--container-max);
   margin: 0 auto;

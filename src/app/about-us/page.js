@@ -15,52 +15,43 @@ export default function AboutUs() {
     <>
       <Navbar />
        <main>
-        {/* HERO section (styled to match homepage Hero/About) */}
-        <section className="section section--white pb-0">
-          <FloatingShapes shapes={[]} />
+        {/* Hero section inspired by RoboLabs first fold */}
+        <section className="section section--white robolabs-hero">
+          <div className="robolabs-hero-bg" />
+          <div className="robolabs-hero-grid" />
+          <div className="robolabs-oval robolabs-oval--1" />
+          <div className="robolabs-oval robolabs-oval--2" />
+          <div className="robolabs-oval robolabs-oval--3" />
+          <div className="robolabs-oval robolabs-oval--4" />
+          <div className="robolabs-oval robolabs-oval--5" />
+          <div className="robolabs-hero-bottom-gradient" />
           <div className="container relative z-10">
-            <div className="section-header">
-              <span className="section-tag">Who We Are</span>
-              <SectionHeading>
-                About
-                <span className="gradient-text"> Adzapster</span>
-              </SectionHeading>
-              <p className="section-subtitle">Adzapster bridges the gap between massive algorithmic data and human-centric marketing. We empower global brands with precision engineering for the programmatic era.</p>
-            </div>
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center about-identity">
-              <div className="lg:col-span-7 flex flex-col gap-md">
-                <h1 className="font-display-lg text-display-lg text-on-background mb-md">
-                  Engineering the future of <span className="text-primary-container">Dynamic Advertising</span>.
-                </h1>
-                <div className="flex items-center gap-4">
-                  <span className="inline-flex items-center gap-2 px-3 py-1 bg-secondary-container/20 text-on-secondary-container rounded-full font-label-md text-label-md">
-                    <span className="material-symbols-outlined text-[18px]">verified</span>
-                    The Programmatic Authority
-                  </span>
-                  <span className="text-on-background font-semibold px-4 text-sm bg-surface-container-low rounded-full">12B+ Daily Bid Requests</span>
-                </div>
+            <div className="max-w-4xl mx-auto text-center">
+              <div className="robolabs-online-badge">
+                <span className="robolabs-online-dot" />
+                <span>Online</span>
               </div>
-              <div className="lg:col-span-5 relative">
-                <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl border-4 border-outline-variant">
-                  <img 
-                  className="w-full h-full object-cover"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhomJP2tw970SKcTYizdcHv6RzI5kAWSkR1vEAE8YxXExIt-b9Sy-FEzPLsal2Odp40vVhzyc4nzrfPQrKDzxrJSZN-bKCwdZxNzrL6zS2r-TJKjTpYFSCexLoR12RAC-bfMcNTShTlGZb-LvKLcQz_RC3qZBW30vxXpm1HNNETgkPJfCBhBDGbvNLQRQe4FvGvOPkv_5GVSGJYN73-zD8s5RThb3E_C4T0vurJpXlfGdsOoRZt8_o36ZcROegpqzOAA8IWRQi9hZU"
-                  alt="Data Visualization"
-                />
+              <h1 className="hero-title mb-6">
+                <span className="robolabs-hero-title-lead">The Era of AI is Here ✦ </span>
+                Adzapster helps you lead it
+              </h1>
+              <p className="hero-subtitle mx-auto mb-10">
+                We are a global crew of performance marketers and AI builders, helping brands use intelligent automation in ways that make sense - no hype, just practical growth.
+              </p>
+              <div className="hero-cta-group justify-center mb-0">
+                <a href="#services" className="btn btn-outline">Learn More</a>
               </div>
-              <div className="absolute -bottom-8 -left-8 bg-surface-container p-6 rounded-xl shadow-xl border border-outline-variant/30 hidden md:block min-w-[200px]">
-                <div className="flex items-center gap-4">
-                  <div className="p-3 bg-primary/10 rounded-lg shrink-0">
-                    <span className="material-symbols-outlined text-primary text-3xl">rocket_launch</span>
-                  </div>
-                  <div className="flex flex-col">
-                    <p className="text-3xl font-bold text-on-background leading-tight">12B+</p>
-                    <p className="text-xs font-medium text-tertiary uppercase tracking-wider">Daily Bid Requests</p>
-                  </div>
+              <div className="robolabs-core-tech">
+                <p>Our core technologies</p>
+                <div className="robolabs-logo-strip">
+                  <img src="https://framerusercontent.com/images/m2Ee8qVNaUq1p30JNXzf87wtGZ4.png" alt="Technology 1" />
+                  <img src="https://framerusercontent.com/images/n3QeCgxiERZtWGL7E7mRbFJGPU.png" alt="Technology 2" />
+                  <img src="https://framerusercontent.com/images/Bcly3ML9TcmNxDC5rKCRKuvqODI.png" alt="Technology 3" />
+                  <img src="https://framerusercontent.com/images/o3i1Dnx2WxItzPkcePIqvEQOFU.png" alt="Technology 4" />
+                  <img src="https://framerusercontent.com/images/aEfuAatqNA9OPAwEZa6f4GuCgU.png" alt="Technology 5" />
                 </div>
               </div>
             </div>
-          </div>
           </div>
         </section>
         <section className="section section--light mt-20">
