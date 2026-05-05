@@ -64,7 +64,7 @@ export default function Funnel() {
           <SectionHeading>
             The <span className="gradient-text">Ad Funnel</span>
           </SectionHeading>
-          <p className="section-subtitle">A full-funnel approach designed to move your audience from first impression to loyal customer.</p>
+          <p className="text-xl text-tertiary">A full-funnel approach designed to move your audience from first impression to loyal customer.</p>
         </motion.div>
 
         <div className="funnel-timeline">

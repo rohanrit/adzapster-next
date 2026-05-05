@@ -45,7 +45,7 @@ export default function Process() {
           <SectionHeading>
             The <span className="gradient-text">BIT Framework™</span>
           </SectionHeading>
-          <p className="section-subtitle">
+          <p className="text-xl text-tertiary">
             A proven 3-phase methodology that ensures your AI Agent delivers real results.
           </p>
         </motion.div>

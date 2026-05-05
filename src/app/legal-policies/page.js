@@ -28,7 +28,7 @@ export default function LegalPolicies() {
           <SectionHeading>
             Our commitment to <span className="gradient-text">compliance</span>.
           </SectionHeading>
-          <p className="section-subtitle">
+          <p className="text-xl text-tertiary">
             Data privacy, ethical advertising, and regulatory compliance across global jurisdictions.
           </p>
         </div>

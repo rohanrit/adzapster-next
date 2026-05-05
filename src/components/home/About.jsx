@@ -141,7 +141,7 @@ export default function About() {
             Who
             <span className="gradient-text"> We Are</span>
           </SectionHeading>
-          <p className="section-subtitle">A decade of transforming digital advertising with data-driven precision and creative excellence.</p>
+          <p className="text-xl text-tertiary">A decade of transforming digital advertising with data-driven precision and creative excellence.</p>
         </motion.div>
 
         {/* Existing Cards Grid */}

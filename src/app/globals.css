@@ -278,14 +278,6 @@ button {
   letter-spacing: -0.02em;
 }
 
-.section-subtitle {
-  font-size: 1.05rem;
-  color: var(--text-muted);
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.7;
-}
-
 /* ─── BUTTONS ──────────────────────────────────────────── */
 .btn {
   display: inline-flex;

@@ -113,7 +113,7 @@ export default function WhyUs() {
           <SectionHeading>
             Why <span className="gradient-text">Choose Us</span>
           </SectionHeading>
-          <p className="section-subtitle">The competitive edge your advertising strategy has been missing.</p>
+          <p className="text-xl text-tertiary">The competitive edge your advertising strategy has been missing.</p>
         </motion.div>
 
         <div className="why-grid">

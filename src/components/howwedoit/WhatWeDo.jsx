@@ -39,7 +39,7 @@ export default function WhatWeDo() {
           <SectionHeading>
             We Build <span className="gradient-text">AI Agents</span>
           </SectionHeading>
-          <p className="section-subtitle">
+          <p className="text-xl text-tertiary">
             The ones that let you...
           </p>
         </motion.div>

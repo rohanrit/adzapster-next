@@ -118,7 +118,7 @@ export default function Products() {
           <SectionHeading>
             Our <span className="gradient-text">Products</span>
           </SectionHeading>
-          <p className="section-subtitle">Proprietary ad-tech products built to give you an unfair advantage in digital advertising.</p>
+          <p className="text-xl text-tertiary">Proprietary ad-tech products built to give you an unfair advantage in digital advertising.</p>
         </motion.div>
 
         <div className="products-carousel">

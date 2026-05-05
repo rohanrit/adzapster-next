@@ -177,7 +177,7 @@ export default function Services() {
           <SectionHeading>
             Our <span className="gradient-text">Services</span>
           </SectionHeading>
-          <p className="section-subtitle">End-to-end advertising solutions engineered for measurable performance across every screen.</p>
+          <p className="text-xl text-tertiary">End-to-end advertising solutions engineered for measurable performance across every screen.</p>
         </motion.div>
 
         <div className="services-carousel">

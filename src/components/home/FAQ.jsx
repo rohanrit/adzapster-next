@@ -61,7 +61,7 @@ export default function FAQ() {
           <SectionHeading>
             Frequently Asked <span className="gradient-text">Questions</span>
           </SectionHeading>
-          <p className="section-subtitle">Got questions? We&apos;ve got answers. If you don&apos;t find what you need, reach out — we&apos;re happy to help.</p>
+          <p className="text-xl text-tertiary">Got questions? We&apos;ve got answers. If you don&apos;t find what you need, reach out — we&apos;re happy to help.</p>
         </motion.div>
 
         <div className="faq-list">

@@ -28,7 +28,7 @@ export default function Blog() {
           <SectionHeading>
             Engineering the Future of <span className="gradient-text">Programmatic Advertising</span>.
           </SectionHeading>
-          <p className="section-subtitle">
+          <p className="text-xl text-tertiary">
             Insights and innovation from our team of experts.
           </p>
         </div>

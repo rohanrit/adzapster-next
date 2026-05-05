@@ -1,14 +1,15 @@
 'use client'
 
 import { useRef, useEffect, useState } from 'react'
+import { Monitor, Play, Tv, FileText, Smartphone, Layout } from 'lucide-react'
 
 const services = [
-  { label: 'Display', color: '#13e195', x: 50, y: 20 },
-  { label: 'Video', color: '#8B5CF6', x: 85, y: 40 },
-  { label: 'CTV', color: '#FF69B4', x: 75, y: 75 },
-  { label: 'Native', color: '#F97316', x: 40, y: 80 },
-  { label: 'Mobile', color: '#13e195', x: 15, y: 55 },
-  { label: 'DOOH', color: '#8B5CF6', x: 25, y: 25 },
+  { label: 'Display', color: '#13e195', x: 50, y: 20, icon: Monitor },
+  { label: 'Video', color: '#8B5CF6', x: 85, y: 40, icon: Play },
+  { label: 'CTV', color: '#FF69B4', x: 75, y: 75, icon: Tv },
+  { label: 'Native', color: '#F97316', x: 40, y: 80, icon: FileText },
+  { label: 'Mobile', color: '#13e195', x: 15, y: 55, icon: Smartphone },
+  { label: 'DOOH', color: '#8B5CF6', x: 25, y: 25, icon: Layout },
 ]
 
 const floatingMetrics = [
@@ -16,96 +17,10 @@ const floatingMetrics = [
   { value: '15ms', label: 'Latency', x: 90, y: 15 },
   { value: '50M+', label: 'Daily Reach', x: 10, y: 40 },
   { value: '12x', label: 'ROAS', x: 80, y: 90 },
-  { value: '24/7', label: 'Monitoring', x: 5, y: 70 },
+  { value: '24/7', label: 'Monitoring', x: 7, y: 70 },
 ]
 
-// Draw SVG-style icons on canvas
-function drawIcon(ctx, iconType, x, y, size, color) {
-  ctx.save()
-  ctx.strokeStyle = color
-  ctx.fillStyle = color
-  ctx.lineWidth = 2
-  ctx.lineCap = 'round'
-  ctx.lineJoin = 'round'
-
-  switch (iconType) {
-    case 'display': // Monitor
-      ctx.beginPath()
-      ctx.rect(x - size / 2, y - size / 3, size, size * 0.7)
-      ctx.stroke()
-      ctx.beginPath()
-      ctx.moveTo(x - size / 4, y + size / 2 * 0.7)
-      ctx.lineTo(x + size / 4, y + size / 2 * 0.7)
-      ctx.stroke()
-      break
-
-    case 'video': // Play button
-      ctx.beginPath()
-      ctx.moveTo(x - size / 3, y - size / 3)
-      ctx.lineTo(x + size / 3, y)
-      ctx.lineTo(x - size / 3, y + size / 3)
-      ctx.closePath()
-      ctx.fill()
-      break
-
-    case 'ctv': // TV
-      ctx.beginPath()
-      ctx.rect(x - size / 2, y - size / 3, size, size * 0.6)
-      ctx.stroke()
-      // Stand
-      ctx.beginPath()
-      ctx.moveTo(x - size / 4, y + size / 3 * 0.6)
-      ctx.lineTo(x + size / 4, y + size / 3 * 0.6)
-      ctx.stroke()
-      ctx.beginPath()
-      ctx.moveTo(x, y + size / 3 * 0.6)
-      ctx.lineTo(x, y + size / 2)
-      ctx.stroke()
-      break
-
-    case 'native': // Document
-      ctx.beginPath()
-      ctx.rect(x - size / 3, y - size / 3, size * 0.66, size * 0.66)
-      ctx.stroke()
-      // Lines
-      for (let i = 0; i < 3; i++) {
-        ctx.beginPath()
-        ctx.moveTo(x - size / 5, y - size / 6 + i * size / 5)
-        ctx.lineTo(x + size / 5, y - size / 6 + i * size / 5)
-        ctx.stroke()
-      }
-      break
-
-    case 'mobile': // Phone
-      ctx.beginPath()
-      ctx.rect(x - size / 3, y - size / 2 * 0.8, size * 0.66, size * 0.8)
-      ctx.stroke()
-      // Screen
-      ctx.beginPath()
-      ctx.rect(x - size / 4, y - size / 4, size / 2, size / 3)
-      ctx.stroke()
-      // Home button
-      ctx.beginPath()
-      ctx.arc(x, y + size / 4, size / 8, 0, Math.PI * 2)
-      ctx.stroke()
-      break
-
-    case 'dooh': // Billboard
-      // Post
-      ctx.beginPath()
-      ctx.moveTo(x, y + size / 2)
-      ctx.lineTo(x, y - size / 6)
-      ctx.stroke()
-      // Sign
-      ctx.beginPath()
-      ctx.rect(x - size / 3, y - size / 2, size * 0.66, size * 0.66)
-      ctx.stroke()
-      break
-  }
-  ctx.restore()
-}
-
-function drawNode(ctx, x, y, radius, color, iconType) {
+function drawNode(ctx, x, y, radius, color) {
   ctx.save()
   // Circle background
   ctx.beginPath()
@@ -115,9 +30,6 @@ function drawNode(ctx, x, y, radius, color, iconType) {
   ctx.strokeStyle = color + '40'
   ctx.lineWidth = 1.5
   ctx.stroke()
-
-  // Draw icon
-  drawIcon(ctx, iconType, x, y, radius * 1.2, color)
   ctx.restore()
 }
 
@@ -357,16 +269,15 @@ export default function HeroInfographic() {
       services.forEach((svc) => {
         const x1 = svc.x * scaleX
         const y1 = svc.y * scaleY
-        drawLine(ctx, centerX, centerY, x1, y1, svc.color, 1.5, 0.2)
+        drawLine(ctx, centerX, centerY, x1, y1, svc.color, 3.5, 0.2)
       })
 
-      // Draw service nodes with SVG icons
-      const iconTypes = ['display', 'video', 'ctv', 'native', 'mobile', 'dooh']
+      // Draw service nodes (circle backgrounds only - icons rendered as Lucide overlays)
       services.forEach((svc, idx) => {
         const x = svc.x * scaleX
         const y = svc.y * scaleY
         const floatOffset = -8 * Math.sin(Date.now() / 1000 * (3 + idx * 0.5) + idx)
-        drawNode(ctx, x, y + floatOffset, 24, svc.color, iconTypes[idx])
+        drawNode(ctx, x, y + floatOffset, 24, svc.color)
         drawText(ctx, svc.label, x, y + floatOffset + 32, 10, '#374151')
       })
 
@@ -377,8 +288,8 @@ export default function HeroInfographic() {
         const floatOffset = -6 * Math.sin(Date.now() / 1000 * (4 + idx * 0.3) + idx)
         ctx.save()
         ctx.globalAlpha = 0.8
-        ctx.fillStyle = '#ffffff80'
-        ctx.strokeStyle = '#e5e7eb80'
+        ctx.fillStyle = '#ffffff'
+        ctx.strokeStyle = '#e5e7eb'
         ctx.lineWidth = 1
         const px = x - 30
         const py = y + floatOffset - 16
@@ -413,6 +324,25 @@ export default function HeroInfographic() {
         className="absolute inset-0 w-full h-full"
         style={{ display: 'block' }}
       />
+      {/* Lucide icon overlays - thick stroke */}
+      {dimensions.width > 0 && services.map((svc, idx) => {
+        const x = svc.x * dimensions.width / 100
+        const y = svc.y * dimensions.height / 100
+        const Icon = svc.icon
+        return (
+          <div
+            key={idx}
+            className="absolute pointer-events-none"
+            style={{
+              left: x - 12,
+              top: y - 12,
+              zIndex: 1,
+            }}
+          >
+            <Icon className="w-6 h-6" style={{ color: svc.color, strokeWidth: 2.5 }} />
+          </div>
+        )
+      })}
     </div>
   )
 }

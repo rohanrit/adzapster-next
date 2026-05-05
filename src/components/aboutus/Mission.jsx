@@ -31,7 +31,7 @@ export default function Mission() {
         <div className="section-header">
           <span className="section-tag">Our Core Foundation</span>
           <SectionHeading>Mission & Vision</SectionHeading>
-          <p className="section-subtitle">Built on reliability, innovation, and absolute transparency.</p>
+          <p className="text-xl text-tertiary">Built on reliability, innovation, and absolute transparency.</p>
         </div>
         <motion.div
           className="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-xl"

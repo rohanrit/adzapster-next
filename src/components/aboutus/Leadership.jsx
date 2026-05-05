@@ -35,7 +35,7 @@ export default function Leadership() {
           <div className="max-w-xl">
             <span className="section-tag">Leadership</span>
             <SectionHeading>The Architects</SectionHeading>
-            <p className="section-subtitle">Meet the visionaries combining decades of experience in fintech, data science, and global marketing.</p>
+            <p className="text-xl text-tertiary">Meet the visionaries combining decades of experience in fintech, data science, and global marketing.</p>
           </div>
           <button className="group flex items-center gap-2 font-label-md text-label-md text-primary hover:text-on-primary-container transition-colors mt-8 md:mt-0">
             Join the team

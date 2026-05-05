@@ -68,7 +68,7 @@ export default function Pricing() {
           <SectionHeading>
             Subscription <span className="gradient-text">Plans</span>
           </SectionHeading>
-          <p className="section-subtitle">Flexible plans designed to scale with your business. Start small, grow big.</p>
+          <p className="text-xl text-tertiary">Flexible plans designed to scale with your business. Start small, grow big.</p>
         </motion.div>
 
         <div className="pricing-grid">
