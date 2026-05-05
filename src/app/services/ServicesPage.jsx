@@ -5,7 +5,8 @@ import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Hero from '@/components/services/Hero'
 import ServicesGrid from '@/components/services/ServicesGrid'
-import WhyChooseUs from '@/components/services/WhyChooseUs'
+import WhatWeDo from '@/components/services/WhatWeDo'
+import Infographic from '@/components/services/Infographic'
 import FAQ from '@/components/services/FAQ'
 import ServiceModal from '@/components/services/ServiceModal'
 
@@ -17,7 +18,8 @@ export default function ServicesPage() {
       <Navbar />
       <Hero />
       <ServicesGrid onSelectService={setSelectedService} />
-      <WhyChooseUs />
+      <WhatWeDo />
+      <Infographic />
       <FAQ />
       <ServiceModal service={selectedService} onClose={() => setSelectedService(null)} />
       <Footer />

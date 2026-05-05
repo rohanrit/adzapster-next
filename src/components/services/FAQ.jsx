@@ -31,13 +31,15 @@ export default function FAQ() {
   const [openFaq, setOpenFaq] = useState(null)
 
   return (
-    <section className="section">
+    <section className="section section--light">
       <div className="container max-w-4xl mx-auto">
-        <SectionHeading
-          tag="FAQ"
-          title="Frequently Asked Questions"
-          subtitle="Everything you need to know about our services and platform."
-        />
+        <motion.div className="section-header" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
+          <span className="section-tag">FAQ</span>
+          <SectionHeading>
+            Frequently Asked <span className="gradient-text">Questions</span>
+          </SectionHeading>
+          <p className="text-xl text-tertiary">Everything you need to know about our services and platform.</p>
+        </motion.div>
 
         <div className="space-y-4">
           {faqs.map((faq, idx) => (

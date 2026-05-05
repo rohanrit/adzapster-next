@@ -100,11 +100,20 @@ export default function ServicesGrid({ onSelectService }) {
   return (
     <section className="section relative" id="services-grid">
       <div className="container relative z-10">
-        <SectionHeading
-          tag="Our Services"
-          title="Complete Ad Tech Solutions"
-          subtitle="Every channel, every format, every outcome—powered by data and optimized for performance."
-        />
+        <motion.div
+                  className="section-header"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: '-60px' }}
+                  transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+                >
+                  <span className="section-tag">Our Services</span>
+                  <SectionHeading>
+                    Solutions
+                    <span className="gradient-text"> We Offer</span>
+                  </SectionHeading>
+                  <p className="text-xl text-tertiary">Every channel, every format, every outcome—powered by data and optimized for performance.</p>
+                </motion.div>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((svc, idx) => (

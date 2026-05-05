@@ -1,11 +1,7 @@
 'use client'
 
-import { motion, useInView, useScroll, useTransform } from 'framer-motion'
-import { useRef, useEffect } from 'react'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
-
-gsap.registerPlugin(ScrollTrigger)
+import { motion, useInView } from 'framer-motion'
+import SectionHeading from '@/components/SectionHeading'
 
 const items = [
   {
@@ -27,71 +23,29 @@ const items = [
 ]
 
 export default function BetterWay() {
-  const parallaxRef = useRef(null)
-  const { scrollYProgress } = useScroll({ target: parallaxRef, offset: ['start start', 'end start'] })
-  const sectionY = useTransform(scrollYProgress, [0, 1], [0, -100])
-  const sectionOpacity = useTransform(scrollYProgress, [0, 0.5, 1, 1], [1, 1, 1, 1])
-
-  const sectionRef = useRef(null)
-  const inView = useInView(sectionRef, { once: true, margin: '-100px' })
-
-  useEffect(() => {
-    if (!sectionRef.current) return
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        '.better-way-card',
-        { opacity: 0, scale: 0.98, y: 40 },
-        {
-          opacity: 1,
-          scale: 1,
-          y: 0,
-          duration: 0.8,
-          stagger: 0.12,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 75%',
-            toggleActions: 'play none none reverse',
-          },
-        }
-      )
-    }, sectionRef)
-    return () => ctx.revert()
-  }, [])
+  const inView = useInView({ once: true, margin: '-100px' })
 
   return (
-    <motion.div
-      ref={parallaxRef}
-      style={{
-        y: sectionY,
-        opacity: sectionOpacity,
-        position: 'sticky',
-        top: 0,
-        zIndex: 60,
-        marginTop: '-20vh',
-        minHeight: '100vh',
-        backgroundColor: 'black'
-      }}
-      className="w-full flex flex-col justify-center"
-    >
-      <section ref={sectionRef} className="relative py-32 md:py-40 bg-black text-white overflow-hidden w-full">
+    <section className="relative py-32 md:py-40 bg-black text-white overflow-hidden w-full">
       <div className="container max-w-[1200px] mx-auto px-6">
         <motion.div
-          initial={{ opacity: 0, y: 40, filter: 'blur(8px)' }}
-          animate={inView ? { opacity: 1, y: 0, filter: 'blur(0px)' } : {}}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="section-header"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
         >
-          <span className="section-tag inline-block mb-6 text-gray-400">Our Approach</span>
-          <h2 className="font-heading text-[clamp(2rem,5vw,3.5rem)] font-bold leading-[0.95] text-white mb-16">
+          <span className="section-tag">Our Approach</span>
+          <SectionHeading>
             A Better Way<br />of Working
-          </h2>
+          </SectionHeading>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {items.map((item, i) => (
             <motion.div
               key={i}
-              className="better-way-card group relative p-8 md:p-10 bg-white/[0.03] border border-white/10 rounded-2xl hover:border-emerald-400/30 hover:bg-white/[0.06] transition-all duration-500"
+              className="relative p-8 md:p-10 bg-white/[0.03] border border-white/10 rounded-2xl hover:border-emerald-400/30 hover:bg-white/[0.06] transition-all duration-500"
               whileHover={{ y: -8, boxShadow: '0 20px 40px rgba(16, 185, 129, 0.1)' }}
               initial={{ opacity: 0, scale: 0.98 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -109,7 +63,6 @@ export default function BetterWay() {
           ))}
         </div>
       </div>
-      </section>
-    </motion.div>
+    </section>
   )
 }

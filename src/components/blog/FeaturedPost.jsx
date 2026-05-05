@@ -50,12 +50,12 @@ export default function FeaturedPost({ blog }) {
         </div>
 
         <Link href={`/blog/${blog.slug}`}>
-          <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-4 hover:text-emerald-600 transition-colors leading-tight">
+          <h2 className="text-2xl lg:text-3xl font-bold text-ternary mb-4 hover:text-emerald-600 transition-colors leading-tight">
             {blog.title}
           </h2>
         </Link>
 
-        <p className="text-gray-600 mb-6 line-clamp-3">
+        <p className="text-ternary mb-6 line-clamp-3">
           {blog.description}
         </p>
 
@@ -64,7 +64,7 @@ export default function FeaturedPost({ blog }) {
             {blog.author.split(' ').map(n => n[0]).join('')}
           </div>
           <div>
-            <p className="font-medium text-gray-900">{blog.author}</p>
+            <p className="font-medium text-ternary">{blog.author}</p>
             <p className="text-sm text-gray-500">Author</p>
           </div>
         </div>

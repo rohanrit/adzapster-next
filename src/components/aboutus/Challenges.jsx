@@ -1,86 +1,33 @@
 'use client'
 
-import { motion, useInView, useScroll, useTransform } from 'framer-motion'
-import { useRef, useEffect } from 'react'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
-
-gsap.registerPlugin(ScrollTrigger)
+import { motion, useInView } from 'framer-motion'
+import SectionHeading from '@/components/SectionHeading'
 
 const challenges = [
-  'Stuck with outdated ad tech',
-  'Complex campaigns need developers',
-  'Too slow to launch new campaigns',
-  'Difficulty scaling as you grow',
-  'Metrics that don\'t tell the full story',
+  '1. Stuck with outdated ad tech',
+  '2. Complex campaigns need developers',
+  '3. Too slow to launch new campaigns',
+  '4. Difficulty scaling as you grow',
+  "5. Metrics that don't tell the full story",
 ]
 
 export default function Challenges() {
-  const parallaxRef = useRef(null)
-  const { scrollYProgress } = useScroll({ target: parallaxRef, offset: ['start start', 'end start'] })
-  const sectionY = useTransform(scrollYProgress, [0, 1], [0, -100])
-  const sectionOpacity = useTransform(scrollYProgress, [0, 0.5, 1, 1], [1, 1, 1, 1])
-
-  const sectionRef = useRef(null)
-  const inView = useInView(sectionRef, { once: true, margin: '-80px' })
-
-  useEffect(() => {
-    if (!sectionRef.current) return
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        '.challenge-item',
-        { opacity: 0, x: -40, borderLeftWidth: '0px' },
-        {
-          opacity: 1,
-          x: 0,
-          borderLeftWidth: '4px',
-          duration: 0.8,
-          stagger: 0.15,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 75%',
-            toggleActions: 'play none none reverse',
-          },
-        }
-      )
-    }, sectionRef)
-    return () => ctx.revert()
-  }, [])
+  const inView = useInView({ once: true, margin: '-100px' })
 
   return (
-    <motion.div
-      ref={parallaxRef}
-      style={{
-        y: sectionY,
-        opacity: sectionOpacity,
-        position: 'sticky',
-        top: 0,
-        zIndex: 50,
-        marginTop: '-20vh',
-        minHeight: '100vh',
-        backgroundColor: 'black'
-      }}
-      className="w-full flex flex-col justify-center"
-    >
-      <section ref={sectionRef} className="relative py-32 md:py-40 bg-black text-white overflow-hidden w-full">
+    <section className="relative py-32 md:py-40 bg-black text-white overflow-hidden w-full">
       <div className="container max-w-[1200px] mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 40, filter: 'blur(8px)' }}
-          animate={inView ? { opacity: 1, y: 0, filter: 'blur(0px)' } : {}}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <span className="section-tag inline-block mb-6 text-gray-400">Pain Points</span>
-          <h2 className="font-heading text-[clamp(2rem,5vw,3.5rem)] font-bold leading-[0.95] text-white mb-16">
+        <div className="mb-16">
+          <SectionHeading tag="Pain Points">
             Challenges We<br />Often Hear
-          </h2>
-        </motion.div>
+          </SectionHeading>
+        </div>
 
         <div className="space-y-8 md:space-y-10 max-w-3xl">
           {challenges.map((text, i) => (
             <motion.div
               key={i}
-              className="challenge-item group relative pl-6 md:pl-8 border-l-4 border-transparent hover:border-emerald-400/60 transition-all duration-500 cursor-default"
+              className="relative pl-6 md:pl-8 border-l-4 border-transparent hover:border-emerald-400/60 transition-all duration-500 cursor-default"
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, margin: '-40px' }}
@@ -93,7 +40,6 @@ export default function Challenges() {
           ))}
         </div>
       </div>
-      </section>
-    </motion.div>
+    </section>
   )
 }

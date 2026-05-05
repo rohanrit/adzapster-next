@@ -118,7 +118,7 @@ export default async function BlogPost({ params }) {
         <section className="section section--white">
           <div className="container max-w-6xl">
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-8">Related Articles</h2>
+              <h2 className="text-2xl font-bold text-ternary mb-8">Related Articles</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {related.map((post) => (
                   <Link key={post.id} href={`/blog/${post.slug}`} className="group">
@@ -134,7 +134,7 @@ export default async function BlogPost({ params }) {
                       </div>
                       <div className="p-4">
                         <span className="text-xs font-semibold text-emerald-600">{post.category}</span>
-                        <h3 className="text-base font-semibold text-gray-900 mt-2 group-hover:text-emerald-600 transition-colors line-clamp-2">
+                        <h3 className="text-base font-semibold text-ternary mt-2 group-hover:text-emerald-600 transition-colors line-clamp-2">
                           {post.title}
                         </h3>
                       </div>

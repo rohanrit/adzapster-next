@@ -1,11 +1,7 @@
 'use client'
 
-import { motion, useInView, useScroll, useTransform } from 'framer-motion'
-import { useRef, useEffect } from 'react'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
-
-gsap.registerPlugin(ScrollTrigger)
+import { motion, useInView } from 'framer-motion'
+import SectionHeading from '../SectionHeading'
 
 const team = [
   { name: 'Ritesh Sharma', role: 'Founder & CEO', initials: 'RS' },
@@ -15,74 +11,36 @@ const team = [
 ]
 
 export default function InHouseTeam() {
-  const parallaxRef = useRef(null)
-  const { scrollYProgress } = useScroll({ target: parallaxRef, offset: ['start start', 'end start'] })
-  const sectionY = useTransform(scrollYProgress, [0, 1], [0, -100])
-  const sectionOpacity = useTransform(scrollYProgress, [0, 0.5, 1, 1], [1, 1, 1, 1])
-
-  const sectionRef = useRef(null)
-  const inView = useInView(sectionRef, { once: true, margin: '-100px' })
-
-  useEffect(() => {
-    if (!sectionRef.current) return
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        '.team-member',
-        { opacity: 0, y: 60, scale: 0.98 },
-        {
-          opacity: 1,
-          y: 0,
-          scale: 1,
-          duration: 0.8,
-          stagger: 0.12,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 75%',
-            toggleActions: 'play none none reverse',
-          },
-        }
-      )
-    }, sectionRef)
-    return () => ctx.revert()
-  }, [])
+  const inView = useInView({ once: true, margin: '-100px' })
 
   return (
-    <motion.div
-      ref={parallaxRef}
-      style={{
-        y: sectionY,
-        opacity: sectionOpacity,
-        position: 'sticky',
-        top: 0,
-        zIndex: 70,
-        marginTop: '-20vh',
-        minHeight: '100vh',
-        backgroundColor: 'black'
-      }}
-      className="w-full flex flex-col justify-center"
-    >
-      <section ref={sectionRef} className="relative py-32 md:py-40 bg-black text-white overflow-hidden w-full">
+    <section className="relative py-32 md:py-40 bg-black text-white overflow-hidden w-full">
       <div className="container max-w-[1200px] mx-auto px-6">
-        <motion.div
-          initial={{ opacity: 0, y: 40, filter: 'blur(8px)' }}
-          animate={inView ? { opacity: 1, y: 0, filter: 'blur(0px)' } : {}}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <span className="section-tag inline-block mb-6 text-gray-400">Our People</span>
-          <h2 className="font-heading text-[clamp(2rem,5vw,3.5rem)] font-bold leading-[0.95] text-white mb-6">
-            A Dedicated<br />In-House Team
-          </h2>
-          <p className="text-lg md:text-xl leading-relaxed text-gray-300 max-w-3xl mb-16">
-            Meet the visionaries combining decades of experience in fintech, data science, and global marketing.
-          </p>
-        </motion.div>
+        <div>
+          <motion.div
+            className="contact-info"
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
+          >
+            <span className="section-tag">Our People</span>
+            <SectionHeading>
+              A Dedicated
+              <span className="gradient-text"> In-House Team</span>
+            </SectionHeading>
+            <p className="text-lg md:text-xl leading-relaxed text-gray-300 max-w-3xl mb-16">
+              Meet the visionaries combining decades of experience in fintech, data science, and
+              global marketing.
+            </p>
+          </motion.div>
+        </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {team.map((member, i) => (
             <motion.div
               key={i}
-              className="team-member group text-center p-8 md:p-10 bg-white/[0.03] border border-white/10 rounded-2xl hover:border-emerald-400/30 hover:bg-white/[0.06] transition-all duration-500"
+              className="text-center p-8 md:p-10 bg-white/[0.03] border border-white/10 rounded-2xl hover:border-emerald-400/30 hover:bg-white/[0.06] transition-all duration-500"
               whileHover={{ y: -8, boxShadow: '0 20px 40px rgba(16, 185, 129, 0.1)' }}
               initial={{ opacity: 0, scale: 0.98 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -95,14 +53,13 @@ export default function InHouseTeam() {
               <h3 className="text-lg md:text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors duration-300">
                 {member.name}
               </h3>
-              <p className="text-sm md:text-base text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
+              <p className="text-sm md:text-base text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-300">
                 {member.role}
               </p>
             </motion.div>
           ))}
         </div>
       </div>
-      </section>
-    </motion.div>
+    </section>
   )
 }

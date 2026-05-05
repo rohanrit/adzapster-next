@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-import { blogs } from '@/data/blogs'
 
 export default function BlogCard({ blog, index }) {
   return (

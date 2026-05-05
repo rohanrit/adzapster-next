@@ -44,8 +44,8 @@ export default function ServiceModal({ service, onClose }) {
                 </span>
               </div>
               <div>
-                <span className="text-sm font-semibold text-primary">{service.tag}</span>
-                <h2 className="text-2xl font-bold text-[var(--text-dark)] dark:text-white">{service.label}</h2>
+                {/* <span className="text-sm font-semibold text-primary">{service.tag}</span> */}
+                <h2 className="text-3xl font-bold text-tertiary">{service.label}</h2>
               </div>
             </div>
             <p className="text-[var(--text-body)] dark:text-gray-300 mb-6">
@@ -75,7 +75,7 @@ export default function ServiceModal({ service, onClose }) {
 
           {/* Features */}
           <div className="p-8">
-            <h3 className="text-lg font-bold mb-4 text-[var(--text-dark)] dark:text-white">Key Features</h3>
+            <h3 className="text-lg font-bold mb-4 text-tertiary">Key Features</h3>
             <ul className="space-y-3">
               {service.features.map((feature, i) => (
                 <li key={i} className="flex items-center gap-3 text-[var(--text-body)] dark:text-gray-300">
