@@ -13,8 +13,8 @@ export const metadata = {
 export default function ContactUs() {
   return (
     <>
-      <Navbar />
-      <Hero />
+       <Navbar />
+       <Hero />
       {/* Contact Form & Info Section */}
       <section className="container" id="contact-form">
         <div className="section-container">

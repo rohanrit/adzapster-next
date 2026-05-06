@@ -149,16 +149,16 @@ export default function About() {
           {cards.map((card, i) => (
             <TiltCard
               key={card.title}
-              className="about-card card multi-gradient-card"
+              className="about-card card"
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ delay: i * 0.08, duration: 0.6 }}
             >
               <div className="about-card-icon">{card.icon}</div>
-              <h3>{card.title}</h3>
-              <p>{card.desc}</p>
-              <ul className="service-features">
+              <h3 className='text-2xl font-bold mb-2 text-[var(--text-dark)] dark:text-white'>{card.title}</h3>
+              <p className='text-tertiary'>{card.desc}</p>
+              <ul className="service-features mt-4">
                 {card.features.map((f) => <li key={f}>{f}</li>)}
               </ul>
             </TiltCard>

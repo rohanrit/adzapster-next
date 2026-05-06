@@ -154,36 +154,6 @@ export default function Navbar() {
            </>
          )}
        </AnimatePresence>
-
-      {/* Mobile Bottom Dock Menu */}
-      <div className="mobile-dock-wrapper mobile-only">
-        <nav className="mobile-dock">
-          <ul className="mobile-dock-menu">
-            <li key="home">
-              <Link href="/" className={`mobile-dock-link ${pathname === '/' ? 'active' : ''}`}>
-                <span className="material-symbols-outlined">home</span>
-                <span className="label">Home</span>
-              </Link>
-            </li>
-            {links.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className={`mobile-dock-link ${pathname === link.href ? 'active' : ''}`}
-                >
-                  <span className="material-symbols-outlined">
-                    {link.label === 'About' ? 'info' : 
-                     link.label === 'Careers' ? 'work' : 
-                     link.label === 'Blog' ? 'article' : 
-                     link.label === 'Contact' ? 'mail' : 'link'}
-                  </span>
-                  <span className="label">{link.label}</span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </div>
-    </>
-  )
+     </>
+   )
 }

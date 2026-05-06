@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { motion } from 'framer-motion';
 import FloatingShapes from '@/components/FloatingShapes';
@@ -28,7 +28,6 @@ export default function Hero() {
       >
         <div className="contact-hero-content">
           <motion.div className="hero-badge" variants={fadeUp}>
-            <MessageSquareIcon className="w-4 h-4" />
             Get In Touch
           </motion.div>
           <motion.h1 className="hero-title" variants={fadeUp}>
@@ -43,7 +42,7 @@ export default function Hero() {
             <div className="card p-6 md:p-8 bg-gradient-to-br from-[var(--bg-navbar)] to-[#251844] text-white relative overflow-hidden">
               <div className="absolute top-0 right-0 w-40 h-40 bg-primary/10 rounded-full blur-3xl" />
               <div className="relative z-10">
-                <h3 className="text-3xl font-bold mb-6">You will get.</h3>
+                <h3 className="text-3xl font-bold text-gray-600 mb-6">You will get.</h3>
                 <div className="grid grid-cols-3 gap-4">
                   {[
                     { metric: '24/7', label: 'Support' },
@@ -61,14 +60,14 @@ export default function Hero() {
           </motion.div>
         </div>
         <motion.div className="contact-hero-visual" variants={fadeUp}>
-          <div className="avatar-infographic">
+          <div className="avatar-infographic responsive-infographic">
             {/* Central Avatar Circle */}
             <div className="avatar-center">
               <div className="avatar-ring ring-1" />
               <div className="avatar-ring ring-2" />
               <div className="avatar-ring ring-3" />
               <div className="avatar-core">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                <svg className="avatar-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                   <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z" />
                 </svg>
               </div>
@@ -76,23 +75,23 @@ export default function Hero() {
             </div>
             {/* Floating Contact Nodes */}
             <motion.div className="contact-node node-email" animate={{ y: [0, -12, 0] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}>
-              <MailIcon className="w-5 h-5" />
-              <span>24h Response</span>
+              <MailIcon className="node-icon" />
+              <span className="node-label">24h Response</span>
             </motion.div>
             <motion.div className="contact-node node-phone" animate={{ y: [0, 12, 0] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}>
-              <PhoneIcon className="w-5 h-5" />
-              <span>Free Consult</span>
+              <PhoneIcon className="node-icon" />
+              <span className="node-label">Free Consult</span>
             </motion.div>
             <motion.div className="contact-node node-chat" animate={{ y: [0, -8, 0] }} transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}>
-              <MessageSquareIcon className="w-5 h-5" />
-              <span>Live Support</span>
+              <MessageSquareIcon className="node-icon" />
+              <span className="node-label">Live Support</span>
             </motion.div>
             <motion.div className="contact-node node-location" animate={{ y: [0, 10, 0] }} transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}>
-              <MapPinIcon className="w-5 h-5" />
-              <span>Global Team</span>
+              <MapPinIcon className="node-icon" />
+              <span className="node-label">Global Team</span>
             </motion.div>
             {/* Connection Lines SVG */}
-            <svg className="connection-lines" viewBox="0 0 400 400" fill="none">
+            <svg className="connection-lines" viewBox="0 0 400 400" fill="none" preserveAspectRatio="xMidYMid meet">
               <motion.circle cx="200" cy="200" r="140" stroke="var(--primary)" strokeWidth="1.5" strokeDasharray="6 6" fill="none" opacity="0.15" animate={{ rotate: 360 }} transition={{ duration: 20, repeat: Infinity, ease: "linear" }} style={{ transformOrigin: "center" }} />
               <motion.circle cx="200" cy="200" r="100" stroke="var(--purple)" strokeWidth="1" strokeDasharray="4 4" fill="none" opacity="0.12" animate={{ rotate: -360 }} transition={{ duration: 25, repeat: Infinity, ease: "linear" }} style={{ transformOrigin: "center" }} />
               <motion.path d="M200 60 L200 340 M60 200 L340 200" stroke="var(--border)" strokeWidth="1" strokeDasharray="8 8" opacity="0.2" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 2, repeat: Infinity, ease: "linear" }} />

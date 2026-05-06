@@ -918,17 +918,7 @@ button {
 }
 
 /* Mobile Dock */
-.mobile-dock-wrapper {
-  position: fixed;
-  bottom: 24px;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  z-index: 1000;
-  pointer-events: none;
-  padding: 0 16px;
-}
+
 
 .mobile-dock {
   pointer-events: auto;
@@ -1651,17 +1641,22 @@ button {
 
 .avatar-infographic {
   position: relative;
-  width: 400px;
-  height: 400px;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  aspect-ratio: 1/1;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0 auto;
 }
 
 .avatar-center {
   position: relative;
-  width: 120px;
-  height: 120px;
+  width: 30%;
+  max-width: 120px;
+  height: auto;
+  aspect-ratio: 1/1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1681,6 +1676,13 @@ button {
   box-shadow: 0 0 40px var(--primary-glow);
   z-index: 2;
   position: relative;
+}
+
+.avatar-icon {
+  width: 40%;
+  max-width: 48px;
+  height: auto;
+  aspect-ratio: 1/1;
 }
 
 .avatar-glow {
@@ -1748,6 +1750,16 @@ button {
   font-weight: 600;
   color: var(--text-dark);
   white-space: nowrap;
+}
+
+.node-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.node-label {
+  font-size: 0.75rem;
 }
 
 .contact-node svg {
@@ -2003,8 +2015,6 @@ button {
   flex-direction: column;
   gap: 8px;
   list-style: none;
-  padding: 0;
-  margin: 0;
   color: var(--text-dark);
 }
 
@@ -2822,7 +2832,7 @@ button {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .contact-wrapper {
+  .contact-wrapper, .contact-hero-container  {
     grid-template-columns: 1fr;
     gap: 40px;
   }
@@ -2851,9 +2861,7 @@ button {
     display: flex !important;
   }
 
-  .mobile-dock-wrapper.mobile-only {
-    display: flex !important;
-  }
+  
 
   .hero-title {
     font-size: clamp(2rem, 8vw, 3rem);
@@ -2935,3 +2943,7 @@ button {
     transform: rotate(360deg);
   }
 }
+
+
+
+

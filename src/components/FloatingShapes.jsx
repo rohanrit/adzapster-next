@@ -201,126 +201,97 @@ function StarsPattern({ mousePos }) {
   )
 }
 
-function CursorTrail({ mousePos }) {
-  const trailX = mousePos.isInSection ? mousePos.x : 0
-  const trailY = mousePos.isInSection ? mousePos.y : 0
-  
-  return (
-    <>
-      <div
-        style={{
-          position: 'fixed',
-          left: trailX,
-          top: trailY,
-          width: 8,
-          height: 8,
-          borderRadius: '50%',
-          background: 'var(--primary)',
-          transform: 'translate(-50%, -50%)',
-          pointerEvents: 'none',
-          zIndex: 9999,
-          opacity: 0.8,
-          boxShadow: '0 0 20px rgba(255, 105, 180, 0.5), 0 0 40px rgba(139, 92, 246, 0.5)',
-        }}
-        className="cursor-trail"
-      />
-      <div
-        style={{
-          position: 'fixed',
-          left: trailX,
-          top: trailY,
-          width: 24,
-          height: 24,
-          borderRadius: '50%',
-          border: '2px solid rgba(139, 92, 246, 0.6)',
-          transform: 'translate(-50%, -50%)',
-          pointerEvents: 'none',
-          zIndex: 9998,
-          opacity: 0.4,
-        }}
-        className="cursor-trail-ring"
-      />
-      <div
-        style={{
-          position: 'fixed',
-          left: trailX,
-          top: trailY,
-          width: 48,
-          height: 48,
-          borderRadius: '50%',
-          border: '1px dashed var(--text-muted)',
-          transform: 'translate(-50%, -50%)',
-          pointerEvents: 'none',
-          zIndex: 9997,
-          opacity: 0.2,
-        }}
-        className="cursor-trail-dashed"
-      />
-    </>
-  )
-}
-
 export default function FloatingShapes({ shapes = [], patternType = null }) {
   const containerRef = useRef(null)
   const [mousePos, setMousePos] = useState({ x: 0, y: 0, isInSection: false })
   const [parallax, setParallax] = useState({ x: 0, y: 0 })
+  const [responsiveShapes, setResponsiveShapes] = useState(shapes)
+
+  useEffect(() => {
+    const updateShapes = () => {
+      const width = window.innerWidth
+      let filtered
+      if (width > 1024) {
+        filtered = shapes
+      } else if (width > 768) {
+        filtered = shapes.slice(0, 5)
+      } else {
+        filtered = shapes
+          .filter(s => s.type === 'blob' || s.size > 60)
+          .slice(0, 2)
+      }
+      setResponsiveShapes(filtered)
+    }
+
+    updateShapes()
+    window.addEventListener('resize', updateShapes)
+    return () => window.removeEventListener('resize', updateShapes)
+  }, [shapes])
+
   const [orbs, setOrbs] = useState(() =>
-    shapes.filter(s => s.type === 'blob').map(() => ({ x: 0, y: 0 }))
+    responsiveShapes.filter(s => s.type === 'blob').map(() => ({ x: 0, y: 0 }))
   )
   const [shapePositions, setShapePositions] = useState(() =>
-    shapes.filter(s => s.type !== 'blob').map(() => ({ rotateX: 0, rotateY: 0, scale: 1 }))
+    responsiveShapes.filter(s => s.type !== 'blob').map(() => ({ rotateX: 0, rotateY: 0, scale: 1 }))
   )
 
+  useEffect(() => {
+    setOrbs(responsiveShapes.filter(s => s.type === 'blob').map(() => ({ x: 0, y: 0 })))
+    setShapePositions(responsiveShapes.filter(s => s.type !== 'blob').map(() => ({ rotateX: 0, rotateY: 0, scale: 1 })))
+  }, [responsiveShapes])
+
   
-useEffect(() => {
-  const handleMouseMove = (e) => {
-      const container = containerRef.current
-      if (!container) return
+  useEffect(() => {
+   const handleMouseMove = (e) => {
+       const container = containerRef.current
+       if (!container) return
 
-      const rect = container.getBoundingClientRect()
-      const x = e.clientX - rect.left
-      const y = e.clientY - rect.top
+       const rect = container.getBoundingClientRect()
+       const x = e.clientX - rect.left
+       const y = e.clientY - rect.top
 
-      setMousePos({ x, y, isInSection: true })
-      setParallax({
-        x: ((x / (rect.width || 1)) - 0.5) * 60,
-        y: ((y / (rect.height || 1)) - 0.5) * 60,
-      })
+       setMousePos({ x, y, isInSection: true })
+       setParallax({
+         x: ((x / (rect.width || 1)) - 0.5) * 60,
+         y: ((y / (rect.height || 1)) - 0.5) * 60,
+       })
 
-      setOrbs((prev) =>
-        prev.map((orb, i) => ({
-          x: (x - rect.width / 2) * 0.3 + (i % 2 === 0 ? -100 : 100),
-          y: (y - rect.height / 2) * 0.3 + (i % 2 === 0 ? -50 : 50),
-        }))
-      )
+       const nonBlobShapes = responsiveShapes.filter(s => s.type !== 'blob')
 
-      setShapePositions((prev) =>
-        prev.map((pos, i) => {
-          const depth = shapes.filter(s => s.type !== 'blob')[i]?.depth || 0.2
-          const centerX = rect.width / 2
-          const centerY = rect.height / 2
-          const deltaX = (x - centerX) / centerX
-          const deltaY = (y - centerY) / centerY
-          return {
-            rotateX: -deltaY * 20 * depth,
-            rotateY: deltaX * 20 * depth,
-            scale: 1 + depth * 0.1,
-          }
-        })
-      )
-    }
+       setOrbs((prev) =>
+         prev.map((orb, i) => ({
+           x: (x - rect.width / 2) * 0.3 + (i % 2 === 0 ? -100 : 100),
+           y: (y - rect.height / 2) * 0.3 + (i % 2 === 0 ? -50 : 50),
+         }))
+       )
 
-    const handleMouseLeave = () => {
-      setMousePos({ x: 0, y: 0, isInSection: false })
-      setParallax({ x: 0, y: 0 })
-      setOrbs((prev) =>
-        prev.map((orb, i) => ({
-          x: 0,
-          y: 0,
-        }))
-      )
-      setShapePositions(shapes.filter(s => s.type !== 'blob').map(() => ({ rotateX: 0, rotateY: 0, scale: 1 })))
-    }
+       setShapePositions((prev) =>
+         prev.map((pos, i) => {
+           const depth = nonBlobShapes[i]?.depth || 0.2
+           const centerX = rect.width / 2
+           const centerY = rect.height / 2
+           const deltaX = (x - centerX) / centerX
+           const deltaY = (y - centerY) / centerY
+           return {
+             rotateX: -deltaY * 20 * depth,
+             rotateY: deltaX * 20 * depth,
+             scale: 1 + depth * 0.1,
+           }
+         })
+       )
+     }
+
+      const handleMouseLeave = () => {
+        setMousePos({ x: 0, y: 0, isInSection: false })
+        setParallax({ x: 0, y: 0 })
+        setOrbs((prev) =>
+          prev.map((orb, i) => ({
+            x: 0,
+            y: 0,
+          }))
+        )
+        setShapePositions(responsiveShapes.filter(s => s.type !== 'blob').map(() => ({ rotateX: 0, rotateY: 0, scale: 1 })))
+      }
 
     const container = containerRef.current
     if (container) {
@@ -334,7 +305,7 @@ useEffect(() => {
         container.removeEventListener('mouseleave', handleMouseLeave)
       }
     }
-  }, [shapes])
+  }, [responsiveShapes])
 
   useEffect(() => {
     let animationId
@@ -357,26 +328,6 @@ useEffect(() => {
       if (animationId) cancelAnimationFrame(animationId)
     }
   }, [mousePos.isInSection, mousePos.x, mousePos.y])
-
-  // Compute parallax movement using state, not ref in render
-  const [containerDims, setContainerDims] = useState({ width: 1, height: 1 })
-  
-  useEffect(() => {
-    function updateDims() {
-      if (containerRef.current) {
-        setContainerDims({
-          width: containerRef.current.offsetWidth || 1,
-          height: containerRef.current.offsetHeight || 1,
-        })
-      }
-    }
-    updateDims()
-    window.addEventListener('resize', updateDims)
-    return () => window.removeEventListener('resize', updateDims)
-  }, [])
-
-  // Remove problematic effect; handle in event
-  // No-op here, event handler below will setParallax instead
 
   return (
     <div
@@ -408,13 +359,13 @@ useEffect(() => {
             key={i}
             x={orb.x}
             y={orb.y}
-            size={shapes.filter(s => s.type === 'blob')[i]?.size || 300}
-            color={shapes.filter(s => s.type === 'blob')[i]?.color || 'blue'}
+            size={responsiveShapes.filter(s => s.type === 'blob')[i]?.size || 300}
+            color={responsiveShapes.filter(s => s.type === 'blob')[i]?.color || 'blue'}
           />
         ))}
       </div>
 
-      {shapes.filter(s => s.type !== 'blob').map((s, i) => {
+      {responsiveShapes.filter(s => s.type !== 'blob').map((s, i) => {
         const depth = s.depth || 0.2
         const moveX = parallax.x * depth * 2
         const moveY = parallax.y * depth * 2
