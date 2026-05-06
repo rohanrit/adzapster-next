@@ -76,40 +76,84 @@ export default function Navbar() {
          </div>
        </div>
 
-      {/* Mobile Menu Overlay */}
-      <AnimatePresence>
-        {menuOpen && (
-          <motion.div 
-            className="mobile-menu-overlay"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-          >
-            <ul className="mobile-nav-menu">
-              {links.map((link) => (
-                <li key={link.href}>
-                  <Link 
-                    href={link.href} 
-                    className="mobile-nav-link"
-                    onClick={() => setMenuOpen(false)}
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-              <li>
-                <Link 
-                  href="/contact-us" 
-                  className="mobile-nav-cta"
-                  onClick={() => setMenuOpen(false)}
-                >
-                  Get Started
-                </Link>
-              </li>
-            </ul>
-          </motion.div>
-        )}
-      </AnimatePresence>
+       {/* Mobile Menu Overlay */}
+       <AnimatePresence>
+         {menuOpen && (
+           <>
+             <motion.div
+               className="mobile-menu-backdrop"
+               initial={{ opacity: 0 }}
+               animate={{ opacity: 1 }}
+               exit={{ opacity: 0 }}
+               onClick={() => setMenuOpen(false)}
+             />
+             <motion.div
+               className="mobile-menu-panel"
+               initial={{ x: '100%' }}
+               animate={{ x: 0 }}
+               exit={{ x: '100%' }}
+               transition={{ type: 'spring', damping: 30, stiffness: 300 }}
+             >
+               <div className="mobile-menu-header">
+                 <Link href="/" className="nav-logo" onClick={() => setMenuOpen(false)}>
+                   <img src="/images/adzapster-logo-sm.png" alt="Adzapster Logo" style={{ height: '40px', width: 'auto' }} />
+                 </Link>
+                 <button className="mobile-menu-close" onClick={() => setMenuOpen(false)}>
+                   <span className="material-symbols-outlined">close</span>
+                 </button>
+               </div>
+               <motion.ul
+                 className="mobile-nav-menu"
+                 initial="hidden"
+                 animate="visible"
+                 variants={{
+                   hidden: {},
+                   visible: {
+                     transition: {
+                       staggerChildren: 0.08,
+                     },
+                   },
+                 }}
+               >
+                 {links.map((link) => (
+                   <motion.li
+                     key={link.href}
+                     variants={{
+                       hidden: { opacity: 0, x: 20 },
+                       visible: { opacity: 1, x: 0 },
+                     }}
+                     transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                   >
+                     <Link
+                       href={link.href}
+                       className={`mobile-nav-link ${pathname === link.href ? 'active' : ''}`}
+                       onClick={() => setMenuOpen(false)}
+                     >
+                       {link.label}
+                       {pathname === link.href && <span className="mobile-nav-indicator" />}
+                     </Link>
+                   </motion.li>
+                 ))}
+                 <motion.li
+                   variants={{
+                     hidden: { opacity: 0, x: 20 },
+                     visible: { opacity: 1, x: 0 },
+                   }}
+                   transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                 >
+                   <Link
+                     href="/contact-us"
+                     className="mobile-nav-cta"
+                     onClick={() => setMenuOpen(false)}
+                   >
+                     Get Started
+                   </Link>
+                 </motion.li>
+               </motion.ul>
+             </motion.div>
+           </>
+         )}
+       </AnimatePresence>
 
       {/* Mobile Bottom Dock Menu */}
       <div className="mobile-dock-wrapper mobile-only">
